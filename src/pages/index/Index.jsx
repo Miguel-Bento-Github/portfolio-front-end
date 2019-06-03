@@ -56,17 +56,15 @@ export default class Index extends Component {
       <div>
         <div className="index" />
         <div className="showcase content row" id="header">
-          <div>
-            <h1>
-              Miguel Bento
-              <br />
-              <span
-                className="typewriter typewriter-text"
-                data-wait={1000}
-                data-words='["Front End Developer", "Web Developer"]'
-              />
-            </h1>
-          </div>
+          <h1>
+            Miguel Bento
+            <br />
+            <span
+              className="typewriter typewriter-text"
+              data-wait={1000}
+              data-words='["Amazing", "Philanthropist", "Genius", "Humble"]'
+            />
+          </h1>
         </div>
       </div>
     );

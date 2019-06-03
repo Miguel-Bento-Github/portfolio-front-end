@@ -10,15 +10,15 @@ import Contact from "./pages/contact/Contact";
 class App extends Component {
   render() {
     return (
-      <>
+      <React.Fragment>
         <NavbarHome />
         <Switch>
-          <Route path="/" component={Index} />
+          <Route exact path="/" component={Index} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/experience" component={Experience} />
           <Route path="/contact" component={Contact} />
         </Switch>
-      </>
+      </React.Fragment>
     );
   }
 }

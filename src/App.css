@@ -3,15 +3,29 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
+  min-height: 95vh;
+  width: 100%;
   background: rgba(0, 0, 0, 0.9);
-  margin: 0;
   color: #f4f4f4;
   font-family: Overpass-mono;
   font-size: 1.7rem;
+  overflow: hidden;
 }
 .navbar {
   list-style: none;
   display: flex;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+@media screen and(max-width: 450px) {
+  body {
+    font-size: 1.2rem;
+  }
 }

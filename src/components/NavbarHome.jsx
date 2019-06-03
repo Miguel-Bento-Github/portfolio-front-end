@@ -1,25 +1,16 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import List from "./listURL/ListURL";
 import "./navbarHome.css";
+
 export default class NavbarHome extends Component {
   render() {
     return (
       <nav>
         <ul className="navbar navbar-content navbar-home">
-          <li>
-            <NavLink to="/" exact>
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/portfolio">Portfolio</NavLink>
-          </li>
-          <li>
-            <NavLink to="/experience">Experience</NavLink>
-          </li>
-          <li>
-            <NavLink to="/contact">Contact</NavLink>
-          </li>
+          <List to="/" name="home" />
+          <List to="portfolio" name="portfolio" />
+          <List to="experience" name="experience" />
+          <List to="contact" name="contact" />
         </ul>
       </nav>
     );
