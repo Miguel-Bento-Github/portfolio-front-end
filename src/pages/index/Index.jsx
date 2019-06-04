@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./index.css";
 import TypeWriter from "../../components/TypeWriter";
+import Letters from "./letters/Letters";
 
 export default class Index extends Component {
   constructor(props) {
@@ -56,15 +57,25 @@ export default class Index extends Component {
       <div>
         <div className="index" />
         <div className="showcase content row" id="header">
-          <h1>
-            Miguel Bento
-            <br />
-            <span
-              className="typewriter typewriter-text"
-              data-wait={1000}
-              data-words='["Amazing", "Philanthropist", "Genius", "Humble"]'
-            />
+          <h1 className="showcase-header">
+            <Letters letter="M" />
+            <Letters letter="i" />
+            <Letters letter="g" />
+            <Letters letter="u" />
+            <Letters letter="e" />
+            <Letters letter="l" />
+            <span> </span>
+            <Letters letter="B" />
+            <Letters letter="e" />
+            <Letters letter="n" />
+            <Letters letter="t" />
+            <Letters letter="o" />
           </h1>
+          <span
+            className="typewriter typewriter-text"
+            data-wait={1000}
+            data-words='["Charity Donator", "Philanthropist", "Genius", "Humble", "A Friend"]'
+          />
         </div>
       </div>
     );

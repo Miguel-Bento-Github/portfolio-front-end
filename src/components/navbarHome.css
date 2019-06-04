@@ -17,7 +17,7 @@
   transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
   .navbar {
     font-size: 1rem;
   }

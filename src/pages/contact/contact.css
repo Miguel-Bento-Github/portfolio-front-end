@@ -1,0 +1,32 @@
+.contact {
+  min-height: 93vh;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+.contact-form > .user-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.contact-form .input {
+  border: 0;
+  background: #333;
+  color: #f4f4f4;
+  padding: 5px;
+  margin: 1vh 1vw;
+  min-height: 5vh;
+  font-size: 1rem;
+}
+.contact-form .input::placeholder {
+  color: #999;
+  font-size: 1rem;
+}
+.contact-form .input-message {
+  height: 20vh;
+  color: #f4f4f4;
+  resize: none;
+}
+.input-message:focus {
+  font-size: 1.2rem;
+}

@@ -1,6 +1,40 @@
-.porfolio-section {
-  min-height: 95vh;
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
 }
+.projects-list {
+  height: 45vh;
+}
+.project,
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project {
+  width: 100%;
+  color: #f4f4f4;
+}
+
 .project-img {
-  max-width: 100%;
+  min-width: 300px;
+  max-width: 51%;
+  width: 50%;
+  filter: blur(0) drop-shadow(0 0 0);
+  border-radius: 2px;
+}
+.project-txt {
+  margin-top: 1vh;
+}
+.project-txt:hover {
+  color: #ccc;
+  -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.project-img:hover {
+  filter: blur(0.5px) drop-shadow(0 0 5px #f4f4f4);
+  -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }

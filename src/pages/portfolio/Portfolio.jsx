@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./portfolio.css";
 import { getProjects } from "../../api/projects";
-//eslint-disable-next-line
 import ProjectsList from "./projects/ProjectsList";
 
 export default class Portfolio extends Component {
@@ -19,18 +18,20 @@ export default class Portfolio extends Component {
     return (
       <main className="main">
         <section className="section portfolio-section">
-          <h1>Portfolio</h1>
-          <div className="projects-container" />
-          {!projects
-            ? null
-            : projects.map(c => (
-                <ProjectsList
-                  key={c.img}
-                  img={c.img}
-                  imgTitle={c.title}
-                  projectName={c.title}
-                />
-              ))}
+          <h1 className="portfolio-header">Portfolio</h1>
+          <ul className="projects-container">
+            {!projects
+              ? null
+              : projects.map(c => (
+                  <ProjectsList
+                    key={c._id}
+                    link={c.link}
+                    img={c.img}
+                    imgTitle={c.title}
+                    projectName={c.title}
+                  />
+                ))}
+          </ul>
         </section>
       </main>
     );
