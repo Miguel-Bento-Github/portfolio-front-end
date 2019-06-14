@@ -17,8 +17,8 @@ export default class Portfolio extends Component {
     if (!projects) return null;
     return (
       <main className="main">
-        <section className="section portfolio-section">
-          <h1 className="portfolio-header">Portfolio</h1>
+        <section className="section portfolio-section slit">
+          <h1 className="section-header">Portfolio</h1>
           <ul className="projects-container">
             {!projects
               ? null

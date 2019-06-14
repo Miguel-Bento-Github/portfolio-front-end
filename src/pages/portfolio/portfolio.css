@@ -1,12 +1,12 @@
 .portfolio-section {
-  padding: 5vh 15vw;
+  padding: 1vh 15vw;
   min-height: 95vh;
   width: 100%;
+  background: url(https://images.pexels.com/photos/1981468/pexels-photo-1981468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
+    no-repeat;
+  background-size: cover;
 }
 
-.portfolio-header {
-  margin: 1rem 0 6vh 1rem;
-}
 @media screen and (max-width: 850px) {
   .portfolio-header {
     text-align: center;

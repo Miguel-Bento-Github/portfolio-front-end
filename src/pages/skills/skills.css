@@ -1,0 +1,52 @@
+@import "../../css/bounce.css";
+@import "../../css/shake.css";
+@import "../../css/slit.css";
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  min-height: min-content;
+  height: 100vh;
+  width: 100%;
+  background: #333;
+  background: url("https://images.pexels.com/photos/1981468/pexels-photo-1981468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
+      no-repeat,
+    linear-gradient(135deg, #f4f4f4 0, #fff 100%);
+
+  background-size: cover;
+}
+.skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+  grid-gap: 4vh 1vw;
+}
+.skill-li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+.img-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 1rem;
+}
+.skill-img {
+  height: 50px;
+  max-width: 100px;
+  margin: 0 auto;
+}
+.skill-title {
+  cursor: default;
+}
+.skill-title:hover {
+  -webkit-animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: text-pop-up-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}

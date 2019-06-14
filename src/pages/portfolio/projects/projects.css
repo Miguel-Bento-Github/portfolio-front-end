@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: min-content;
 }
 
 .project {
@@ -20,13 +21,13 @@
 
 .project-img {
   min-width: 300px;
-  max-width: 51%;
-  width: 50%;
+  width: 100%;
   filter: blur(0) drop-shadow(0 0 0);
   border-radius: 2px;
 }
 .project-txt {
-  margin-top: 1vh;
+  margin-top: 1rem;
+  font-size: 2rem;
 }
 .project-txt:hover {
   color: #ccc;

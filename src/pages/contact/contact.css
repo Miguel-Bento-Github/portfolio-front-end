@@ -1,9 +1,24 @@
 .contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  padding: 1vh 15vw;
   min-height: 93vh;
 }
+.section-header {
+  margin-top: 1rem;
+  padding: 5px;
+}
+.contact-section {
+  min-height: 93vh;
+}
+/* form */
 .contact-form {
   display: flex;
   flex-direction: column;
+}
+.form-header {
+  font-size: 2rem;
+  padding: 5px;
 }
 .contact-form > .user-info {
   display: grid;
@@ -14,7 +29,7 @@
   background: #333;
   color: #f4f4f4;
   padding: 5px;
-  margin: 1vh 1vw;
+  margin: 0.5rem 0.5rem;
   min-height: 5vh;
   font-size: 1rem;
 }
@@ -22,11 +37,32 @@
   color: #999;
   font-size: 1rem;
 }
+.contact-form .input-message::placeholder {
+  font-size: 1.1rem;
+}
 .contact-form .input-message {
   height: 20vh;
   color: #f4f4f4;
   resize: none;
 }
+.btn-submit {
+  margin: 1vh 10px 1vh auto;
+}
 .input-message:focus {
   font-size: 1.2rem;
+}
+/* banners */
+.contact .banners {
+  display: flex;
+  justify-content: space-evenly;
+}
+.contact-icon {
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.contact-icon:hover {
+  color: #999;
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.map {
+  background: #999;
 }

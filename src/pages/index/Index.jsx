@@ -54,8 +54,8 @@ export default class Index extends Component {
 
   render() {
     return (
-      <div>
-        <div className="index" />
+      <section className="slit">
+        <div className="bg" />
         <div className="showcase content row" id="header">
           <h1 className="showcase-header">
             <Letters letter="M" />
@@ -77,7 +77,7 @@ export default class Index extends Component {
             data-words='["Charity Donator", "Philanthropist", "Genius", "Humble", "A Friend"]'
           />
         </div>
-      </div>
+      </section>
     );
   }
 }
