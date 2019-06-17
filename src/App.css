@@ -1,5 +1,5 @@
-@import "http://overpass-30e2.kxcdn.com/overpass-mono.css";
-@import "http://overpass-30e2.kxcdn.com/overpass.css";
+@import 'http://overpass-30e2.kxcdn.com/overpass-mono.css';
+@import 'http://overpass-30e2.kxcdn.com/overpass.css';
 
 * {
   margin: 0;
@@ -28,7 +28,6 @@ ul {
   border: 0;
   border-radius: 1rem;
   color: #222;
-  background: transparent;
   box-shadow: 0 1px 6px #000;
   width: max-content;
   padding: 0.4rem 1rem;
@@ -37,8 +36,10 @@ ul {
   font-weight: 800;
 }
 .btn:hover {
-  background: #cac4a4;
-  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+  background: linear-gradient(
+    rgba(202, 196, 164, 0.7),
+    rgba(202, 196, 164, 0.8)
+  );
 }
 .section {
   min-height: min-content;
@@ -70,6 +71,7 @@ ul {
 .loading-content {
   padding: 15vh 15vw;
   margin: 5vh 5vw;
+  color: #f4f4f4;
 }
 .loading-screen .spinner {
   display: flex;
@@ -140,10 +142,10 @@ ul {
   position: relative;
 }
 .pulse:hover {
-  cursor: default;
+  cursor: pointer;
 }
 .pulse::before {
-  content: "";
+  content: '';
   z-index: -1;
   position: absolute;
   top: 0;
@@ -158,8 +160,8 @@ ul {
   transform-origin: center;
   transform: scale(1.3);
   opacity: 0;
-  border: 1px solid #f4f4f4;
-  border-radius: 1rem;
+  border: 1px solid #000;
+  border-radius: 0.5rem;
 }
 .flicker {
   -webkit-animation: text-flicker-in-glow 4s linear both;

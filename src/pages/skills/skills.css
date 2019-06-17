@@ -1,6 +1,6 @@
-@import "../../css/shake.css";
-@import "../../css/slit.css";
-@import "../../css/flicker.css";
+@import '../../css/shake.css';
+@import '../../css/slit.css';
+@import '../../css/flicker.css';
 
 .skills {
   display: flex;
@@ -24,8 +24,8 @@
 
   background-image: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.2),
-    rgba(0, 0, 0, 0.5)
+    rgba(100, 100, 100, 0.2),
+    rgba(100, 100, 100, 0.5)
   );
 }
 .logos-container {
