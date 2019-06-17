@@ -1,12 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default class List extends Component {
-  render() {
-    return (
-      <li>
-        <NavLink to={this.props.to}>{this.props.name}</NavLink>
-      </li>
-    );
-  }
-}
+const ListURL = ({ close, to, name }) => {
+  return (
+    <li>
+      <NavLink to={to}>
+        <ul>
+          <li className="slide-in nav-link" onClick={close}>
+            {name}
+          </li>
+        </ul>
+      </NavLink>
+    </li>
+  );
+};
+export default ListURL;

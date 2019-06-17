@@ -5,7 +5,7 @@ import "./skills.css";
 export default class Skills extends Component {
   render() {
     return (
-      <section className="skills slit">
+      <section className="skills secondBg slit section blur">
         <h1 className="skills-title">Skills</h1>
         <IconsList />
       </section>

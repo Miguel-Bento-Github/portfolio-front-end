@@ -52,8 +52,9 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <main className="contact slit">
-        <section className="contact-section">
+      <section className="contact-section blur">
+        <div className="bg zoom" />
+        <div className="contact slit">
           <h1 className="section-header">
             C<span className="flicker">o</span>ntact Me
           </h1>
@@ -94,10 +95,14 @@ export default class Contact extends Component {
                 icon="instagram"
               />
             </Tooltip>
+            {/* TODO change tooltip and btn pulse */}
           </div>
-        </section>
-        <section className="profile-pic" />
-      </main>
+
+          <aside className="profile-pic">
+            <div className="zoom" />
+          </aside>
+        </div>
+      </section>
     );
   }
 }

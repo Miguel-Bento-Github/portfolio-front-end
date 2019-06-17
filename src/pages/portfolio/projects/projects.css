@@ -13,21 +13,16 @@
   align-items: center;
   min-height: min-content;
 }
-
-.project {
-  width: 100%;
-  color: #f4f4f4;
-}
-
 .project-img {
   min-width: 300px;
   width: 100%;
   filter: blur(0) drop-shadow(0 0 0);
-  border-radius: 2px;
+  border-radius: 1rem;
 }
 .project-txt {
   margin-top: 1rem;
   font-size: 2rem;
+  color: #222;
 }
 .project-txt:hover {
   color: #ccc;

@@ -1,18 +1,17 @@
-.contact {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  padding: 1vh 15vw;
-  min-height: 93vh;
-}
-.section-header {
-  margin-top: 1rem;
-  padding: 5px;
-}
+@import "../../css/zoom.css";
+
 .contact-section {
+  overflow: hidden;
+}
+.contact {
   display: flex;
   flex-direction: column;
-  min-height: 93vh;
+  min-height: 90vh;
+  position: absolute;
+  top: 10vh;
+  left: 15vw;
 }
+
 /* form */
 .contact-form {
   display: flex;
@@ -28,15 +27,16 @@
 }
 .contact-form .input {
   border: 0;
-  background: #333;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
   color: #f4f4f4;
   padding: 5px;
   margin: 0.5rem;
   min-height: 5vh;
   font-size: 1rem;
+  border-radius: 2px;
 }
 .contact-form .input::placeholder {
-  color: #999;
+  color: #ccc;
   font-size: 1rem;
 }
 .contact-form .input-message::placeholder {
@@ -49,30 +49,23 @@
   resize: none;
 }
 .btn-submit {
-  margin: 1vh 10px 1vh auto;
+  margin: 1.5vh 10px 1vh auto;
 }
 .input-message:focus {
   font-size: 1.2rem;
 }
-/* banners */
 .contact .banners {
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  margin: auto 0.5rem 5vh;
+  margin: 1vh 0.5rem 5vh;
 }
 .contact-icon {
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
   font-size: 2.5rem;
+  color: #2e2419;
 }
 .contact-icon:hover {
   color: #999;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-}
-.profile-pic {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
-    url(https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940)
-      no-repeat;
-  background-size: cover;
-  margin: 5vh 5vw;
 }
