@@ -6,12 +6,11 @@ import { Switch, Route, withRouter } from "react-router-dom";
 import NavbarHome from "./components/NavbarHome";
 import Index from "./pages/index/Index";
 import Portfolio from "./pages/portfolio/Portfolio";
-import Experience from "./pages/experience/Experience";
 import Contact from "./pages/contact/Contact";
 import Skills from "./pages/skills/Skills";
 
 toast.configure({
-  autoClose: 2000,
+  autoClose: 10000,
   draggable: false,
   pauseOnFocusLoss: true,
   position: "top-left",
@@ -26,7 +25,6 @@ class App extends Component {
         <Switch>
           <Route exact path="/" component={Index} />
           <Route path="/portfolio" component={Portfolio} />
-          <Route path="/experience" component={Experience} />
           <Route path="/contact" component={Contact} />
           <Route path="/skills" component={Skills} />
         </Switch>

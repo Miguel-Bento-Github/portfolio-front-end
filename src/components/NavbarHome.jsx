@@ -10,7 +10,6 @@ export default class NavbarHome extends Component {
           <List to="/" name="home" />
           <List to="skills" name="skills" />
           <List to="portfolio" name="portfolio" />
-          <List to="experience" name="experience" />
           <List to="contact" name="contact" />
         </ul>
       </nav>

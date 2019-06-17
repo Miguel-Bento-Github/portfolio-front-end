@@ -13,7 +13,7 @@ export default class projectsList extends Component {
             className="project"
           >
             <img
-              className="project-img"
+              className="project-img shake"
               src={this.props.img}
               alt={this.props.imgTitle}
             />

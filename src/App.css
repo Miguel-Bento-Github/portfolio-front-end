@@ -1,5 +1,6 @@
 @import "http://overpass-30e2.kxcdn.com/overpass-mono.css";
 @import "http://overpass-30e2.kxcdn.com/overpass.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -34,11 +35,14 @@ ul {
   width: max-content;
   padding: 0.4rem 1rem;
   margin: 0 1vw 0 auto;
+  font-size: 1rem;
 }
 .btn:hover {
   background: #111;
   transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+
+/* fx */
 .slit {
   -webkit-animation: slit-in-vertical 0.45s ease-out both;
   animation: slit-in-vertical 0.45s ease-out both;
@@ -46,21 +50,19 @@ ul {
 .bounce {
   -webkit-animation: bounce-top 0.9s both;
   animation: bounce-top 0.9s both;
-  animation-delay: 1s;
+  animation-delay: 0.3s;
 }
 .shake {
   -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
     both;
   animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
-  animation-delay: 1.5s;
 }
-/* pulse effect */
 .pulse {
   z-index: 1;
   position: relative;
 }
 .pulse:hover {
-  cursor: pointer;
+  cursor: default;
 }
 .pulse::before {
   content: "";
@@ -81,6 +83,16 @@ ul {
   opacity: 0;
   border: 1px solid #f4f4f4;
 }
+.flicker {
+  -webkit-animation: text-flicker-in-glow 4s linear both;
+  animation: text-flicker-in-glow 4s linear both;
+}
+.tracking-in {
+  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
+    both;
+  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation-delay: 0.3s;
+}
 
 /*  border effect */
 .border:hover {
@@ -88,7 +100,11 @@ ul {
 }
 /* magic */
 
-/* .Toastify__toast-container {} */
+.Toastify__toast-body {
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-family: overpass;
+}
 
 @media screen and(max-width: 450px) {
   body {

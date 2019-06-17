@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./contact.css";
 import Input from "./input/Input";
+import Tooltip from "react-simple-tooltip";
 import { toast } from "react-toastify";
 import { sendEmail } from "../../api/email";
 import Link from "../../components/iconLink/IconLink";
@@ -21,6 +22,11 @@ export default class Contact extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const validateEmail = email => {
+      const validator = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/;
+      return validator.test(String(email).toLowerCase());
+    };
+    validateEmail(this.state.email);
     if (
       !this.state.name ||
       !this.state.email ||
@@ -28,9 +34,13 @@ export default class Contact extends Component {
       !this.state.message
     ) {
       return toast.warning("Please input all fields");
+    } else if (validateEmail(this.state.email) === false) {
+      return toast.warning("Please input a valid email address");
     }
+    toast.info("Hey, there. I got your message. I'll get back to you soon!");
 
     this.handleSend();
+    document.getElementById("contact-form").reset();
   };
 
   handleSend = () =>
@@ -44,8 +54,10 @@ export default class Contact extends Component {
     return (
       <main className="contact slit">
         <section className="contact-section">
-          <h1 className="section-header">Contact Me</h1>
-          <form className="contact-form">
+          <h1 className="section-header">
+            C<span className="flicker">o</span>ntact Me
+          </h1>
+          <form id="contact-form" className="contact-form">
             <div className="user-info">
               <Input handleChange={this.handleChange} pHolder="name" />
               <Input handleChange={this.handleChange} pHolder="email" />
@@ -65,18 +77,26 @@ export default class Contact extends Component {
             </button>
           </form>
           <div className="banners">
-            <Link href="https://github.com/MiguelIronHack" icon="github" />
-            <Link
-              href="https://www.linkedin.com/in/miguel-angelo-bento/"
-              icon="linkedin-in"
-            />
-            <Link
-              href="https://www.instagram.com/cupids.trick/"
-              icon="instagram"
-            />
+            <Tooltip padding={2} fontSize="1rem" content="Github">
+              <Link href="https://github.com/MiguelIronHack" icon="github" />
+            </Tooltip>
+
+            <Tooltip padding={2} fontSize="1rem" content="LinkedIn">
+              <Link
+                href="https://www.linkedin.com/in/miguel-angelo-bento/"
+                icon="linkedin-in"
+              />
+            </Tooltip>
+
+            <Tooltip padding={2} fontSize="1rem" content="Instagram">
+              <Link
+                href="https://www.instagram.com/cupids.trick/"
+                icon="instagram"
+              />
+            </Tooltip>
           </div>
         </section>
-        <section className="map" />
+        <section className="profile-pic" />
       </main>
     );
   }

@@ -9,6 +9,8 @@
   padding: 5px;
 }
 .contact-section {
+  display: flex;
+  flex-direction: column;
   min-height: 93vh;
 }
 /* form */
@@ -29,7 +31,7 @@
   background: #333;
   color: #f4f4f4;
   padding: 5px;
-  margin: 0.5rem 0.5rem;
+  margin: 0.5rem;
   min-height: 5vh;
   font-size: 1rem;
 }
@@ -38,10 +40,11 @@
   font-size: 1rem;
 }
 .contact-form .input-message::placeholder {
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 .contact-form .input-message {
-  height: 20vh;
+  font-size: 1.1rem;
+  height: 35vh;
   color: #f4f4f4;
   resize: none;
 }
@@ -54,15 +57,22 @@
 /* banners */
 .contact .banners {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 5px;
+  margin: auto 0.5rem 5vh;
 }
 .contact-icon {
   transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  font-size: 2.5rem;
 }
 .contact-icon:hover {
   color: #999;
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
-.map {
-  background: #999;
+.profile-pic {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+    url(https://images.pexels.com/photos/33999/pexels-photo.jpg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940)
+      no-repeat;
+  background-size: cover;
+  margin: 5vh 5vw;
 }

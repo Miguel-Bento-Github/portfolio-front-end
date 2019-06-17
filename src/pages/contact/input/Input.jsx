@@ -6,7 +6,7 @@ const Input = ({ handleChange, pHolder }) => {
       onChange={e => handleChange(e)}
       className={`input  input-${pHolder}`}
       placeholder={pHolder}
-      type="text"
+      type={pHolder === "email" ? "email" : "text"}
     />
   );
 };

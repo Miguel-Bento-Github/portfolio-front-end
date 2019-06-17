@@ -1,9 +1,11 @@
+@import "../../css//tracking.css";
 .portfolio-section {
   padding: 1vh 15vw;
   min-height: 95vh;
   width: 100%;
-  background: url(https://images.pexels.com/photos/1981468/pexels-photo-1981468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)
-    no-repeat;
+  background: #222;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+    url(https://images.pexels.com/photos/273222/pexels-photo-273222.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-size: cover;
 }
 
