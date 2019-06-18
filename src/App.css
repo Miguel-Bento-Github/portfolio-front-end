@@ -42,7 +42,6 @@ ul {
 }
 .section {
   min-height: min-content;
-  height: 100vh;
   padding: 1vh 15vw;
 }
 .section-header {

@@ -25,13 +25,13 @@ export default class IconsList extends Component {
       <ul className="skill-list">
         <IconLi
           title="Javascript"
-          img={[js, node, chart, react]}
-          name={["Javascript", "Node.JS", "Chart.JS", "React"]}
+          img={[react, chart, js, node]}
+          name={["React", "Chart.JS", "Javascript", "Node.JS"]}
         />
         <IconLi
           title="Markup"
-          img={[hb, html, ejs, react]}
-          name={["Handlebars", "HTML5", "EJS", "JSX"]}
+          img={[ejs, react, html, hb]}
+          name={["EJS", "JSX", "HTML5", "Handlebars"]}
         />
         <IconLi
           title="Styling"
