@@ -51,7 +51,7 @@ export default class NavbarHome extends Component {
                 </li>
                 <List close={close} to="/" name="home" />
                 <List close={close} to="skills" name="skills" />
-                <List close={close} to="portfolio" name="portfolio" />
+                <List close={close} to="portfolio" name="projects" />
                 <List close={close} to="contact" name="contact" />
               </ul>
               <span className="nav-close-btn btn pulse" onClick={close}>

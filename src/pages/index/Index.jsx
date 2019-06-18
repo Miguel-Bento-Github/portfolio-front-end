@@ -73,11 +73,15 @@ export default class Index extends Component {
           />
         </div>
         <p className="home-description">
-          Welcome to my portfolio page.
+          Hello, welcome to my portfolio page.
+          <br /> <br /> I've called my website mr-monkey, because my girlfriend
+          calls me Mr. Monkey. She calls me that because she thinks I'm curious
+          and active, just like a monkey. <br /> <br /> Well, as web developer,
+          I am indeed actively coding and am very curious about learning new
+          programming languages. I'm fascinated by the creativity and dynamic of
+          web development.
           <br />
-          Feel free to look around and get to know me and my work.
-          <br />
-          Enjoy!
+          <br /> I wish you a good journey in my page.
         </p>
       </section>
     );
