@@ -1,6 +1,6 @@
-@import '../../css/shake.css';
-@import '../../css/slit.css';
-@import '../../css/flicker.css';
+@import "../../css/shake.css";
+@import "../../css/slit.css";
+@import "../../css/flicker.css";
 
 .skills {
   display: flex;

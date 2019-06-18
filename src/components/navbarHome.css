@@ -1,8 +1,5 @@
 @import "../css/slide.css";
 
-.main-nav {
-  display: fixed;
-}
 .navbar.navbar-content {
   padding: 1vh 1vw;
   min-height: 3rem;

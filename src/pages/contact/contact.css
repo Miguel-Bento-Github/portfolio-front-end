@@ -11,7 +11,9 @@
   top: 10vh;
   left: 20vw;
 }
-
+.contact > .section-header {
+  margin: 0.5rem;
+}
 /* form */
 .contact-form {
   display: flex;
@@ -66,11 +68,14 @@
   margin: 1vh 0.5rem 5vh;
 }
 .contact-icon {
-  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
   font-size: 2.5rem;
   color: #2e2419;
 }
 .contact-icon:hover {
-  color: #999;
-  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  color: #994b1b;
+}
+.card {
+  position: absolute;
+  top: 5%;
 }

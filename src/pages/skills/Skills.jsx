@@ -6,7 +6,7 @@ export default class Skills extends Component {
   render() {
     return (
       <section className="skills secondBg slit section blur">
-        <h1 className="skills-title">Skills</h1>
+        <h1 className="section-header skills-title">Skills</h1>
         <IconsList />
       </section>
     );

@@ -5,7 +5,7 @@ import Letters from "./letters/Letters";
 
 export default class Index extends Component {
   state = {
-    words: ["Amazing", "Philanthropist", "Genius", "Humble"],
+    words: [""],
     txt: "",
     typeSpeed: 200,
     wordIndex: 0,
@@ -69,20 +69,15 @@ export default class Index extends Component {
           <span
             className="typewriter typewriter-text"
             data-wait={1000}
-            data-words='["Charity Donator", "Philanthropist", "Humble", "A Friend", "More than a Friend"]'
+            data-words='["Web Developer", "Programmer"]'
           />
         </div>
         <p className="home-description">
-          <q>
-            A computer is like a violin. You can imagine a novice trying ﬁrst a
-            phonograph and then a violin. The latter, he says, sounds terrible.
-            That is the argument we have heard from our humanists and most of
-            our computer scientists. Computer programs are good, they say, for
-            particular purposes, but they aren’t ﬂexible. Neither is a violin,
-            or a typewriter, until you learn how to use it.
-          </q>
+          Welcome to my portfolio page.
           <br />
-          Marvin Minsky
+          Feel free to look around and get to know me and my work.
+          <br />
+          Enjoy!
         </p>
       </section>
     );
