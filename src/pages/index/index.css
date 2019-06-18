@@ -31,6 +31,8 @@
   border-right: 4px solid;
 }
 .home-description {
+  display: flex;
+  align-items: center;
   position: absolute;
   top: 40vh;
   right: 15vw;
@@ -41,8 +43,8 @@
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.5);
   color: #f4f4f4;
-  height: min-content;
-  max-height: min-content;
+  min-height: min-content;
+  height: max-content;
 }
 
 @media screen and (max-width: 850px) {
