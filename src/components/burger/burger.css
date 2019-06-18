@@ -1,5 +1,7 @@
 .hamburger {
   position: fixed;
+  top: 3vh;
+  right: 3vw;
   z-index: 1;
   font: inherit;
   display: inline-block;
@@ -43,7 +45,7 @@
   transition-duration: 0.2s;
   transition-property: transform;
   border-radius: 4px;
-  background: #f4f4f4;
+  background: #000;
 }
 .hamburger-inner:after,
 .hamburger-inner:before {

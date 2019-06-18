@@ -70,32 +70,46 @@ export default class Contact extends Component {
               placeholder="message"
               type="text"
             />
-            <button
-              onClick={this.handleSubmit}
-              className="btn btn-submit pulse"
-            >
+            <button onClick={this.handleSubmit} className="btn btn-submit">
               Send
             </button>
           </form>
           <div className="banners">
-            <Tooltip padding={2} fontSize="1rem" content="Github">
+            <Tooltip
+              color="#ddd9c3"
+              radius={3}
+              padding={4}
+              fontSize="1rem"
+              content="Github"
+            >
               <Link href="https://github.com/MiguelIronHack" icon="github" />
             </Tooltip>
 
-            <Tooltip padding={2} fontSize="1rem" content="LinkedIn">
+            <Tooltip
+              color="#ddd9c3"
+              radius={3}
+              padding={4}
+              fontSize="1rem"
+              content="LinkedIn"
+            >
               <Link
                 href="https://www.linkedin.com/in/miguel-angelo-bento/"
                 icon="linkedin-in"
               />
             </Tooltip>
 
-            <Tooltip padding={2} fontSize="1rem" content="Instagram">
+            <Tooltip
+              color="#ddd9c3"
+              radius={3}
+              padding={2}
+              fontSize="1rem"
+              content="Instagram"
+            >
               <Link
                 href="https://www.instagram.com/cupids.trick/"
                 icon="instagram"
               />
             </Tooltip>
-            {/* TODO change tooltip and btn pulse */}
           </div>
 
           <aside className="profile-pic">
