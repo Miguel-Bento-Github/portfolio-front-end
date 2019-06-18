@@ -41,6 +41,7 @@ export default class Contact extends Component {
 
     this.handleSend();
     document.getElementById("contact-form").reset();
+    this.setState({ name: "", email: "", subject: "", message: "" });
   };
 
   handleSend = () =>
