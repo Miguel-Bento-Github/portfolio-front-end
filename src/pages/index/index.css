@@ -32,11 +32,10 @@
 }
 .home-description {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   position: absolute;
-  top: 40vh;
   right: 15vw;
-  bottom: 0;
+  bottom: 20vh;
   left: auto;
   padding: 1rem;
   max-width: 30vw;

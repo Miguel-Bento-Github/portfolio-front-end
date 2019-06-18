@@ -6,6 +6,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+html {
+  height: 95vh;
+}
 body {
   min-height: 95vh;
   width: 100%;
