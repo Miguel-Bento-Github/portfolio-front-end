@@ -31,20 +31,29 @@
   border-right: 4px solid;
 }
 .home-description {
+  display: flex;
+  align-items: flex-start;
   position: absolute;
-  top: 40vh;
   right: 15vw;
-  bottom: 0;
+  bottom: 20vh;
   left: auto;
   padding: 1rem;
   max-width: 30vw;
   font-size: 1rem;
   background: rgba(0, 0, 0, 0.5);
   color: #f4f4f4;
-  height: min-content;
-  max-height: min-content;
+  min-height: min-content;
+  height: max-content;
 }
 
+@media screen and (min-height: 900px) {
+  .home-description {
+    font-size: 2rem;
+  }
+  .content {
+    font-size: 3rem;
+  }
+}
 @media screen and (max-width: 850px) {
   .content {
     font-size: 1.2rem;
@@ -67,5 +76,13 @@
   }
   .home-description {
     font-size: 1rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .content {
+    font-size: 1.3rem;
+  }
+  .home-description {
+    font-size: 0.8rem;
   }
 }

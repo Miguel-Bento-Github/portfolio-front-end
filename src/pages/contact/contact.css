@@ -6,10 +6,9 @@
 .contact {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
   position: absolute;
-  top: 10vh;
-  left: 20vw;
+  top: 25vh;
+  left: 25vw;
 }
 .contact > .section-header {
   margin: 0.5rem;
@@ -65,7 +64,7 @@
   display: flex;
   justify-content: space-between;
   padding: 5px;
-  margin: 1vh 0.5rem 5vh;
+  margin: 1vh 0.5rem 0;
 }
 .contact-icon {
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
@@ -78,4 +77,28 @@
 .card {
   position: absolute;
   top: 5%;
+}
+@media screen and (max-width: 800px) {
+  .contact {
+    font-size: 1.2rem;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .contact .input {
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .contact {
+    font-size: 1rem;
+    top: 15vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .contact .input {
+    font-size: 0.5rem;
+  }
 }
