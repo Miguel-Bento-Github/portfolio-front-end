@@ -31,8 +31,7 @@
   border-right: 4px solid;
 }
 .home-description {
-  display: flex;
-  align-items: flex-start;
+  text-align: justify;
   position: absolute;
   right: 15vw;
   bottom: 20vh;
@@ -44,6 +43,12 @@
   color: #f4f4f4;
   min-height: min-content;
   height: max-content;
+  transition: background 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.home-description:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transition: background 2s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: default;
 }
 
 @media screen and (min-height: 900px) {
