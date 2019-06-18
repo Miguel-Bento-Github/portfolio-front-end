@@ -17,7 +17,8 @@ const contentStyle = {
   border: "none",
   padding: "1rem",
   borderRadius: "0.5rem",
-  opacity: "0.9"
+  opacity: "0.9",
+  width: "50%"
 };
 export default class NavbarHome extends Component {
   blur = () => {
