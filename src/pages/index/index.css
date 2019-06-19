@@ -91,3 +91,8 @@
     font-size: 0.8rem;
   }
 }
+@media screen and (max-width: 450px) {
+  .home-description {
+    font-size: 0.5rem;
+  }
+}
