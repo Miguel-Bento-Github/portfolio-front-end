@@ -51,7 +51,7 @@
   cursor: default;
 }
 
-@media screen and (min-height: 900px) {
+@media screen and (min-height: 1100px) {
   .home-description {
     font-size: 2rem;
   }
