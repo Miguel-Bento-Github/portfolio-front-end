@@ -59,6 +59,7 @@
   }
   .content {
     font-size: 3rem;
+    right: 40vw;
   }
 }
 @media screen and (max-width: 850px) {
