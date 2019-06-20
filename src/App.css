@@ -36,7 +36,7 @@ input::-webkit-input-placeholder {
   padding: 0.4rem 1rem;
   margin: 0 0.3rem 0.3rem auto;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 500;
   font-family: overpass;
 }
 .btn:hover {
