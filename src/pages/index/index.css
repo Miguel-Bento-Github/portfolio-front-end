@@ -21,7 +21,7 @@
   font-size: 3rem;
 }
 .content {
-  position: fixed;
+  position: absolute;
   z-index: 1;
   top: 35%;
   left: 15%;
@@ -31,6 +31,8 @@
   border-right: 4px solid;
 }
 .home-description {
+  display: flex;
+  align-items: center;
   text-align: justify;
   position: absolute;
   right: 15vw;
@@ -83,16 +85,22 @@
     font-size: 1rem;
   }
 }
+@media screen and (max-width: 450px) {
+  .content {
+    top: 10%;
+    color: #f4f4f4;
+  }
+  .home-description {
+    font-size: 0.7rem;
+    bottom: 10vh;
+  }
+}
+
 @media screen and (max-width: 400px) {
   .content {
     font-size: 1.3rem;
   }
   .home-description {
     font-size: 0.8rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  .home-description {
-    font-size: 0.5rem;
   }
 }
