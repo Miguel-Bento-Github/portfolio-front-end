@@ -23,6 +23,10 @@ a {
 ul {
   list-style: none;
 }
+input::placeholder,
+input::-webkit-input-placeholder {
+  font-family: overpass;
+}
 .btn {
   border: 0;
   border-radius: 1rem;
@@ -33,6 +37,7 @@ ul {
   margin: 0 0.3rem 0.3rem auto;
   font-size: 1rem;
   font-weight: 800;
+  font-family: overpass;
 }
 .btn:hover {
   background: linear-gradient(
@@ -231,8 +236,22 @@ ul {
   .section {
     padding: 5vh 10vw;
   }
+  input[type="text"]::-webkit-input-placeholder,
+  input[type="email"]::-webkit-input-placeholder {
+    line-height: 1rem;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: overpass;
+  }
 }
 @media screen and (max-width: 400px) {
+  input[type="text"]::-webkit-input-placeholder,
+  input[type="email"]::-webkit-input-placeholder {
+    line-height: 0.7rem;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: overpass;
+  }
   .section {
     padding: 10vh 10vw;
   }
