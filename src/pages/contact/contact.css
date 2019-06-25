@@ -79,6 +79,15 @@
   position: absolute;
   top: 5%;
 }
+@media screen and (min-width: 1700px) {
+  .contact-icon {
+    font-size: 3.5rem;
+  }
+  .contact-form .input-message::placeholder,
+  .contact-form .input::placeholder {
+    font-size: 1.5rem;
+  }
+}
 @media screen and (max-width: 800px) {
   .contact {
     font-size: 1.2rem;
