@@ -82,7 +82,6 @@ export default class Contact extends Component {
               padding={4}
               fontSize="1rem"
               content="Github"
-              placement="right"
             >
               <Link href="https://github.com/MiguelIronHack" icon="github" />
             </Tooltip>
@@ -92,8 +91,7 @@ export default class Contact extends Component {
               radius={3}
               padding={4}
               fontSize="1rem"
-              content="LinkedIn"
-              placement="right"
+              content="Linkedin"
             >
               <Link
                 href="https://www.linkedin.com/in/miguel-angelo-bento/"
@@ -107,7 +105,6 @@ export default class Contact extends Component {
               padding={2}
               fontSize="1rem"
               content="Instagram"
-              placement="right"
             >
               <Link
                 href="https://www.instagram.com/cupids.trick/"
