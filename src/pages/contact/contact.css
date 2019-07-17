@@ -37,6 +37,13 @@
   font-size: 1rem;
   border-radius: 2px;
 }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #222 inset;
+  -webkit-text-fill-color: #f4f4f4;
+}
 .contact-form .input::placeholder {
   color: #ccc;
   font-size: 1rem;
@@ -54,12 +61,17 @@
 .btn-submit {
   margin: 1.5vh 10px 1vh auto;
   background: linear-gradient(
-    rgba(160, 152, 109, 0.5),
-    rgba(173, 167, 134, 0.4)
+    rgba(160, 152, 109, 0.8),
+    rgba(173, 167, 134, 0.7)
   );
 }
 .input-message:focus {
   font-size: 1.2rem;
+}
+.contact-form .input:focus,
+.input-message:focus {
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+  border: solid 1px #994b1b;
 }
 .contact .banners {
   display: flex;
@@ -85,15 +97,15 @@
   }
   .contact-form .input-message::placeholder,
   .contact-form .input::placeholder {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 }
 @media screen and (max-width: 800px) {
   .contact {
     font-size: 1.2rem;
     top: 15vh;
-    left: 0;
-    right: 0;
+    left: 10vh;
+    right: 10vh;
     bottom: 5vh;
   }
   .contact .input {

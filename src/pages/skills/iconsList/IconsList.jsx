@@ -35,8 +35,8 @@ export default class IconsList extends Component {
         />
         <IconLi
           title="Styling"
-          img={[css, bootstrap, bulma, sass]}
-          name={["CSS3", "Bootstrap", "Bulma", "Sass"]}
+          img={[css, bulma, bootstrap, sass]}
+          name={["CSS3", "Bulma", "Bootstrap", "Sass"]}
         />
         <IconLi
           title="Other"
