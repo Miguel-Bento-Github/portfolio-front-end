@@ -1,10 +1,19 @@
 import React, { Component } from "react";
-import "./contact.css";
 import Input from "./input/Input";
 import Tooltip from "react-simple-tooltip";
 import { toast } from "react-toastify";
 import { sendEmail } from "../../api/email";
 import Link from "../../components/iconLink/IconLink";
+import "./contact.css";
+import "react-toastify/dist/ReactToastify.css";
+
+toast.configure({
+  autoClose: 10000,
+  draggable: false,
+  pauseOnFocusLoss: true,
+  position: "top-left",
+  closeOnClick: true
+});
 
 export default class Contact extends Component {
   state = {

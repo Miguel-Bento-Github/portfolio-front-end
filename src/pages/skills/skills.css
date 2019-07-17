@@ -25,8 +25,8 @@
 
   background-image: linear-gradient(
     to right,
-    rgba(100, 100, 100, 0.4),
-    rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.3),
+    rgba(100, 100, 100, 0.4)
   );
 }
 .logos-container {
