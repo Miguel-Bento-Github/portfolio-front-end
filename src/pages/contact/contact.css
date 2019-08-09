@@ -104,15 +104,15 @@ input:-webkit-autofill:active {
   .contact {
     font-size: 1.2rem;
     top: 15vh;
-    left: 10vh;
-    right: 10vh;
+    left: 15vh;
+    right: 15vh;
     bottom: 5vh;
   }
   .contact .input {
     font-size: 0.8rem;
   }
 }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .contact {
     font-size: 1rem;
     top: 15vh;
