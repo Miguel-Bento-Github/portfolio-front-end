@@ -110,6 +110,7 @@ input:-webkit-autofill:active {
   }
   .contact .input {
     font-size: 0.8rem;
+    line-height: 1rem;
   }
 }
 @media screen and (max-width: 450px) {
