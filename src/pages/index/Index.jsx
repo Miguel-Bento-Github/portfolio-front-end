@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./index.css";
+import "./index.scss";
 import TypeWriter from "../../components/TypeWriter";
 import Letters from "./letters/Letters";
 
@@ -12,6 +12,10 @@ export default class Index extends Component {
     wait: parseInt(1000, 10),
     isDeleting: false
   };
+
+  componentDidMount() {
+    this.init();
+  }
 
   type() {
     let { txt, typeSpeed, wordIndex, words, wait, isDeleting } = this.state;
@@ -43,13 +47,13 @@ export default class Index extends Component {
     new TypeWriter(txtElement, words, wait);
   }
 
-  componentDidMount() {
-    this.init();
-  }
+  removeSlit = e => {
+    e.target.parentElement.classList.remove("slit");
+  };
 
   render() {
     return (
-      <section className="slit index blur">
+      <section onMouseEnter={this.removeSlit} className="slit index blur">
         <div className="bg zoom" />
         <div className="showcase content row" id="header">
           <h1 className="showcase-header">

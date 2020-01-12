@@ -1,0 +1,30 @@
+@import "../../variables";
+
+.loading {
+  &-screen {
+    overflow: hidden;
+  }
+
+  &-icon {
+    margin-bottom: 55px;
+  }
+
+  &-content {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15vh 25vw;
+    margin: 5vh 5vw;
+    color: $color-white;
+  }
+
+  &-screen .spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 15vh;
+    font-size: 2rem;
+  }
+}

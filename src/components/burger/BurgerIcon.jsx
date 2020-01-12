@@ -1,14 +1,15 @@
 import React from "react";
-import "./burger.css";
+import "./burger.scss";
 
-const BurgerIcon = ({ burgerTransition, open, ...props }) => {
+export default function BurgerIcon({ isOpen, ...props }) {
   return (
-    <div className={open ? "hamburger open is-active" : "hamburger"} {...props}>
+    <button
+      className={isOpen ? "hamburger hamburger--open" : "hamburger"}
+      {...props}
+    >
       <div className="hamburger-box">
         <div className="hamburger-inner" />
       </div>
-    </div>
+    </button>
   );
-};
-
-export default BurgerIcon;
+}

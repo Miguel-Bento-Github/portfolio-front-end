@@ -4,9 +4,7 @@ const Img = ({ img, name }) => {
   return (
     <div className="img-container">
       <img
-        className={
-          name === "Handlebars" ? "skill-img shake hb" : "skill-img shake"
-        }
+        className={name === "Handlebars" ? "skill-img hb" : "skill-img shake"}
         src={img}
         alt={img.toString()}
       />

@@ -12,16 +12,20 @@ export default class TypeWriter {
   type() {
     const current = this.wordIndex % this.words.length;
     const fullTxt = this.words[current];
+
     if (this.isDeleting) {
       this.txt = fullTxt.substring(0, this.txt.length - 1);
     } else {
       this.txt = fullTxt.substring(0, this.txt.length + 1);
     }
-    this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
+
+    this.txtElement.innerHTML = `${this.txt}`;
     let typeSpeed = 200;
+
     if (this.isDeleting) {
       typeSpeed /= 2;
     }
+
     if (!this.isDeleting && this.txt === fullTxt) {
       typeSpeed = this.wait;
       this.isDeleting = true;

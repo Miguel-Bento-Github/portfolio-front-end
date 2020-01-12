@@ -1,8 +1,10 @@
-@import "../../css/zoom.css";
+@import "../../variables";
+@import "../../animations/zoom";
 
 .contact-section {
   overflow: hidden;
 }
+
 .contact {
   display: flex;
   flex-direction: column;
@@ -11,7 +13,8 @@
   bottom: 5vh;
   right: 45vw;
 }
-.contact > .section-header {
+
+.contact .section-header {
   margin: 0.5rem;
 }
 /* form */
@@ -30,19 +33,19 @@
 .contact-form .input {
   border: 0;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
-  color: #f4f4f4;
+  color: $color-white;
   padding: 5px;
   margin: 0.5rem;
   min-height: 5vh;
   font-size: 1rem;
-  border-radius: 2px;
+  border-radius: 8px;
 }
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px #222 inset;
-  -webkit-text-fill-color: #f4f4f4;
+  -webkit-box-shadow: 0 0 0 30px $color-dark-grey inset;
+  -webkit-text-fill-color: $color-white;
 }
 .contact-form .input::placeholder {
   color: #ccc;
@@ -55,7 +58,7 @@ input:-webkit-autofill:active {
   font-family: overpass;
   font-size: 1rem;
   height: 35vh;
-  color: #f4f4f4;
+  color: $color-white;
   resize: none;
 }
 .btn-submit {
