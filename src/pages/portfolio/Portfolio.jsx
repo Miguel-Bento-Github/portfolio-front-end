@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./portfolio.css";
+import "./portfolio.scss";
 import { getProjects } from "../../api/projects";
 import ProjectsList from "./projects/ProjectsList";
+import LoadingScreen from "./LoadingScreen";
 
 export default class Portfolio extends Component {
   state = {};
@@ -14,35 +15,13 @@ export default class Portfolio extends Component {
 
   render() {
     const { projects } = this.state;
-    if (!projects)
-      return (
-        <>
-          <div className="loading-screen blur">
-            <p className="loading-content">
-              <i className="fas fa-2x fa-spinner fa-pulse" />
-              <br /> <br />
-              Loading content
-              <span>.</span>
-              <span>.</span>
-              <span>.</span>
-              <br /> if it takes too long, the first thing you do, is unplug
-              every cable that's plugged in to your computer, then, format your
-              disk and buy some replacement parts,
-              <a
-                style={{ color: "#53a7ea" }}
-                href="https://www.youtube.com/watch?v=gRo8FVytTtg"
-              >
-                {" "}
-                here's{" "}
-              </a>
-              a guide on how you should <b>not</b> behave
-            </p>
-          </div>
-        </>
-      );
+
+    return <LoadingScreen />;
+    // TODO delete backend.
+    // eslint-disable-next-line
     return (
       <main className="main blur">
-        <section className="section secondBg slit">
+        <section className="section secondBg">
           <h1 className="section-header ">Portfolio</h1>
           <ul className="projects-container">
             {!projects

@@ -1,15 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-const ListURL = ({ close, to, name }) => {
+const ListURL = ({ exact, to, name, close }) => {
   return (
     <li>
-      <NavLink to={to}>
-        <ul>
-          <li className="slide-in nav-link" onClick={close}>
-            {name}
-          </li>
-        </ul>
+      <NavLink onClick={close} className="nav-link" exact={exact} to={to}>
+        {name}
       </NavLink>
     </li>
   );

@@ -4,7 +4,7 @@ import Tooltip from "react-simple-tooltip";
 import { toast } from "react-toastify";
 import { sendEmail } from "../../api/email";
 import Link from "../../components/iconLink/IconLink";
-import "./contact.css";
+import "./contact.scss";
 import "react-toastify/dist/ReactToastify.css";
 
 toast.configure({
@@ -64,10 +64,8 @@ export default class Contact extends Component {
     return (
       <section className="contact-section blur">
         <div className="bg zoom" />
-        <div className="contact slit">
-          <h1 className="section-header">
-            C<span className="flicker">o</span>ntact Me
-          </h1>
+        <div className="contact">
+          <h1 className="section-header">Contact Me</h1>
           <form id="contact-form" className="contact-form">
             <div className="user-info">
               <Input handleChange={this.handleChange} pHolder="name" />
@@ -92,7 +90,10 @@ export default class Contact extends Component {
               fontSize="1rem"
               content="Github"
             >
-              <Link href="https://github.com/MiguelIronHack" icon="github" />
+              <Link
+                href="https://github.com/Miguel-Bento-Github"
+                icon="github"
+              />
             </Tooltip>
 
             <Tooltip

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "./app.scss";
 import { Switch, Route, withRouter } from "react-router-dom";
 import NavbarHome from "./components/NavbarHome";
 import Index from "./pages/index/Index";
@@ -14,7 +14,7 @@ class App extends Component {
         <NavbarHome />
         <Switch>
           <Route exact path="/" component={Index} />
-          <Route path="/portfolio" component={Portfolio} />
+          <Route path="/projects" component={Portfolio} />
           <Route path="/contact" component={Contact} />
           <Route path="/skills" component={Skills} />
         </Switch>

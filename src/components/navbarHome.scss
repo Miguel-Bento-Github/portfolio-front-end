@@ -1,0 +1,43 @@
+@import "../variables";
+@import "../animations/slide.scss";
+
+.nav {
+  &-link {
+    width: 450px;
+    color: #2e2419;
+    padding: 5px 5px 5px 0;
+    text-transform: capitalize;
+    transition: all 0.1s cubic-bezier(0.19, 1, 0.22, 1);
+
+    &:hover {
+      color: $color-white;
+      padding-left: 15px;
+      background: #9e876a;
+      border-radius: 8px;
+    }
+  }
+}
+
+.btn-nav-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: flex-end;
+  align-self: flex-end;
+  border: 0;
+  border-radius: 25px;
+  padding: 0.5rem 1rem;
+  color: #000;
+  box-shadow: 0 0 3px #000;
+  background: $color-white;
+
+  &:hover {
+    background: lighten($color-white, 100%);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .navbar {
+    font-size: 1rem;
+  }
+}
