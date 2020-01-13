@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, memo } from "react";
 import "./fourOhFour.scss";
 import { Link } from "react-router-dom";
 
-export default function FourOhFour() {
+const FourOhFour = () => {
   useEffect(() => {
     document.querySelector(".hamburger-inner").className +=
       " hamburger-inner--loading";
@@ -23,4 +23,5 @@ export default function FourOhFour() {
       </Link>
     </section>
   );
-}
+};
+export default memo(FourOhFour);
