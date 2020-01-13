@@ -6,6 +6,7 @@ import Index from "./pages/index/Index";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Contact from "./pages/contact/Contact";
 import Skills from "./pages/skills/Skills";
+import FourOhFour from "./pages/fourOhfour/FourOhFour";
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Route path="/projects" component={Portfolio} />
           <Route path="/contact" component={Contact} />
           <Route path="/skills" component={Skills} />
+          <Route component={FourOhFour} />
         </Switch>
       </React.Fragment>
     );

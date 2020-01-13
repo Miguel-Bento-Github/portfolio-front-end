@@ -12,12 +12,16 @@ const NavbarHome = () => {
 
   const blur = () => {
     const bg = document.querySelector(".blur");
-    bg.style.filter = "blur(2px)";
+    if (bg) {
+      bg.style.filter = "blur(2px)";
+    }
   };
 
   const unBlur = () => {
     const bg = document.querySelector(".blur");
-    bg.style.filter = "blur(0)";
+    if (bg) {
+      bg.style.filter = "blur(0)";
+    }
   };
 
   return (
