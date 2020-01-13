@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React, { memo } from "react";
 
-export default class Letters extends Component {
-  render() {
-    return <span className="showcase-header--pulse">{this.props.letter}</span>;
-  }
-}
+const Letters = ({ letter }) => (
+  <span className="showcase-header--pulse">{letter}</span>
+);
+
+export default memo(Letters);

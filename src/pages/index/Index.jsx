@@ -15,30 +15,6 @@ export default class Index extends Component {
 
   componentDidMount() {
     this.init();
-    // loading assets before initialization
-    const assets = [
-      "../skills/icons/css/bootstrap.png",
-      "../skills/icons/css/bulma.png",
-      "../skills/icons/css/css.svg",
-      "../skills/icons/css/sass.svg",
-      "../skills/icons/js/chart.png",
-      "../skills/icons/js/js.svg",
-      "../skills/icons/js/node.svg",
-      "../skills/icons/js/react.png",
-      "../skills/icons/markup/ejs.png",
-      "../skills/icons/markup/hb.svg",
-      "../skills/icons/markup/html.svg",
-      "../skills/icons/markup/react.png",
-      "../skills/icons/others/github.png",
-      "../skills/icons/others/heroku.png",
-      "../skills/icons/others/mongodb.png",
-      "../skills/icons/others/npm.svg"
-    ];
-
-    assets.forEach(picture => {
-      const img = new Image();
-      img.src = picture.fileName;
-    });
   }
 
   type() {

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { memo } from "react";
 // markup
 import ejs from "../icons/markup/ejs.png";
 import hb from "../icons/markup/hb.svg";
@@ -19,31 +19,31 @@ import heroku from "../icons/others/heroku.png";
 import mongodb from "../icons/others/mongodb.png";
 import npm from "../icons/others/npm.svg";
 import IconLi from "./IconLi";
-export default class IconsList extends Component {
-  render() {
-    return (
-      <ul className="skill-list">
-        <IconLi
-          title="Javascript"
-          img={[react, chart, js, node]}
-          name={["React", "Chart.JS", "Javascript", "Node.JS"]}
-        />
-        <IconLi
-          title="Markup"
-          img={[ejs, react, html, hb]}
-          name={["EJS", "JSX", "HTML5", "Handlebars"]}
-        />
-        <IconLi
-          title="Styling"
-          img={[css, bulma, bootstrap, sass]}
-          name={["CSS3", "Bulma", "Bootstrap", "Sass"]}
-        />
-        <IconLi
-          title="Other"
-          img={[heroku, github, mongodb, npm]}
-          name={["Heroku", "Github", "MongoDB", "NPM"]}
-        />
-      </ul>
-    );
-  }
-}
+
+const IconsList = () => {
+  return (
+    <ul className="skill-list">
+      <IconLi
+        title="Javascript"
+        img={[react, chart, js, node]}
+        name={["React", "Chart.JS", "Javascript", "Node.JS"]}
+      />
+      <IconLi
+        title="Markup"
+        img={[ejs, react, html, hb]}
+        name={["EJS", "JSX", "HTML5", "Handlebars"]}
+      />
+      <IconLi
+        title="Styling"
+        img={[css, bulma, bootstrap, sass]}
+        name={["CSS3", "Bulma", "Bootstrap", "Sass"]}
+      />
+      <IconLi
+        title="Other"
+        img={[heroku, github, mongodb, npm]}
+        name={["Heroku", "Github", "MongoDB", "NPM"]}
+      />
+    </ul>
+  );
+};
+export default memo(IconsList);
