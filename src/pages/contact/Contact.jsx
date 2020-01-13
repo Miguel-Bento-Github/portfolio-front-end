@@ -31,31 +31,41 @@ export default class Contact extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    const validateEmail = email => {
+    const { email, name, subject, message } = this.state;
+
+    const validateEmail = userEmail => {
       const validator = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/;
-      return validator.test(String(email).toLowerCase());
+      return validator.test(String(userEmail).toLowerCase());
     };
-    validateEmail(this.state.email);
-    if (
-      !this.state.name ||
-      !this.state.email ||
-      !this.state.subject ||
-      !this.state.message
-    ) {
-      return toast.warning("Please input all fields");
-    } else if (validateEmail(this.state.email) === false) {
+    validateEmail(email);
+
+    if (!name) {
+      return toast.warning("Please input your name.");
+    } else if (!validateEmail(email)) {
       return toast.warning("Please input a valid email address");
+    } else if (email.length > 29) {
+      return toast.warning("This email is too long. Please try another one.");
+    } else if (!email) {
+      return toast.warning("Please input your email.");
+    } else if (!subject) {
+      return toast.warning("Please submit the subject of this message.");
+    } else if (message.length < 10) {
+      return toast.warning(
+        "Your message should be at least 10 characters long."
+      );
+    } else {
+      toast.info("Hey, there. I got your message. I'll get back to you soon!");
     }
-    toast.info("Hey, there. I got your message. I'll get back to you soon!");
 
     this.handleSend();
+
     document.getElementById("contact-form").reset();
     this.setState({ name: "", email: "", subject: "", message: "" });
   };
 
   handleSend = () =>
     sendEmail(this.state)
-      .then(res =>
+      .then(() =>
         this.setState({ name: "", email: "", subject: "", message: "" })
       )
       .catch(err => console.error(err));

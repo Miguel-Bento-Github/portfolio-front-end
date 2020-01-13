@@ -129,16 +129,9 @@ input::-webkit-input-placeholder {
   }
 }
 
-.tracking-in {
-  -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1)
-    both;
-  animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation-delay: 0.3s;
-}
-
 .zoom {
-  -webkit-animation: zoom 2s ease-out both;
-  animation: zoom 2s ease-out both;
+  -webkit-animation: zoom 10s ease-out both;
+  animation: zoom 10s ease-out both;
 }
 
 /* magic */
