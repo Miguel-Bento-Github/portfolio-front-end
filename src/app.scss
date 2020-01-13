@@ -1,16 +1,6 @@
 @import "variables";
 
-@font-face {
-  font-family: overpass;
-  src: url("./fonts/overpass-desktop-fonts/overpass/overpass.otf")
-    format("opentype");
-}
-
-@font-face {
-  font-family: overpass-mono;
-  src: url("./fonts/overpass-desktop-fonts/overpass-mono/overpass-mono-regular.otf")
-    format("opentype");
-}
+@import url("https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono&display=swap");
 
 * {
   margin: 0;
@@ -22,7 +12,7 @@ body {
   width: 100%;
   background: $color-dark-grey;
   color: $color-dark-grey;
-  font-family: overpass-mono;
+  font-family: "Overpass Mono", monospace;
   font-size: 1.7rem;
 }
 
@@ -36,7 +26,7 @@ ul {
 
 input::placeholder,
 input::-webkit-input-placeholder {
-  font-family: overpass;
+  font-family: "Overpass", sans-serif;
 }
 
 .btn {
@@ -49,7 +39,8 @@ input::-webkit-input-placeholder {
   margin: 0 0.3rem 0.3rem auto;
   font-size: 1rem;
   font-weight: 500;
-  font-family: overpass;
+  font-family: "Overpass", sans-serif;
+
   cursor: pointer;
 
   &:hover {
@@ -154,7 +145,7 @@ input::-webkit-input-placeholder {
 .Toastify__toast-body {
   padding: 1rem;
   font-size: 1.3rem;
-  font-family: overpass;
+  font-family: "Overpass", sans-serif;
 }
 
 @media screen and (min-height: 1100px) {
@@ -185,7 +176,7 @@ input::-webkit-input-placeholder {
     line-height: 1rem;
     appearance: none;
     -webkit-appearance: none;
-    font-family: overpass;
+    font-family: "Overpass", sans-serif;
   }
 }
 
@@ -203,7 +194,7 @@ input::-webkit-input-placeholder {
     line-height: 0.7rem;
     appearance: none;
     -webkit-appearance: none;
-    font-family: overpass;
+    font-family: "Overpass", sans-serif;
   }
 
   .section {
