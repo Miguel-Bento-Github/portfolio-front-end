@@ -8,7 +8,7 @@ import "./contact.scss";
 import "react-toastify/dist/ReactToastify.css";
 
 toast.configure({
-  autoClose: 10000,
+  autoClose: 50000,
   draggable: false,
   pauseOnFocusLoss: true,
   position: "top-left",
@@ -37,27 +37,24 @@ export default class Contact extends Component {
       const validator = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/;
       return validator.test(String(userEmail).toLowerCase());
     };
-    validateEmail(email);
 
-    if (!name) {
-      return toast.warning("Please input your name.");
-    } else if (!validateEmail(email)) {
+    if (!name || name.length > 29) {
+      return toast.warning("Please input a valid name.");
+    } else if (!validateEmail(email) || !email) {
       return toast.warning("Please input a valid email address");
     } else if (email.length > 29) {
       return toast.warning("This email is too long. Please try another one.");
-    } else if (!email) {
-      return toast.warning("Please input your email.");
-    } else if (!subject) {
-      return toast.warning("Please submit the subject of this message.");
+    } else if (!subject || name.length > 29) {
+      return toast.warning(
+        "Please submit a subject. Keep it under 30 characters."
+      );
     } else if (message.length < 10) {
       return toast.warning(
         "Your message should be at least 10 characters long."
       );
     } else {
-      toast.info("Hey, there. I got your message. I'll get back to you soon!");
+      this.handleSend();
     }
-
-    this.handleSend();
 
     document.getElementById("contact-form").reset();
     this.setState({ name: "", email: "", subject: "", message: "" });
@@ -65,10 +62,16 @@ export default class Contact extends Component {
 
   handleSend = () =>
     sendEmail(this.state)
-      .then(() =>
-        this.setState({ name: "", email: "", subject: "", message: "" })
-      )
-      .catch(err => console.error(err));
+      .then(() => {
+        this.setState({ name: "", email: "", subject: "", message: "" });
+        toast.info("Hey there. I got your message. I'll get back to you soon!");
+      })
+      .catch(err => {
+        toast.error(
+          "Something went wrong. You can contact me directly via Linkedin."
+        );
+        console.error(err);
+      });
 
   render() {
     return (

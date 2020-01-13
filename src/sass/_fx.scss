@@ -1,7 +1,8 @@
 /* fx */
 .slit {
-  -webkit-animation: slit-in-vertical 0.45s ease-out both;
-  animation: slit-in-vertical 0.45s ease-out both;
+  -webkit-animation: slit-in-vertical 0.45s cubic-bezier(0.075, 0.82, 0.165, 1)
+    both;
+  animation: slit-in-vertical 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) both;
 }
 
 .bounce {
@@ -14,4 +15,9 @@
   -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
     both;
   animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+.zoom {
+  -webkit-animation: zoom 10s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+  animation: zoom 10s cubic-bezier(0.075, 0.82, 0.165, 1) both;
 }
