@@ -10,10 +10,9 @@
   margin: auto;
   padding: 16px;
   height: min-content;
-  opacity: 0.8;
   z-index: 2;
   border: none;
   border-radius: 8px;
-  background: #c1b2a0;
+  background: rgba(#c1b2a0, 0.9);
   color: $color-dark-grey;
 }

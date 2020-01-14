@@ -1,3 +1,4 @@
+@import "../../sass/font";
 @import "../../sass/variables";
 @import "../../animations/zoom";
 
@@ -17,29 +18,38 @@
 .contact .section-header {
   margin: 0.5rem;
 }
+
 /* form */
 .contact-form {
   display: flex;
   flex-direction: column;
 }
+
 .form-header {
   font-size: 2rem;
   padding: 5px;
 }
+
 .contact-form > .user-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .contact-form .input {
   border: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+  background: linear-gradient(
+    rgba(rgba($color-dark-grey, 0.8), 0.4),
+    rgba(rgba($color-dark-grey, 0.8), 0.6)
+  );
   color: $color-white;
   padding: 5px;
   margin: 0.5rem;
   min-height: 5vh;
   font-size: 1rem;
+  line-height: calc(1rem * 1.4);
   border-radius: 8px;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -47,20 +57,25 @@ input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px $color-dark-grey inset;
   -webkit-text-fill-color: $color-white;
 }
+
 .contact-form .input::placeholder {
   color: #ccc;
-  font-size: 1rem;
+  @include font(1.1rem);
 }
+
 .contact-form .input-message::placeholder {
-  font-size: 1rem;
+  @include font(1.1rem);
 }
+
 .contact-form .input-message {
   font-family: "Overpass", sans-serif;
-  font-size: 1rem;
+  @include font(1.1rem);
+  line-height: calc(1.2rem * 1.4);
   height: 35vh;
   color: $color-white;
   resize: none;
 }
+
 .btn-submit {
   margin: 1.5vh 10px 1vh auto;
   background: linear-gradient(
@@ -68,63 +83,77 @@ input:-webkit-autofill:active {
     rgba(173, 167, 134, 0.7)
   );
 }
+
 .input-message:focus {
-  font-size: 1.2rem;
+  @include font(1.1rem);
 }
+
 .contact-form .input:focus,
 .input-message:focus {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-  border: solid 1px #994b1b;
+  background: linear-gradient(
+    rgba($color-dark-grey, 0.8),
+    rgba($color-dark-grey, 0.8)
+  );
+  border: solid 1px $color-brown;
 }
+
 .contact .banners {
   display: flex;
   justify-content: space-between;
   padding: 5px;
   margin: 1vh 0.5rem 0;
 }
+
 .contact-icon {
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-  font-size: 2.5rem;
-  color: #2e2419;
+  @include font(2.5rem);
+  color: $color-raisin-black;
 }
+
 .contact-icon:hover {
-  color: #994b1b;
+  color: $color-brown;
 }
+
 .card {
   position: absolute;
   top: 5%;
 }
+
 @media screen and (min-width: 1700px) {
   .contact-icon {
-    font-size: 3.5rem;
+    @include font(3.5rem);
   }
+
   .contact-form .input-message::placeholder,
   .contact-form .input::placeholder {
-    font-size: 1.4rem;
+    @include font(1.4rem);
   }
 }
+
 @media screen and (max-width: 800px) {
   .contact {
-    font-size: 1.2rem;
+    @include font(1.1rem);
     top: 15vh;
     left: 15vh;
     right: 15vh;
     bottom: 5vh;
   }
+
   .contact .input {
-    font-size: 0.8rem;
-    line-height: 1rem;
+    @include font(0.8rem);
   }
 }
+
 @media screen and (max-width: 450px) {
   .contact {
-    font-size: 1rem;
+    @include font(1rem);
     top: 15vh;
     left: 0;
     right: 0;
     bottom: 0;
   }
+
   .contact .input {
-    font-size: 0.5rem;
+    @include font(0.5rem);
   }
 }
