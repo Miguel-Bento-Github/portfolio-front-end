@@ -60,7 +60,7 @@ export default class Contact extends Component {
     this.setState({ name: "", email: "", subject: "", message: "" });
   };
 
-  handleSend = () =>
+  handleSend = () => {
     sendEmail(this.state)
       .then(() => {
         this.setState({ name: "", email: "", subject: "", message: "" });
@@ -72,7 +72,7 @@ export default class Contact extends Component {
         );
         console.error(err);
       });
-
+  };
   render() {
     return (
       <section className="contact-section blur">

@@ -16,7 +16,7 @@ export default class Portfolio extends Component {
   render() {
     const { projects } = this.state;
 
-    return <LoadingScreen />;
+    if (!projects) return <LoadingScreen />;
     // TODO delete backend.
     // eslint-disable-next-line
     return (
