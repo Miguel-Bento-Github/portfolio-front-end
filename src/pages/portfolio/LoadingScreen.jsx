@@ -13,20 +13,18 @@ export default function LoadingScreen() {
   }, []);
 
   return (
-    <>
-      <div className="loading-screen blur">
-        <div className="loading-content">
-          <i className="fas fa-2x fa-cog fa-spin loading-icon" />
-          <div className="loading-text">
-            Page under maintenance.
-            <br />
-            <a
-              style={{ color: "#53a7ea" }}
-              href="https://www.youtube.com/watch?v=gRo8FVytTtg"
-            >{` When is it finished?`}</a>
-          </div>
+    <div className="loading-screen blur">
+      <div className="loading-content">
+        <i className="fas fa-2x fa-cog fa-spin loading-icon" />
+        <div className="loading-text">
+          Page under maintenance.
+          <br />
+          <a
+            style={{ color: "#53a7ea" }}
+            href="https://www.youtube.com/watch?v=gRo8FVytTtg"
+          >{` When is it finished?`}</a>
         </div>
       </div>
-    </>
+    </div>
   );
 }
