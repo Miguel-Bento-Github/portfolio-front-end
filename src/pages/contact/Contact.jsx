@@ -58,13 +58,14 @@ export default class Contact extends Component {
 
     document.getElementById("contact-form").reset();
     this.setState({ name: "", email: "", subject: "", message: "" });
+    toast.info("Hey there. I got your message. I'll get back to you soon!");
   };
 
   handleSend = () => {
     sendEmail(this.state)
       .then(() => {
         this.setState({ name: "", email: "", subject: "", message: "" });
-        toast.info("Hey there. I got your message. I'll get back to you soon!");
+        // toast.info("Hey there. I got your message. I'll get back to you soon!");
       })
       .catch(err => {
         toast.error(
