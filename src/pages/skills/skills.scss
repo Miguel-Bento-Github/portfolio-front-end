@@ -1,3 +1,5 @@
+@import "../../sass/variables";
+@import "../../sass/_font";
 @import "../../animations/shake.scss";
 @import "../../animations/slit.scss";
 
@@ -7,55 +9,77 @@
   min-height: min-content;
   height: max-content;
 }
-.skill-title {
-  cursor: default;
-  font-size: 1.8rem;
-  padding: 5px;
-}
-.skill-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-  grid-gap: 4vh 1vw;
-}
-.skill-li {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 255, 255, 0.3),
-    rgba(100, 100, 100, 0.4)
-  );
+.skill {
+  &-title {
+    cursor: default;
+    font-size: 1.8rem;
+    padding: 15px;
+  }
+
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
+    grid-gap: 4vh 1vw;
+    color: $color-white;
+  }
+
+  &-li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: $color-gradient-dark;
+    border-radius: 8px;
+  }
 }
-.logos-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  padding: 1rem;
+
+.logos {
+  &-container {
+    width: 100%;
+    display: grid;
+    padding: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-content: center;
+    align-items: center;
+  }
 }
-.logos-container .img-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
+.img {
+  &-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    animation: appear 1s forwards;
+
+    &:hover {
+      .img-caption {
+        color: $color-white;
+        @include font(1.5rem);
+      }
+    }
+  }
+
+  &-caption {
+    padding: 3vh 1vw;
+    padding-bottom: 0;
+    color: $color-white;
+    @include font(1.1rem);
+    line-height: 1.5rem * 1.4;
+    transition: all 200ms cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  &-skill {
+    max-width: 80px;
+    opacity: 0;
+    animation: appear 250ms forwards;
+  }
 }
-.logos-container .img-container {
-  cursor: default;
-}
-.logos-container .skill-img {
-  height: 75px;
-  margin: auto;
-}
-.logos-container .skill-img.hb {
-  height: 30px;
-}
-.logos-container .img-caption {
-  padding: 3vh 1vw;
-  padding-bottom: 0;
-}
-@media screen and (max-width: 800px) {
-  .logos-container .img-caption {
-    font-size: 1rem;
+
+@keyframes appear {
+  100% {
+    opacity: 1;
   }
 }

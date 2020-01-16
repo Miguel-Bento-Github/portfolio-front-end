@@ -18,13 +18,6 @@
     padding: 15vh 25vw;
     margin: 5vh 5vw;
     color: $color-white;
-  }
-
-  &-screen .spinner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 15vh;
-    font-size: 2rem;
+    text-align: center;
   }
 }

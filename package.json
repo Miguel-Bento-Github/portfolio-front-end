@@ -8,6 +8,7 @@
     "postcss-normalize": "^8.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-lazy-load-image-component": "^1.4.0",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.3.0",
     "react-simple-tooltip": "^2.6.0",

@@ -24,4 +24,5 @@ const FourOhFour = () => {
     </section>
   );
 };
+
 export default memo(FourOhFour);

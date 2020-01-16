@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./loadingScreen.scss";
+import Spinner from "../../components/Spinner";
 
 export default function LoadingScreen() {
   useEffect(() => {
@@ -15,7 +16,7 @@ export default function LoadingScreen() {
   return (
     <div className="loading-screen blur">
       <div className="loading-content">
-        <i className="fas fa-2x fa-cog fa-spin loading-icon" />
+        {<Spinner />}
         <div className="loading-text">
           Page under maintenance.
           <br />

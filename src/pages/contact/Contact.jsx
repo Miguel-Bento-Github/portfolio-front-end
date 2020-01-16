@@ -58,14 +58,16 @@ export default class Contact extends Component {
 
     document.getElementById("contact-form").reset();
     this.setState({ name: "", email: "", subject: "", message: "" });
-    toast.info("Hey there. I got your message. I'll get back to you soon!");
   };
 
   handleSend = () => {
     sendEmail(this.state)
-      .then(() => {
+      .then(res => {
         this.setState({ name: "", email: "", subject: "", message: "" });
-        // toast.info("Hey there. I got your message. I'll get back to you soon!");
+        const data = JSON.parse(res.config.data);
+        toast.info(
+          `Hey there ${data.name}. I got your message. I'll get back to you soon!`
+        );
       })
       .catch(err => {
         toast.error(
@@ -79,7 +81,7 @@ export default class Contact extends Component {
       <section className="contact-section blur">
         <div className="bg zoom" />
         <div className="contact">
-          <h1 className="section-header">Contact Me</h1>
+          <h1 className="section-header">Contact me</h1>
           <form id="contact-form" className="contact-form">
             <div className="user-info">
               <Input handleChange={this.handleChange} pHolder="name" />

@@ -73,7 +73,7 @@ export default class Index extends Component {
           <span
             className="typewriter typewriter-text"
             data-wait={1000}
-            data-words='["Web Developer", "Programmer"]'
+            data-words='["Web Developer", "Frontend Developer", "React Expert", "Styling Enthusiast"]'
           />
         </div>
         <p className="home-description">

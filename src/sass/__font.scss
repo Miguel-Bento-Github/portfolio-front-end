@@ -3,7 +3,7 @@
 @mixin font($size, $weight: "") {
   @if $size {
     font-size: $size;
-    line-height: calc($size * 1.4);
+    line-height: $size * 1.4;
   }
 
   @if $weight {

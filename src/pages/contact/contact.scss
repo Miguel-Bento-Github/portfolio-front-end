@@ -1,4 +1,4 @@
-@import "../../sass/font";
+@import "../../sass/_font";
 @import "../../sass/variables";
 @import "../../animations/zoom";
 
@@ -15,8 +15,10 @@
   right: 45vw;
 }
 
-.contact .section-header {
-  margin: 0.5rem;
+@media screen and (min-width: 1150px) {
+  .contact .section-header {
+    margin: 0.5rem;
+  }
 }
 
 /* form */
@@ -30,24 +32,24 @@
   padding: 5px;
 }
 
-.contact-form > .user-info {
+.contact-form .user-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
 }
 
 .contact-form .input {
   border: 0;
   background: linear-gradient(
-    rgba(rgba($color-dark-grey, 0.8), 0.4),
-    rgba(rgba($color-dark-grey, 0.8), 0.6)
+    to right,
+    rgba($color-dark-grey, 0.8),
+    rgba($color-dark-grey, 0.6)
   );
   color: $color-white;
-  padding: 5px;
+  padding: 5px 8px;
   margin: 0.5rem;
-  min-height: 5vh;
-  font-size: 1rem;
-  line-height: calc(1rem * 1.4);
+  @include font(1.1rem);
   border-radius: 8px;
+  outline: thin;
 }
 
 input:-webkit-autofill,
@@ -70,7 +72,6 @@ input:-webkit-autofill:active {
 .contact-form .input-message {
   font-family: "Overpass", sans-serif;
   @include font(1.1rem);
-  line-height: calc(1.2rem * 1.4);
   height: 35vh;
   color: $color-white;
   resize: none;
@@ -78,10 +79,7 @@ input:-webkit-autofill:active {
 
 .btn-submit {
   margin: 1.5vh 10px 1vh auto;
-  background: linear-gradient(
-    rgba(160, 152, 109, 0.8),
-    rgba(173, 167, 134, 0.7)
-  );
+  background: linear-gradient(#a0986dcc, #ada786b3);
 }
 
 .input-message:focus {
@@ -94,7 +92,7 @@ input:-webkit-autofill:active {
     rgba($color-dark-grey, 0.8),
     rgba($color-dark-grey, 0.8)
   );
-  border: solid 1px $color-brown;
+  outline: thin 1px double;
 }
 
 .contact .banners {
@@ -130,13 +128,16 @@ input:-webkit-autofill:active {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 900px) {
   .contact {
     @include font(1.1rem);
-    top: 15vh;
-    left: 15vh;
-    right: 15vh;
-    bottom: 5vh;
+    top: 1vh;
+    left: 15%;
+    right: 15%;
+    bottom: 5%;
+  }
+  .contact .section-header {
+    margin-left: 10px;
   }
 
   .contact .input {
@@ -145,15 +146,23 @@ input:-webkit-autofill:active {
 }
 
 @media screen and (max-width: 450px) {
+  .contact-icon {
+    color: $color-white;
+  }
+
   .contact {
     @include font(1rem);
-    top: 15vh;
     left: 0;
     right: 0;
     bottom: 0;
   }
 
   .contact .input {
-    @include font(0.5rem);
+    @include font(1rem);
+    background: linear-gradient(
+      to right,
+      rgba($color-dark-grey, 0.7),
+      rgba($color-dark-grey, 0.9)
+    );
   }
 }

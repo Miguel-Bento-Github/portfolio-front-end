@@ -1,5 +1,6 @@
 @import "../sass/variables";
 @import "../animations/slide.scss";
+@import "../sass/_font";
 
 .nav {
   &-link {
@@ -25,11 +26,15 @@
   justify-self: flex-end;
   align-self: flex-end;
   border: 0;
-  border-radius: 25px;
   padding: 0.5rem 1rem;
+  margin-left: auto;
   color: $color-dark-grey;
-  box-shadow: 0 0 3px $color-dark-grey;
   background: $color-white;
+
+  @media screen and (max-width: 650px) {
+    margin-top: 1rem;
+    margin-left: initial;
+  }
 
   &:hover {
     background: lighten($color-white, 100%);
@@ -37,6 +42,28 @@
 }
 
 @media screen and (max-width: 650px) {
+  .nav {
+    &-list {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-evenly;
+      min-height: 30vh;
+      margin-top: 15px;
+    }
+
+    &-title {
+      @include font(1.7rem);
+      margin-bottom: 20px;
+    }
+
+    &-link {
+      @include font(1.5rem);
+
+      &--active {
+        color: $color-dark-grey;
+      }
+    }
+  }
   .navbar {
     font-size: 1rem;
   }

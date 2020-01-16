@@ -4,7 +4,13 @@ import { NavLink } from "react-router-dom";
 const ListURL = ({ exact, to, name, close }) => {
   return (
     <li>
-      <NavLink onClick={close} className="nav-link" exact={exact} to={to}>
+      <NavLink
+        onClick={close}
+        activeClassName="nav-link--active"
+        className="nav-link"
+        exact={exact}
+        to={to}
+      >
         {name}
       </NavLink>
     </li>

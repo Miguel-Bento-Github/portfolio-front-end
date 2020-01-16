@@ -1,43 +1,36 @@
-import React, { Component } from "react";
+import React from "react";
 import "./portfolio.scss";
-import { getProjects } from "../../api/projects";
 import ProjectsList from "./projects/ProjectsList";
 import LoadingScreen from "./LoadingScreen";
+import useDataApi from "../../api/useDataApi";
+import FourOhFour from "../fourOhfour/FourOhFour";
+import { isDesktopWidth } from "../../helpers/isMobile";
 
-export default class Portfolio extends Component {
-  state = {};
+export default function Portfolio() {
+  const url = process.env.REACT_APP_BACK_URL + "/api";
+  const [{ data, isLoading, error }] = useDataApi(`${url}/project`);
 
-  componentDidMount() {
-    getProjects()
-      .then(res => this.setState({ projects: res.data }))
-      .catch(err => console.error(err));
-  }
+  if (isLoading || !data) return <LoadingScreen />;
 
-  render() {
-    const { projects } = this.state;
-
-    if (!projects) return <LoadingScreen />;
-    // TODO delete backend.
-    // eslint-disable-next-line
-    return (
-      <main className="main blur">
-        <section className="section secondBg">
-          <h1 className="section-header ">Portfolio</h1>
-          <ul className="projects-container">
-            {!projects
-              ? null
-              : projects.map(c => (
-                  <ProjectsList
-                    key={c._id}
-                    link={c.link}
-                    img={c.img}
-                    imgTitle={c.title}
-                    projectName={c.title}
-                  />
-                ))}
-          </ul>
-        </section>
-      </main>
-    );
-  }
+  if (!data && error) return <FourOhFour />;
+  // TODO delete backend.
+  return (
+    <main className="main blur">
+      {isDesktopWidth() && <div className="second-bg"></div>}
+      <section className={`section ${!isDesktopWidth() && "second-bg"}`}>
+        <h1 className="section-header ">Portfolio</h1>
+        <ul className="projects-container">
+          {data.map(project => (
+            <ProjectsList
+              key={project._id}
+              link={project.link}
+              img={project.img}
+              imgTitle={project.title}
+              projectName={project.title}
+            />
+          ))}
+        </ul>
+      </section>
+    </main>
+  );
 }

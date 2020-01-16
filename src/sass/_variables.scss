@@ -2,3 +2,8 @@ $color-white: #f4f4f4;
 $color-dark-grey: #222;
 $color-brown: #994b1b;
 $color-raisin-black: #2e2419;
+$color-gradient-dark: linear-gradient(
+  to right,
+  rgba($color-dark-grey, 0.4),
+  rgba($color-dark-grey, 0.6)
+);

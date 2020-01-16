@@ -17,7 +17,6 @@
 
   &-list {
     min-height: min-content;
-    height: 45vh;
   }
 }
 
@@ -32,10 +31,9 @@
   &-txt {
     margin-top: 1rem;
     font-size: 2rem;
-    color: $color-dark-grey;
+    color: $color-white;
 
     &:hover {
-      color: $color-dark-grey;
       -webkit-transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
       transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
     }

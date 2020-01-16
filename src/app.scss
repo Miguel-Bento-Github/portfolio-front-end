@@ -1,11 +1,21 @@
 @import "./sass/variables";
-@import "./sass/font";
+@import "./sass/_font";
 @import "./sass/fx";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.is-mobile {
+  height: 85vh;
+  max-height: 85vh;
+}
+
+.is-android {
+  height: 100vh;
+  max-height: 100vh;
 }
 
 body {
@@ -26,6 +36,7 @@ h2 {
 
 a {
   text-decoration: none;
+  color: initial;
 }
 
 ul {
@@ -44,16 +55,26 @@ input::-webkit-input-placeholder {
   box-shadow: 0 1px 6px $color-dark-grey;
   width: max-content;
   padding: 0.4rem 1rem;
-  margin: 0 0.3rem 0.3rem auto;
   font-family: "Overpass", sans-serif;
   cursor: pointer;
-  @include font(1rem, 500);
+  @include font(1rem);
 
   &:hover {
     background: linear-gradient(
       rgba(202, 196, 164, 0.7),
       rgba(202, 196, 164, 0.8)
     );
+  }
+
+  &--link {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    width: 100%;
+
+    &:hover {
+      background: rgba($color-white, 0.2);
+    }
   }
 }
 
@@ -63,29 +84,59 @@ input::-webkit-input-placeholder {
   padding: 1vh 15vw;
 
   &-header {
-    margin: 4vh 0 4vh;
+    margin: 3vh 0 4vh 0;
     padding: 5px;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5));
+    background: linear-gradient(
+      to right,
+      rgba($color-dark-grey, 0.8),
+      rgba($color-dark-grey, 0.6)
+    );
     color: $color-white;
     border-radius: 8px;
   }
 }
 
-.secondBg {
+.bg,
+.second-bg {
+  height: 100vh;
   width: 100%;
-  background: $color-dark-grey;
+  background: $color-white;
+}
+
+.bg {
+  display: flex;
+  content: "";
   background: linear-gradient(
-      rgba(202, 196, 164, 0.4),
-      rgba(202, 196, 164, 0.5)
+      to right,
+      rgba($color-dark-grey, 0.1),
+      rgba($color-dark-grey, 0)
     ),
-    url(https://images.unsplash.com/photo-1432821579285-1b649e5b1ce3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+    url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")
+      no-repeat center;
   background-size: cover;
-  min-height: 100vh;
-  height: min-content;
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.bg-icon {
+  font-size: 3rem;
+}
+
+.second-bg {
+  background: linear-gradient(
+      rgba($color-dark-grey, 0.1),
+      rgba($color-dark-grey, 0.3)
+    ),
+    url("https://images.pexels.com/photos/1422286/pexels-photo-1422286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+      no-repeat;
+  background-size: cover;
 }
 
 .showcase-header {
   cursor: default;
+  color: $color-white;
+  background: $color-gradient-dark;
+  border-radius: 8px;
+  padding: 5px 8px;
 
   &--pulse {
     z-index: 1;
@@ -148,37 +199,57 @@ input::-webkit-input-placeholder {
   }
 
   .section {
-    padding: 5vh 10vw;
+    padding: 1vh 10vw 5vh;
+
+    &-header {
+      margin: 3vh auto 4vh 0;
+    }
   }
 
   input[type="text"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder {
-    line-height: 1rem;
     appearance: none;
     -webkit-appearance: none;
     font-family: "Overpass", sans-serif;
   }
 }
 
-@media screen and (max-width: 400px) {
-  .secondBg {
+@media screen and (max-width: 450px) {
+  .bg {
     background: linear-gradient(
-        rgba(202, 196, 164, 0.4),
-        rgba(202, 196, 164, 0.5)
+        rgba($color-dark-grey, 0.4),
+        rgba($color-dark-grey, 0.5)
       ),
-      url("./assets/secondBg.jpg");
+      url("./assets/bg.jpg") center no-repeat;
+  }
+
+  .second-bg {
+    background: linear-gradient(
+        rgba($color-dark-grey, 0.1),
+        rgba($color-dark-grey, 0.2)
+      ),
+      url("./assets/secondBg.jpg") center no-repeat;
+    position: fixed;
+  }
+
+  .bg,
+  .second-bg {
+    background-size: cover;
+    z-index: -1;
   }
 
   input[type="text"]::-webkit-input-placeholder,
   input[type="email"]::-webkit-input-placeholder {
-    line-height: 0.7rem;
     appearance: none;
     -webkit-appearance: none;
     font-family: "Overpass", sans-serif;
   }
 
   .section {
-    padding: 10vh 10vw;
+    padding: 1vh 10vw 5vh;
+    &-header {
+      background: $color-gradient-dark;
+    }
   }
 
   h1 {
@@ -190,6 +261,6 @@ input::-webkit-input-placeholder {
   }
 
   .btn {
-    @include font(0.7rem);
+    @include font(1rem);
   }
 }
