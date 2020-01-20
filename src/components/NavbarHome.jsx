@@ -13,14 +13,14 @@ const NavbarHome = () => {
   const blur = () => {
     const bg = document.querySelector(".blur");
     if (bg) {
-      bg.style.filter = "blur(2px)";
+      bg.classList += " blur--active";
     }
   };
 
   const unBlur = () => {
-    const bg = document.querySelector(".blur");
+    const bg = document.querySelector(".blur--active");
     if (bg) {
-      bg.style.filter = "blur(0)";
+      bg.classList.remove("blur--active");
     }
   };
 

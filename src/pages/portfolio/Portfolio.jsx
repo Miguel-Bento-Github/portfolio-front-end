@@ -1,36 +1,48 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./portfolio.scss";
 import ProjectsList from "./projects/ProjectsList";
 import LoadingScreen from "./LoadingScreen";
 import useDataApi from "../../api/useDataApi";
 import FourOhFour from "../fourOhfour/FourOhFour";
 import { isDesktopWidth } from "../../helpers/isMobile";
+import { getProjects } from "../../api/projects";
 
 export default function Portfolio() {
   const url = process.env.REACT_APP_BACK_URL + "/api";
-  const [{ data, isLoading, error }] = useDataApi(`${url}/project`);
+  const [{ data, isLoading, error }, Fetch] = useDataApi(`${url}/project`);
 
-  if (isLoading || !data) return <LoadingScreen />;
+  useEffect(() => {
+    Fetch(url + "/project");
+  }, [url, Fetch, isLoading]);
 
-  if (!data && error) return <FourOhFour />;
+  if (isLoading || !data) {
+    return <LoadingScreen />;
+  }
+
+  if (!data && error) {
+    return <FourOhFour />;
+  }
   // TODO delete backend.
+
   return (
-    <main className="main blur">
+    <>
       {isDesktopWidth() && <div className="second-bg"></div>}
-      <section className={`section ${!isDesktopWidth() && "second-bg"}`}>
-        <h1 className="section-header ">Portfolio</h1>
-        <ul className="projects-container">
-          {data.map(project => (
-            <ProjectsList
-              key={project._id}
-              link={project.link}
-              img={project.img}
-              imgTitle={project.title}
-              projectName={project.title}
-            />
-          ))}
-        </ul>
-      </section>
-    </main>
+      <main className="main blur">
+        <section className={`section ${!isDesktopWidth() ? "second-bg" : ""}`}>
+          <h1 className="section-header ">Portfolio</h1>
+          <ul className="projects-container">
+            {data.map(project => (
+              <ProjectsList
+                key={project._id}
+                link={project.link}
+                img={project.img}
+                imgTitle={project.title}
+                projectName={project.title}
+              />
+            ))}
+          </ul>
+        </section>
+      </main>
+    </>
   );
 }

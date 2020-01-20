@@ -2,12 +2,11 @@
 @import "../../sass/_font";
 @import "../../animations/shake.scss";
 @import "../../animations/slit.scss";
+@import "../../animations/appear.scss";
 
 .skills {
   display: flex;
   flex-direction: column;
-  min-height: min-content;
-  height: max-content;
 }
 
 .skill {
@@ -75,11 +74,5 @@
     max-width: 80px;
     opacity: 0;
     animation: appear 250ms forwards;
-  }
-}
-
-@keyframes appear {
-  100% {
-    opacity: 1;
   }
 }

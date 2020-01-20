@@ -10,7 +10,7 @@ import FourOhFour from "./pages/fourOhfour/FourOhFour";
 
 function App() {
   return (
-    <React.Fragment>
+    <>
       <NavbarHome />
       <Switch>
         <Route exact path="/" component={Index} />
@@ -19,7 +19,7 @@ function App() {
         <Route path="/skills" component={Skills} />
         <Route component={FourOhFour} />
       </Switch>
-    </React.Fragment>
+    </>
   );
 }
 export default withRouter(App);

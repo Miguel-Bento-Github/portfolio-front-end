@@ -1,8 +1,8 @@
 /* fx */
 .slit {
-  -webkit-animation: slit-in-vertical 0.45s cubic-bezier(0.075, 0.82, 0.165, 1)
-    both;
-  animation: slit-in-vertical 0.45s cubic-bezier(0.075, 0.82, 0.165, 1) both;
+  -webkit-animation: slit-in-vertical 0.45s linear both;
+  animation: slit-in-vertical 0.45s linear both;
+  overflow: hidden;
 }
 
 .bounce {
@@ -18,6 +18,6 @@
 }
 
 .zoom {
-  -webkit-animation: zoom 15s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
-  animation: zoom 15s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+  -webkit-animation: zoom 4s ease-out forwards;
+  animation: zoom 4s ease-out forwards;
 }

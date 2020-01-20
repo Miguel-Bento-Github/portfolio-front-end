@@ -14,7 +14,7 @@ const FourOhFour = () => {
   }, []);
 
   return (
-    <section className="four-oh-four">
+    <section className="four-oh-four page">
       <h1 className="four-oh-four__title">404 This page doesn't exist</h1>
 
       <Link className="four-oh-four__link" to="/">

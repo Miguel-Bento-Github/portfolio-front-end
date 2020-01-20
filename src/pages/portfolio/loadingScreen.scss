@@ -2,11 +2,18 @@
 
 .loading {
   &-screen {
+    min-height: 100vh;
     overflow: hidden;
+    background: $color-dark-grey;
   }
 
   &-icon {
     margin-bottom: 55px;
+  }
+
+  &-contact-icon {
+    color: $color-white;
+    font-size: 6rem;
   }
 
   &-content {
@@ -15,8 +22,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 15vh 25vw;
-    margin: 5vh 5vw;
+    padding: 15vh 15vw;
     color: $color-white;
     text-align: center;
   }

@@ -30,8 +30,9 @@ const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
   handleClickOutside(ref);
 
   function disableAnchorClicks(disable) {
-    let links = document.querySelectorAll(".bg");
-    if (!links.length) links = document.querySelectorAll(".second-bg");
+    let links;
+    links = document.querySelectorAll(".page");
+
     if (disable) {
       links.forEach(link => {
         link.style.pointerEvents = "none";
@@ -60,13 +61,13 @@ const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
   }, [isOpen, onOpen, onClose]);
 
   return (
-    <div ref={ref} className="control-menu">
+    <div ref={ref} className="page-overview">
       <h2 className="nav-title">Where to?</h2>
       <ul className="nav-list">
         <List close={close} exact={true} to="/" name="home" />
         {displayPages}
       </ul>
-      {!isDesktopWidth() && (
+      {isDesktopWidth() && (
         <button type="button" className="btn btn-nav-close" onClick={close}>
           close
         </button>

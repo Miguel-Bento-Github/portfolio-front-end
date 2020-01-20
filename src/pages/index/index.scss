@@ -4,7 +4,7 @@
 @import "../../animations//blink";
 
 .index {
-  overflow: hidden;
+  min-height: 100vh;
 }
 
 .content {
@@ -12,6 +12,62 @@
   z-index: 1;
   top: 35%;
   left: 25%;
+
+  @media screen and (max-width: 1150px) {
+    top: 10%;
+    left: 20%;
+    right: auto;
+  }
+
+  @media screen and (max-width: 850px) {
+    top: 0%;
+    left: 5%;
+  }
+
+  @media (orientation: landscape) and (max-width: 1150px) {
+    @include font(1rem);
+  }
+}
+
+.showcase-header {
+  cursor: default;
+  color: $color-white;
+  background: $color-gradient-dark;
+  border-radius: 8px;
+  padding: 0 8px;
+
+  &--pulse {
+    z-index: 1;
+    position: relative;
+
+    &:hover {
+      cursor: default;
+    }
+
+    &::before {
+      content: "";
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      transform-origin: center;
+      transform: scale(1);
+    }
+
+    &:hover::before {
+      transition: all 750ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      transform-origin: center;
+      transform: scale(1.3);
+      opacity: 0;
+      border: 1px solid $color-dark-grey;
+    }
+  }
+
+  @media screen and (max-width: 1150px) {
+    @include font(2rem);
+  }
 }
 
 .typewriter-text {
@@ -20,6 +76,10 @@
   cursor: default;
   color: $color-dark-grey;
   padding-left: 10px;
+
+  @media screen and (max-width: 1150px) {
+    color: $color-white;
+  }
 }
 
 .home-description {
@@ -49,37 +109,24 @@
     );
     cursor: default;
   }
-}
 
-@media screen and (max-width: 1150px) {
-  .content {
-    top: 10%;
-    left: 20%;
-    right: auto;
-    color: $color-white;
-  }
-
-  .home-description {
+  @media screen and (max-width: 1150px) {
     @include font(0.8rem);
     left: 20%;
     right: 20%;
-    top: 40%;
+    top: 50%;
     max-width: 100vw;
   }
-}
 
-@media screen and (max-width: 850px) {
-  .content {
-    top: 2%;
-    left: 5%;
-  }
-
-  .showcase-header {
-    margin-bottom: 25%;
-  }
-
-  .home-description {
+  @media screen and (max-width: 850px) {
+    top: 40%;
     left: 5%;
     right: 5%;
+  }
+
+  @media (orientation: landscape) and (max-width: 1150px) {
+    @include font(0.6rem);
+    top: 20%;
+    left: 40%;
   }
 }

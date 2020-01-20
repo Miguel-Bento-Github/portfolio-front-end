@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./loadingScreen.scss";
 import Spinner from "../../components/Spinner";
+import Link from "../../components/iconLink/IconLink";
 
 export default function LoadingScreen() {
   useEffect(() => {
@@ -14,16 +15,22 @@ export default function LoadingScreen() {
   }, []);
 
   return (
-    <div className="loading-screen blur">
+    <div className="loading-screen blur page">
       <div className="loading-content">
         {<Spinner />}
         <div className="loading-text">
           Page under maintenance.
           <br />
-          <a
-            style={{ color: "#53a7ea" }}
-            href="https://www.youtube.com/watch?v=gRo8FVytTtg"
-          >{` When is it finished?`}</a>
+          <br />
+          <Link
+            className="loading-contact-icon"
+            href="https://github.com/Miguel-Bento-Github"
+            icon="github"
+          >
+            Please check my Github.
+            <br />
+            <br />
+          </Link>
         </div>
       </div>
     </div>

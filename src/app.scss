@@ -1,11 +1,16 @@
 @import "./sass/variables";
 @import "./sass/_font";
 @import "./sass/fx";
+@import "./animations/appear.scss";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  padding: env(safe-area-inset);
 }
 
 .is-mobile {
@@ -20,10 +25,15 @@
 
 body {
   width: 100%;
-  background: $color-dark-grey;
   color: $color-dark-grey;
   font-family: "Overpass Mono", monospace;
   @include font(27px);
+}
+
+.blur {
+  &--active {
+    filter: blur(2px);
+  }
 }
 
 h1 {
@@ -73,7 +83,7 @@ input::-webkit-input-placeholder {
     width: 100%;
 
     &:hover {
-      background: rgba($color-white, 0.2);
+      opacity: 0.9;
     }
   }
 }
@@ -98,18 +108,17 @@ input::-webkit-input-placeholder {
 
 .bg,
 .second-bg {
+  position: fixed;
   height: 100vh;
-  width: 100%;
-  background: $color-white;
+  width: 100vw;
+  z-index: -1;
 }
 
 .bg {
-  display: flex;
-  content: "";
   background: linear-gradient(
       to right,
-      rgba($color-dark-grey, 0.1),
-      rgba($color-dark-grey, 0)
+      rgba($color-dark-grey, 0.4),
+      rgba($color-dark-grey, 0.2)
     ),
     url("https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80")
       no-repeat center;
@@ -129,43 +138,6 @@ input::-webkit-input-placeholder {
     url("https://images.pexels.com/photos/1422286/pexels-photo-1422286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
       no-repeat;
   background-size: cover;
-}
-
-.showcase-header {
-  cursor: default;
-  color: $color-white;
-  background: $color-gradient-dark;
-  border-radius: 8px;
-  padding: 5px 8px;
-
-  &--pulse {
-    z-index: 1;
-    position: relative;
-
-    &:hover {
-      cursor: default;
-    }
-
-    &::before {
-      content: "";
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      transform-origin: center;
-      transform: scale(1);
-    }
-
-    &:hover::before {
-      transition: all 750ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-      transform-origin: center;
-      transform: scale(1.3);
-      opacity: 0;
-      border: 1px solid $color-dark-grey;
-    }
-  }
 }
 
 /* magic */
@@ -193,7 +165,12 @@ input::-webkit-input-placeholder {
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 850px) {
+  .bg,
+  .second-bg {
+    z-index: -1;
+  }
+
   body {
     @include font(1.2rem);
   }
@@ -213,6 +190,13 @@ input::-webkit-input-placeholder {
     font-family: "Overpass", sans-serif;
   }
 }
+@media (orientation: landscape) {
+  .section {
+    &-header {
+      margin: 3vh 0.5rem 4vh;
+    }
+  }
+}
 
 @media screen and (max-width: 450px) {
   .bg {
@@ -229,13 +213,11 @@ input::-webkit-input-placeholder {
         rgba($color-dark-grey, 0.2)
       ),
       url("./assets/secondBg.jpg") center no-repeat;
-    position: fixed;
   }
 
   .bg,
   .second-bg {
     background-size: cover;
-    z-index: -1;
   }
 
   input[type="text"]::-webkit-input-placeholder,
@@ -249,6 +231,7 @@ input::-webkit-input-placeholder {
     padding: 1vh 10vw 5vh;
     &-header {
       background: $color-gradient-dark;
+      margin-right: auto;
     }
   }
 

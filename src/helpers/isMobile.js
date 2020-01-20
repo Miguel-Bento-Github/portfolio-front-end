@@ -26,5 +26,5 @@ export function isDesktopWidth() {
     window.screen.width < window.outerWidth
       ? window.screen.width
       : window.outerWidth;
-  return windowWidth < 900;
+  return windowWidth > 950;
 }

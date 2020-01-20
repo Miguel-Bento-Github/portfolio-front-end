@@ -76,74 +76,80 @@ export default class Contact extends Component {
         console.error(err);
       });
   };
+
   render() {
     return (
-      <section className="contact-section blur">
+      <>
         <div className="bg zoom" />
-        <div className="contact">
-          <h1 className="section-header">Contact me</h1>
-          <form id="contact-form" className="contact-form">
-            <div className="user-info">
-              <Input handleChange={this.handleChange} pHolder="name" />
-              <Input handleChange={this.handleChange} pHolder="email" />
+        <section className="contact-section blur page">
+          <div className="contact">
+            <h1 className="section-header">Contact me</h1>
+            <form id="contact-form" className="contact-form">
+              <div className="user-info">
+                <Input handleChange={this.handleChange} pHolder="name" />
+                <Input handleChange={this.handleChange} pHolder="email" />
+              </div>
+              <Input handleChange={this.handleChange} pHolder="subject" />
+              <textarea
+                onChange={this.handleChange}
+                className="input input-message"
+                placeholder="message"
+                type="text"
+              />
+              <button onClick={this.handleSubmit} className="btn btn-submit">
+                Send
+              </button>
+            </form>
+            <div className="banners">
+              <Tooltip
+                color="#ddd9c3"
+                radius={3}
+                padding={4}
+                fontSize="1rem"
+                content="Github"
+              >
+                <Link
+                  className="contact-icon"
+                  href="https://github.com/Miguel-Bento-Github"
+                  icon="github"
+                />
+              </Tooltip>
+
+              <Tooltip
+                color="#ddd9c3"
+                radius={3}
+                padding={4}
+                fontSize="1rem"
+                content="Linkedin"
+              >
+                <Link
+                  className="contact-icon"
+                  href="https://www.linkedin.com/in/miguel-angelo-bento/"
+                  icon="linkedin-in"
+                />
+              </Tooltip>
+
+              <Tooltip
+                color="#ddd9c3"
+                radius={3}
+                padding={2}
+                fontSize="1rem"
+                content="Instagram"
+              >
+                <Link
+                  className="contact-icon"
+                  href="https://www.instagram.com/cupids.trick/"
+                  icon="instagram"
+                />
+              </Tooltip>
             </div>
-            <Input handleChange={this.handleChange} pHolder="subject" />
-            <textarea
-              onChange={this.handleChange}
-              className="input input-message"
-              placeholder="message"
-              type="text"
-            />
-            <button onClick={this.handleSubmit} className="btn btn-submit">
-              Send
-            </button>
-          </form>
-          <div className="banners">
-            <Tooltip
-              color="#ddd9c3"
-              radius={3}
-              padding={4}
-              fontSize="1rem"
-              content="Github"
-            >
-              <Link
-                href="https://github.com/Miguel-Bento-Github"
-                icon="github"
-              />
-            </Tooltip>
 
-            <Tooltip
-              color="#ddd9c3"
-              radius={3}
-              padding={4}
-              fontSize="1rem"
-              content="Linkedin"
-            >
-              <Link
-                href="https://www.linkedin.com/in/miguel-angelo-bento/"
-                icon="linkedin-in"
-              />
-            </Tooltip>
-
-            <Tooltip
-              color="#ddd9c3"
-              radius={3}
-              padding={2}
-              fontSize="1rem"
-              content="Instagram"
-            >
-              <Link
-                href="https://www.instagram.com/cupids.trick/"
-                icon="instagram"
-              />
-            </Tooltip>
+            <aside className="profile-pic">
+              <div className="zoom" />
+            </aside>
           </div>
-
-          <aside className="profile-pic">
-            <div className="zoom" />
-          </aside>
-        </div>
-      </section>
+        </section>
+      </>
     );
   }
 }
