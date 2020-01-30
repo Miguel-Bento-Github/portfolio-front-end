@@ -19,7 +19,7 @@ export default function LoadingScreen() {
       <div className="loading-content">
         {<Spinner />}
         <div className="loading-text">
-          Page under maintenance.
+          Page loading.
           <br />
           <br />
           <Link

@@ -8,6 +8,7 @@ const Icon = ({ img, name, link }) => {
   const className = `img-skill img-skill--${name.toLowerCase()}${
     hovered ? " shake" : ""
   }`;
+
   return (
     <button
       type="button"

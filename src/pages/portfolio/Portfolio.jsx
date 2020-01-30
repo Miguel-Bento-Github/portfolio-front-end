@@ -5,7 +5,6 @@ import LoadingScreen from "./LoadingScreen";
 import useDataApi from "../../api/useDataApi";
 import FourOhFour from "../fourOhfour/FourOhFour";
 import { isDesktopWidth } from "../../helpers/isMobile";
-import { getProjects } from "../../api/projects";
 
 export default function Portfolio() {
   const url = process.env.REACT_APP_BACK_URL + "/api";
