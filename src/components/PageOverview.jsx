@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
-import "./pageOverview.scss";
-import List from "./listURL/ListURL";
-import { isDesktopWidth } from "../helpers/isMobile";
+import React, { useEffect, useRef } from 'react';
+import './pageOverview.scss';
+import List from './listURL/ListURL';
+import { isDesktopWidth } from '../helpers/isMobile';
 
 const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
-  const pages = ["skills", "projects", "contact"];
+  const pages = ['skills', 'projects', 'contact'];
 
-  const displayPages = pages.map(page => (
+  const displayPages = pages.map((page) => (
     <List key={page} close={close} to={page} name={page} />
   ));
 
@@ -31,24 +31,24 @@ const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
 
   function disableAnchorClicks(disable) {
     let links;
-    links = document.querySelectorAll(".page");
+    links = document.querySelectorAll('.page');
 
     if (disable) {
-      links.forEach(link => {
-        link.style.pointerEvents = "none";
+      links.forEach((link) => {
+        link.style.pointerEvents = 'none';
       });
     } else {
-      links.forEach(link => {
-        link.style.pointerEvents = "";
+      links.forEach((link) => {
+        link.style.pointerEvents = '';
       });
     }
   }
 
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
     disableAnchorClicks(true);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
       disableAnchorClicks();
     };
   });
@@ -61,14 +61,19 @@ const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
   }, [isOpen, onOpen, onClose]);
 
   return (
-    <div ref={ref} className="page-overview">
-      <h2 className="nav-title">Where to?</h2>
-      <ul className="nav-list">
-        <List close={close} exact={true} to="/" name="home" />
+    <div ref={ref} className='page-overview'>
+      <h2 className='nav-title'>Where to?</h2>
+      <ul className='nav-list'>
+        <List close={close} exact={true} to='/' name='home' />
         {displayPages}
       </ul>
       {isDesktopWidth() && (
-        <button type="button" className="btn btn-nav-close" onClick={close}>
+        <button
+          aria-label='close navbar'
+          type='button'
+          className='btn btn-nav-close'
+          onClick={close}
+        >
           close
         </button>
       )}

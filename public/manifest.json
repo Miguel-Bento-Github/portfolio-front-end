@@ -1,6 +1,6 @@
 {
-  "short_name": "Miguel Portfolio",
-  "name": "Miguel Bentos Portfolio",
+  "short_name": "Miguel_Portfolio",
+  "name": "Miguel Bento Portfolio",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,8 +8,8 @@
       "type": "image/x-icon"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#fefefe"
 }

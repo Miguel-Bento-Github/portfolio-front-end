@@ -1,34 +1,35 @@
-import React, { useState } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React, { useState } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Icon = ({ img, name, link }) => {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
   const className = `img-skill img-skill--${name.toLowerCase()}${
-    hovered ? " shake" : ""
+    hovered ? ' shake' : ''
   }`;
 
   return (
     <button
-      type="button"
-      className="btn btn--link"
+      aria-label={name}
+      type='button'
+      className='btn btn--link'
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >
       <a
         href={link}
-        target="_blank"
-        className="img-container"
-        rel="noopener noreferrer"
+        target='_blank'
+        className='img-container'
+        rel='noopener noreferrer'
       >
         <LazyLoadImage
           src={img}
-          effect="blur"
+          effect='blur'
           alt={name}
           className={className}
         />
-        <figcaption className="img-caption">{name}</figcaption>
+        <figcaption className='img-caption'>{name}</figcaption>
       </a>
     </button>
   );
