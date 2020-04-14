@@ -1,44 +1,35 @@
-import React, { useEffect } from "react";
-import "./portfolio.scss";
-import ProjectsList from "./projects/ProjectsList";
-import LoadingScreen from "./LoadingScreen";
-import useDataApi from "../../api/useDataApi";
-import FourOhFour from "../fourOhfour/FourOhFour";
+import React from 'react';
+import './portfolio.scss';
+import ProjectsList from './projects/ProjectsList';
+import projects from './projects/projects.json';
 
 export default function Portfolio() {
-  const url = process.env.REACT_APP_BACK_URL + "/api";
-  const [{ data, isLoading, error }, Fetch] = useDataApi(`${url}/project`);
+  const Projects = projects.map((project) => {
+    const {
+      _id: { $oid: id },
+      link,
+      img,
+      title,
+    } = project;
 
-  useEffect(() => {
-    Fetch(url + "/project");
-  }, [url, Fetch, isLoading]);
-
-  if (isLoading || !data) {
-    return <LoadingScreen />;
-  }
-
-  if (!data && error) {
-    return <FourOhFour />;
-  }
-  // TODO delete backend.
+    return (
+      <ProjectsList
+        key={id}
+        link={link}
+        img={img}
+        imgTitle={title}
+        projectName={title}
+      />
+    );
+  });
 
   return (
     <>
-      <div className="second-bg"></div>
-      <main className="main blur">
-        <section className="section">
-          <h1 className="section-header ">Portfolio</h1>
-          <ul className="projects-container">
-            {data.map(project => (
-              <ProjectsList
-                key={project._id}
-                link={project.link}
-                img={project.img}
-                imgTitle={project.title}
-                projectName={project.title}
-              />
-            ))}
-          </ul>
+      <div className='second-bg'></div>
+      <main className='main blur'>
+        <section className='section'>
+          <h1 className='section-header '>Portfolio</h1>
+          <ul className='projects-container'>{Projects}</ul>
         </section>
       </main>
     </>
