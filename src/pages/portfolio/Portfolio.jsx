@@ -1,44 +1,80 @@
-import React, { useEffect } from "react";
-import "./portfolio.scss";
-import ProjectsList from "./projects/ProjectsList";
-import LoadingScreen from "./LoadingScreen";
-import useDataApi from "../../api/useDataApi";
-import FourOhFour from "../fourOhfour/FourOhFour";
+import React, { useEffect, useState } from 'react';
+import './portfolio.scss';
+import ProjectsList from './projects/ProjectsList';
+import projects from './projects/projects.json';
 
 export default function Portfolio() {
-  const url = process.env.REACT_APP_BACK_URL + "/api";
-  const [{ data, isLoading, error }, Fetch] = useDataApi(`${url}/project`);
+  const [activeProject, setActiveProject] = useState(0);
 
   useEffect(() => {
-    Fetch(url + "/project");
-  }, [url, Fetch, isLoading]);
+    document.title = 'Projects';
+    return () => {
+      document.title = 'Miguel Bento';
+    };
+  });
 
-  if (isLoading || !data) {
-    return <LoadingScreen />;
-  }
+  useEffect(() => {
+    const element = document.getElementById(activeProject);
+    if (activeProject === 0) {
+      document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }, [activeProject]);
 
-  if (!data && error) {
-    return <FourOhFour />;
+  const ProjectsController = (
+    <a
+      onClick={referenceProject}
+      className={`projects-controller${
+        activeProject >= projects.length - 1
+          ? ' projects-controller-reverse'
+          : ''
+      }`}
+      href={activeProject}
+    >
+      <i className='fas fa-2x fa-chevron-circle-down'></i>
+    </a>
+  );
+
+  const Projects = projects.map((project, index) => {
+    const {
+      _id: { $oid: id },
+      link,
+      img,
+      title,
+      description,
+    } = project;
+
+    return (
+      <ProjectsList
+        key={id}
+        id={index}
+        link={link}
+        img={img}
+        title={title}
+        description={description}
+      />
+    );
+  });
+
+  function referenceProject(e) {
+    e.preventDefault();
+
+    if (activeProject >= projects.length - 1) {
+      setActiveProject(0);
+    } else {
+      setActiveProject(activeProject + 1);
+    }
   }
-  // TODO delete backend.
 
   return (
     <>
-      <div className="second-bg"></div>
-      <main className="main blur">
-        <section className="section">
-          <h1 className="section-header ">Portfolio</h1>
-          <ul className="projects-container">
-            {data.map(project => (
-              <ProjectsList
-                key={project._id}
-                link={project.link}
-                img={project.img}
-                imgTitle={project.title}
-                projectName={project.title}
-              />
-            ))}
-          </ul>
+      <div className='second-bg'></div>
+      <main className='main blur'>
+        <section className='section'>
+          <h1 className='section-header'>Projects</h1>
+          <ul className='projects-container'>{Projects}</ul>
+          {ProjectsController}
         </section>
       </main>
     </>

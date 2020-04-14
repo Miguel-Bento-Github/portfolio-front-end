@@ -45,6 +45,7 @@
     rgba($color-dark-grey, 0.8),
     rgba($color-dark-grey, 0.6)
   );
+  box-shadow: $box-shadow;
   color: $color-white;
   padding: 5px 8px;
   margin: 0.5rem;
@@ -80,6 +81,7 @@ input:-webkit-autofill:active {
 .btn-submit {
   margin: 1.5vh 10px 1vh auto;
   background: linear-gradient(#a0986dcc, #ada786b3);
+  box-shadow: $box-shadow;
 }
 
 .input-message:focus {

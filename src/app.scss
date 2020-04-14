@@ -91,26 +91,22 @@ ul {
 .section {
   min-height: 100vh;
   height: min-content;
-  padding: 1vh 15vw;
+  padding: 1vh 15vw 10vh;
 
   &-header {
     margin: 3vh 0 4vh 0;
     padding: 5px;
-    background: linear-gradient(
-      to right,
-      rgba($color-dark-grey, 0.8),
-      rgba($color-dark-grey, 0.6)
-    );
     color: $color-white;
     border-radius: 8px;
+    cursor: default;
   }
 }
 
 .bg,
 .second-bg {
   position: fixed;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   z-index: -1;
 }
 
@@ -188,13 +184,6 @@ ul {
     -webkit-appearance: none;
   }
 }
-@media (orientation: landscape) {
-  .section {
-    &-header {
-      margin: 3vh 0.5rem 4vh;
-    }
-  }
-}
 
 @media screen and (max-width: 450px) {
   .bg {
@@ -227,8 +216,9 @@ ul {
   .section {
     padding: 1vh 10vw 5vh;
     &-header {
-      background: $color-gradient-dark;
       margin-right: auto;
+      text-shadow: 2px 2px 2px $color-dark-grey,
+        -2px -2px 2px darken($color-white, 10%);
     }
   }
 

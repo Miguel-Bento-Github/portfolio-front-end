@@ -1,5 +1,5 @@
-@import "../sass/variables";
-@import "../animations/slide.scss";
+@import '../sass/variables';
+@import '../animations/slide.scss';
 
 .page-overview {
   position: fixed;
@@ -14,6 +14,7 @@
   color: $color-dark-grey;
   transform: translate(-50%, -50%);
   background: rgba(#c1b2a0, 0.9);
+  box-shadow: $box-shadow;
 
   @media screen and (max-width: 850px) {
     left: 0;
