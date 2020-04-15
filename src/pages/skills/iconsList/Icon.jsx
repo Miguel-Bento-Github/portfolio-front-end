@@ -23,12 +23,7 @@ const Icon = ({ img, name, link }) => {
         className='img-container'
         rel='noopener noreferrer'
       >
-        <LazyLoadImage
-          src={img}
-          effect='blur'
-          alt={name}
-          className={className}
-        />
+        <LazyLoadImage src={img} alt={name} className={className} />
         <figcaption className='img-caption'>{name}</figcaption>
       </a>
     </button>

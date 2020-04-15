@@ -1,7 +1,6 @@
 import React, { useEffect, useRef } from 'react';
-import { isDesktopWidth } from '../../../helpers/isMobile';
 
-export default function ProjectsList({ link, img, title, description, id }) {
+function ProjectsList({ link, img, title, description, id }) {
   const ref = useRef();
   useEffect(() => {
     const element = ref.current;
@@ -13,7 +12,7 @@ export default function ProjectsList({ link, img, title, description, id }) {
 
   const Title = (
     <a
-      className='project-title'
+      className='project-title page'
       rel='noopener noreferrer'
       target='_blank'
       href={link}
@@ -24,7 +23,7 @@ export default function ProjectsList({ link, img, title, description, id }) {
 
   const Image = (
     <a
-      className='project-img-container'
+      className='project-img-container page'
       rel='noopener noreferrer'
       target='_blank'
       href={link}
@@ -41,11 +40,12 @@ export default function ProjectsList({ link, img, title, description, id }) {
   );
 
   return (
-    <li id={id} className='projects-list'>
-      <div ref={ref} className='project-content'>
+    <li className='projects-list'>
+      <div id={id} ref={ref} className='project-content'>
         {Image}
-        {isDesktopWidth() && Description}
+        {Description}
       </div>
     </li>
   );
 }
+export default ProjectsList;

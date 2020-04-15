@@ -1,9 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useLayoutEffect } from 'react';
 import './pageOverview.scss';
 import List from './listURL/ListURL';
 import { isDesktopWidth } from '../helpers/isMobile';
 
-const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
+const PageOverview = ({ isOpen, toggle, close }) => {
+  useLayoutEffect(() => {
+    document.getElementById('section').classList.add('blur');
+  });
+
   const pages = ['skills', 'projects', 'contact'];
 
   const displayPages = pages.map((page) => (
@@ -20,18 +24,13 @@ const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
    * @param {object} event
    */
   function handleClickOutside(event) {
-    if (ref.current && !ref.current.contains(event.target)) {
-      setTimeout(() => {
-        close();
-      }, 100);
+    if (isOpen && !ref.current.contains(event.target)) {
+      close();
     }
   }
 
-  handleClickOutside(ref);
-
   function disableAnchorClicks(disable) {
-    let links;
-    links = document.querySelectorAll('.page');
+    const links = document.querySelectorAll('.page');
 
     if (disable) {
       links.forEach((link) => {
@@ -45,24 +44,32 @@ const PageOverview = ({ isOpen, onOpen, onClose, close }) => {
   }
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('click', handleClickOutside);
     disableAnchorClicks(true);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside);
       disableAnchorClicks();
     };
   });
 
+  const blur = (section) => {
+    section.classList.add('blur-active');
+  };
+
+  const unBlur = (section) => {
+    section.classList.remove('blur-active');
+  };
+
   useEffect(() => {
-    onOpen();
-    return () => {
-      onClose();
-    };
-  }, [isOpen, onOpen, onClose]);
+    const section = document.getElementById('section');
+    if (!isOpen) unBlur(section);
+    else blur(section);
+  }, [isOpen]);
+
+  const display = isOpen ? '' : 'none';
 
   return (
-    <div ref={ref} className='page-overview'>
-      <h2 className='nav-title'>Where to?</h2>
+    <div style={{ display }} ref={ref} className='page-overview'>
       <ul className='nav-list'>
         <List close={close} exact={true} to='/' name='home' />
         {displayPages}

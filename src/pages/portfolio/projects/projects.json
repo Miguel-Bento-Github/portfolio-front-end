@@ -1,25 +1,13 @@
 [
   {
     "_id": {
-      "$oid": "5d08d2c7fb6fc00e79abcfe8"
+      "$oid": "5e597a89e7179a5e7ee4c02d"
     },
-    "title": "Ruxian's Profile",
-    "img": "https://images.pexels.com/photos/2089379/pexels-photo-2089379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "date": "2019-06-03T17:43:23.767Z",
+    "title": "Photo Gallery",
+    "img": "https://images.pexels.com/photos/139764/pexels-photo-139764.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     "__v": 0,
-    "link": "https://ruxianyang.netlify.com/",
-    "description": "This is a personal portfolio. This project was written with Vanilla JavaScript, Sass and HTML."
-  },
-  {
-    "_id": {
-      "$oid": "5d094c33fb6fc00e79ac366a"
-    },
-    "title": "Teachimp",
-    "img": "https://images.pexels.com/photos/48126/books-education-school-literature-48126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "date": "2019-06-04T16:12:14.170Z",
-    "__v": 0,
-    "link": "https://teachimp-front.herokuapp.com/",
-    "description": "This project was written with React.js, Node.js, Sass and MongoDB. It was my 3rd school project."
+    "link": "https://miguel-bento-github.github.io/photo-gallery/",
+    "description": "This ongoing project is part of a series. It's written with React Hooks and Sass."
   },
   {
     "_id": {
@@ -34,6 +22,17 @@
   },
   {
     "_id": {
+      "$oid": "5d08d2c7fb6fc00e79abcfe8"
+    },
+    "title": "Ruxian's Profile",
+    "img": "https://images.pexels.com/photos/2089379/pexels-photo-2089379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "date": "2019-06-03T17:43:23.767Z",
+    "__v": 0,
+    "link": "https://ruxianyang.netlify.com/",
+    "description": "This is a personal portfolio. This project was written with Vanilla JavaScript, Sass and HTML."
+  },
+  {
+    "_id": {
       "$oid": "5d094c51fb6fc00e79ac366e"
     },
     "title": "Fun With Flags",
@@ -41,7 +40,18 @@
     "date": "2019-06-03T17:43:23.767Z",
     "__v": 0,
     "link": "https://miguelironhack.github.io/fun-with-flags/",
-    "description": "A mini-game. Written with Vanilla JavaScript, CSS and HTML5."
+    "description": "A mini-game. Written with Vanilla JavaScript, CSS and HTML5. My 1st school project"
+  },
+  {
+    "_id": {
+      "$oid": "5d094c33fb6fc00e79ac366a"
+    },
+    "title": "Teachimp",
+    "img": "https://images.pexels.com/photos/48126/books-education-school-literature-48126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "date": "2019-06-04T16:12:14.170Z",
+    "__v": 0,
+    "link": "https://teachimp-front.herokuapp.com/",
+    "description": "This project was written with React.js, Node.js, Sass and MongoDB. It was my 3rd school project."
   },
   {
     "_id": {
@@ -53,15 +63,5 @@
     "__v": 0,
     "link": "https://studios.netlify.com/",
     "description": "My first project ever! It was written with HTML and CSS, using bootstrap."
-  },
-  {
-    "_id": {
-      "$oid": "5e597a89e7179a5e7ee4c02d"
-    },
-    "title": "Photo Gallery",
-    "img": "https://images.pexels.com/photos/139764/pexels-photo-139764.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "__v": 0,
-    "link": "https://miguel-bento-github.github.io/photo-gallery/",
-    "description": "This ongoing project is part of a series. It's written with React Hooks and Sass."
   }
 ]
