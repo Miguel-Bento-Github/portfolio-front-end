@@ -88,7 +88,7 @@ export default class Contact extends Component {
     return (
       <>
         <div className='bg zoom' />
-        <section className='contact-section blur page'>
+        <section id='section' className='contact-section page'>
           <div className='contact'>
             <h1 className='section-header'>Contact me</h1>
             <form id='contact-form' className='contact-form'>

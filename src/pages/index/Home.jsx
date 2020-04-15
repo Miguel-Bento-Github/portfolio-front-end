@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className='slit'>
       <div className='bg zoom' />
-      <section className='index blur page'>
+      <section id='section' className='index page'>
         <div className='showcase content row' id='header'>
           <AuthorName />
           <TypeWriter />

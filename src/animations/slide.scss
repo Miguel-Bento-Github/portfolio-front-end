@@ -9,15 +9,3 @@
     transform: translateX(0%);
   }
 }
-
-@-webkit-keyframes slide-out {
-  100% {
-    -webkit-transform: translateX(-100%);
-  }
-}
-
-@keyframes slide-out {
-  100% {
-    transform: translateX(-100%);
-  }
-}

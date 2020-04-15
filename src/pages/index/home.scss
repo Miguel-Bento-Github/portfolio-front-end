@@ -84,17 +84,14 @@
 }
 
 .home-description {
-  display: flex;
-  align-items: center;
   text-align: justify;
   position: absolute;
   right: 15vw;
-  bottom: 10vh;
+  top: 60vh;
   padding: 1rem;
   min-width: 300px;
   max-width: 30vw;
-  height: max-content;
-  min-height: min-content;
+
   @include font(1rem);
   background: linear-gradient(
     rgba($color-dark-grey, 0.7),
@@ -114,16 +111,8 @@
 
   @media screen and (max-width: 1150px) {
     @include font(0.8rem);
-    left: 20%;
-    right: 20%;
-    top: 50%;
-    max-width: 100vw;
-  }
 
-  @media screen and (max-width: 850px) {
-    top: 40%;
-    left: 5%;
-    right: 5%;
+    max-width: 80vw;
   }
 
   @media (orientation: landscape) and (max-width: 1150px) {

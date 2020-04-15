@@ -19,7 +19,7 @@
   &-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50%, 1fr));
-    grid-gap: 4vh 1vw;
+    gap: 4vh 1vw;
     color: $color-white;
   }
 
@@ -52,7 +52,7 @@
     align-items: center;
     width: 100%;
     opacity: 0;
-    animation: appear 1s forwards;
+    animation: appear 1250ms linear forwards;
   }
 
   &-caption {
@@ -60,7 +60,6 @@
     padding-bottom: 0;
     color: $color-white;
     @include font(1.1rem);
-    transition: all 200ms cubic-bezier(0.86, 0, 0.07, 1);
   }
 
   &-skill {

@@ -32,5 +32,8 @@
       "last 5 firefox version",
       "last 5 safari version"
     ]
+  },
+  "devDependencies": {
+    "smoothscroll-polyfill": "^0.4.4"
   }
 }
