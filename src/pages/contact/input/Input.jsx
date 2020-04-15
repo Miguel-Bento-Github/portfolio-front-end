@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from 'react';
 
 const Input = ({ handleChange, pHolder }) => {
   return (
@@ -6,10 +6,10 @@ const Input = ({ handleChange, pHolder }) => {
       onChange={handleChange}
       className={`input input-${pHolder}`}
       placeholder={pHolder}
-      type={pHolder === "email" ? "email" : "text"}
+      type={pHolder === 'email' ? 'email' : 'text'}
       maxLength={30}
     />
   );
 };
 
-export default Input;
+export default memo(Input);

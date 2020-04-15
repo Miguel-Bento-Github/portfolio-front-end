@@ -7,7 +7,8 @@
     "img": "https://images.pexels.com/photos/2089379/pexels-photo-2089379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "date": "2019-06-03T17:43:23.767Z",
     "__v": 0,
-    "link": "https://ruxianyang.netlify.com/"
+    "link": "https://ruxianyang.netlify.com/",
+    "description": "This is a personal portfolio. This project was written with Vanilla JavaScript, Sass and HTML."
   },
   {
     "_id": {
@@ -17,7 +18,8 @@
     "img": "https://images.pexels.com/photos/48126/books-education-school-literature-48126.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "date": "2019-06-04T16:12:14.170Z",
     "__v": 0,
-    "link": "https://teachimp-front.herokuapp.com/"
+    "link": "https://teachimp-front.herokuapp.com/",
+    "description": "This project was written with React.js, Node.js, Sass and MongoDB. It was my 3rd school project."
   },
   {
     "_id": {
@@ -27,7 +29,8 @@
     "img": "https://images.unsplash.com/photo-1494232410401-ad00d5433cfa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
     "date": "2019-06-04T16:00:19.257Z",
     "__v": 0,
-    "link": "https://minks-synth.herokuapp.com/"
+    "link": "https://minks-synth.herokuapp.com/",
+    "description": "One of my favorites. Written with EJS, Node.js, Bulma, MongoDB and Tone.js. This was my 2nd school project."
   },
   {
     "_id": {
@@ -37,7 +40,8 @@
     "img": "https://images.pexels.com/photos/269057/pexels-photo-269057.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=650&w=940",
     "date": "2019-06-03T17:43:23.767Z",
     "__v": 0,
-    "link": "https://miguelironhack.github.io/fun-with-flags/"
+    "link": "https://miguelironhack.github.io/fun-with-flags/",
+    "description": "A mini-game. Written with Vanilla JavaScript, CSS and HTML5."
   },
   {
     "_id": {
@@ -47,7 +51,8 @@
     "img": "https://images.pexels.com/photos/55800/microphone-audio-computer-sound-recording-55800.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
     "date": "2019-06-03T17:43:23.767Z",
     "__v": 0,
-    "link": "https://studios.netlify.com/"
+    "link": "https://studios.netlify.com/",
+    "description": "My first project ever! It was written with HTML and CSS, using bootstrap."
   },
   {
     "_id": {
@@ -56,6 +61,7 @@
     "title": "Photo Gallery",
     "img": "https://images.pexels.com/photos/139764/pexels-photo-139764.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
     "__v": 0,
-    "link": "https://miguel-bento-github.github.io/photo-gallery/"
+    "link": "https://miguel-bento-github.github.io/photo-gallery/",
+    "description": "This ongoing project is part of a series. It's written with React Hooks and Sass."
   }
 ]
