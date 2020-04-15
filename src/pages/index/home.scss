@@ -33,6 +33,7 @@
   cursor: default;
   color: $color-white;
   background: $color-gradient-dark;
+  box-shadow: $box-shadow;
   border-radius: 8px;
   padding: 0 8px;
 
@@ -101,6 +102,7 @@
   );
   color: $color-white;
   border-radius: 8px;
+  box-shadow: $box-shadow;
 
   &:hover {
     background: linear-gradient(

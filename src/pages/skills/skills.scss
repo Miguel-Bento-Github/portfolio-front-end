@@ -1,8 +1,8 @@
-@import "../../sass/variables";
-@import "../../sass/_font";
-@import "../../animations/shake.scss";
-@import "../../animations/slit.scss";
-@import "../../animations/appear.scss";
+@import '../../sass/variables';
+@import '../../sass/_font';
+@import '../../animations/shake.scss';
+@import '../../animations/slit.scss';
+@import '../../animations/appear.scss';
 
 .skills {
   display: flex;
@@ -28,6 +28,7 @@
     flex-direction: column;
     justify-content: center;
     background: $color-gradient-dark;
+    box-shadow: $box-shadow;
     border-radius: 8px;
   }
 }
