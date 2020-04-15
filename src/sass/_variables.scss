@@ -10,3 +10,15 @@ $color-gradient-dark: linear-gradient(
   rgba($color-dark-grey, 0.4),
   rgba($color-dark-grey, 0.6)
 );
+$box-shadow: (
+  2px 2px 2px darken($color-brown, 5%),
+  -2px -2px 2px lighten($color-beaver, 5%)
+);
+$box-shadow-mobile: (
+  2px 2px 2px $color-raisin-black,
+  -2px -2px 2px lighten($color-white, 25%)
+);
+$box-shadow-hover: (
+  3px 3px 6px darken($color-brown, 8%),
+  -2px -2px 2px lighten($color-beaver, 3%)
+);

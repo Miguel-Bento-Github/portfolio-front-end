@@ -23,6 +23,13 @@ export default class Contact extends Component {
     message: '',
   };
 
+  componentDidMount() {
+    document.title = 'Contact me';
+  }
+  componentWillUnmount() {
+    document.title = 'Miguel Bento';
+  }
+
   handleChange = ({ target }) => {
     const key = target.placeholder;
     const val = target.value;
@@ -136,7 +143,7 @@ export default class Contact extends Component {
               <Tooltip
                 color='#ddd9c3'
                 radius={3}
-                padding={2}
+                padding={4}
                 fontSize='1rem'
                 content='Instagram'
               >
