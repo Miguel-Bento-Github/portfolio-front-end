@@ -1,5 +1,5 @@
 @import '../../sass/variables';
-@import '../../sass/_font';
+@import '../../sass/font';
 @import '../../animations/shake.scss';
 @import '../../animations/slit.scss';
 @import '../../animations/appear.scss';
@@ -27,7 +27,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: $color-gradient-dark;
+    background: rgba($color-dark-grey, 0.3);
     box-shadow: $box-shadow;
     border-radius: 8px;
   }
@@ -39,7 +39,6 @@
     display: grid;
     padding: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    justify-content: center;
     align-items: flex-end;
   }
 }

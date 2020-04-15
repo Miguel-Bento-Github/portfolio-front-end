@@ -1,5 +1,5 @@
 @import './sass/variables';
-@import './sass/_font';
+@import './sass/font';
 @import './sass/fx';
 @import './animations/appear.scss';
 
@@ -61,6 +61,14 @@ ul {
   list-style: none;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $color-dark-grey inset;
+  -webkit-text-fill-color: $color-white;
+}
+
 .btn {
   border: 0;
   border-radius: 25px;
@@ -69,12 +77,20 @@ ul {
   padding: 0.4rem 1rem;
   cursor: pointer;
   @include font(1rem);
+  outline: thin;
 
-  &:hover {
-    background: linear-gradient(
-      rgba(202, 196, 164, 0.7),
-      rgba(202, 196, 164, 0.8)
-    );
+  &-submit {
+    margin: 1.5vh 10px 1vh auto;
+    background: linear-gradient(145deg, #cfbeab, #aea090);
+    box-shadow: $box-shadow-button;
+
+    &:hover {
+      box-shadow: $box-shadow-button-hover;
+    }
+
+    &:active {
+      box-shadow: $box-shadow-button-active;
+    }
   }
 
   &--link {

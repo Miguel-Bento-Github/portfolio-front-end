@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './portfolio.scss';
 import ProjectsList from './projects/ProjectsList';
 import projects from './projects/projects.json';
+import useDocumentTitle from '../../hooks/useDocumentTitle';
 require('smoothscroll-polyfill').polyfill();
 
 export default function Portfolio() {
@@ -28,12 +29,7 @@ export default function Portfolio() {
     );
   });
 
-  useEffect(() => {
-    document.title = 'Projects';
-    return () => {
-      document.title = 'Miguel Bento';
-    };
-  });
+  useDocumentTitle('Projects');
 
   useEffect(() => {
     const element = document.getElementById(activeProject);

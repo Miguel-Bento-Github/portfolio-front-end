@@ -1,5 +1,5 @@
 @import '../../sass/variables';
-@import '../../sass/_font';
+@import '../../sass/font';
 @import '../../sass/_colors';
 @import '../../animations/blink';
 
@@ -87,12 +87,12 @@
   text-align: justify;
   position: absolute;
   right: 15vw;
-  top: 60vh;
+  top: 55vh;
   padding: 1rem;
   min-width: 300px;
   max-width: 30vw;
 
-  @include font(1rem);
+  font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
   background: linear-gradient(
     rgba($color-dark-grey, 0.7),
     rgba($color-dark-grey, 0.8)
@@ -110,14 +110,11 @@
   }
 
   @media screen and (max-width: 1150px) {
-    @include font(0.8rem);
-
     max-width: 80vw;
   }
 
   @media (orientation: landscape) and (max-width: 1150px) {
-    @include font(0.6rem);
-    top: 20%;
-    left: 40%;
+    top: 35%;
+    left: 20%;
   }
 }

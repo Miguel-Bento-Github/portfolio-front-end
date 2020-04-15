@@ -1,24 +1,13 @@
-@import '../../sass/_font';
+@import '../../sass/font';
 @import '../../sass/variables';
 @import '../../animations/zoom';
-
-.contact-section {
-  min-height: 100vh;
-  width: 100vw;
-}
 
 .contact {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  left: 25vw;
-  bottom: 5vh;
-  right: 45vw;
-}
 
-@media screen and (min-width: 1150px) {
-  .contact .section-header {
-    margin: 0.5rem;
+  &-section {
+    margin: 0 30vw;
   }
 }
 
@@ -26,91 +15,81 @@
 .contact-form {
   display: flex;
   flex-direction: column;
+
+  &-user-info {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .input {
+    border: 0;
+    background: linear-gradient(
+      to right,
+      rgba($color-dark-grey, 0.8),
+      rgba($color-dark-grey, 0.6)
+    );
+    box-shadow: $box-shadow;
+    color: $color-white;
+    padding: 5px 8px;
+    margin: 0.5rem;
+    height: 6vh;
+    @include font(1.1rem);
+    border-radius: 8px;
+    outline: thin;
+
+    &::placeholder {
+      color: #ccc;
+      @include font(1.1rem);
+    }
+
+    &:focus,
+    &-message:focus {
+      background: linear-gradient(
+        rgba($color-dark-grey, 0.8),
+        rgba($color-dark-grey, 0.8)
+      );
+      outline: thin 1px double;
+    }
+
+    &-message {
+      @include font(1.1rem);
+      height: 35vh;
+      color: $color-white;
+      resize: none;
+      padding: 10px 15px;
+    }
+  }
 }
 
-.form-header {
-  font-size: 2rem;
-  padding: 5px;
+.banner {
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 1vh 0.5rem 0;
+    width: max-content;
+    margin-top: calc(-35px - 0.5rem);
+  }
+
+  &-icon {
+    transition: color 300ms cubic-bezier(0.19, 1, 0.22, 1);
+    @include font(2.5rem);
+    color: $color-raisin-black;
+    animation: changeColor 2s alternate-reverse 2;
+    margin: 0 5px;
+
+    &:hover {
+      animation: changeColor 750ms alternate-reverse infinite;
+    }
+  }
 }
 
-.contact-form .user-info {
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
-
-.contact-form .input {
-  border: 0;
-  background: linear-gradient(
-    to right,
-    rgba($color-dark-grey, 0.8),
-    rgba($color-dark-grey, 0.6)
-  );
-  box-shadow: $box-shadow;
-  color: $color-white;
-  padding: 5px 8px;
-  margin: 0.5rem;
-  @include font(1.1rem);
-  border-radius: 8px;
-  outline: thin;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 30px $color-dark-grey inset;
-  -webkit-text-fill-color: $color-white;
-}
-
-.contact-form .input::placeholder {
-  color: #ccc;
-  @include font(1.1rem);
-}
-
-.contact-form .input-message::placeholder {
-  @include font(1.1rem);
-}
-
-.contact-form .input-message {
-  @include font(1.1rem);
-  height: 35vh;
-  color: $color-white;
-  resize: none;
-}
-
-.btn-submit {
-  margin: 1.5vh 10px 1vh auto;
-  background: linear-gradient(#a0986dcc, #ada786b3);
-  box-shadow: $box-shadow;
-}
-
-.input-message:focus {
-  @include font(1.1rem);
-}
-
-.contact-form .input:focus,
-.input-message:focus {
-  background: linear-gradient(
-    rgba($color-dark-grey, 0.8),
-    rgba($color-dark-grey, 0.8)
-  );
-  outline: thin 1px double;
-}
-
-.contact .banners {
-  display: flex;
-  justify-content: space-between;
-  padding: 5px;
-  margin: 1vh 0.5rem 0;
-}
-
-.contact-icon {
-  transition: color 300ms cubic-bezier(0.19, 1, 0.22, 1);
-  @include font(2.5rem);
-  color: $color-raisin-black;
-
-  &:hover {
-    color: $color-brown;
+@keyframes changeColor {
+  from {
+    color: $color-white;
+  }
+  to {
+    color: $color-raisin-black;
   }
 }
 
@@ -118,13 +97,8 @@ input:-webkit-autofill:active {
   color: $color-link;
 }
 
-.card {
-  position: absolute;
-  top: 5%;
-}
-
 @media screen and (min-width: 1700px) {
-  .contact-icon {
+  .banner-icon {
     @include font(3.5rem);
   }
 
@@ -146,46 +120,26 @@ input:-webkit-autofill:active {
   .btn-submit {
     display: flex;
     align-items: center;
-    @include font(1rem);
     min-height: 35px;
-  }
-  .contact .banners {
-    margin-top: calc(-35px - 0.5rem);
-    display: inline-block;
-  }
-  .btn--link {
-    @include font(2rem);
-    margin-right: 15px;
+    @include font(1rem);
   }
 }
 
 @media screen and (max-width: 900px) {
   .contact {
+    &-section {
+      margin: 0 5vw;
+    }
     @include font(1.1rem);
-    top: 1vh;
-    left: 15%;
-    right: 15%;
-    bottom: 5%;
   }
   .contact .section-header {
     margin-left: 10px;
-  }
-
-  .contact .input {
-    @include font(0.8rem);
-  }
-
-  .contact-icon {
-    color: $color-white;
   }
 }
 
 @media screen and (max-width: 450px) {
   .contact {
     @include font(1rem);
-    left: 0;
-    right: 0;
-    bottom: 0;
   }
 
   .contact .input {

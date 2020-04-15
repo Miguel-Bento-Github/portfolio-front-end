@@ -92,7 +92,7 @@ export default class Contact extends Component {
           <div className='contact'>
             <h1 className='section-header'>Contact me</h1>
             <form id='contact-form' className='contact-form'>
-              <div className='user-info'>
+              <div className='contact-form-user-info'>
                 <Input handleChange={this.handleChange} pHolder='name' />
                 <Input handleChange={this.handleChange} pHolder='email' />
               </div>
@@ -111,7 +111,7 @@ export default class Contact extends Component {
                 Send
               </button>
             </form>
-            <div className='banners'>
+            <div className='banner-container'>
               <Tooltip
                 color='#ddd9c3'
                 radius={3}
@@ -120,7 +120,7 @@ export default class Contact extends Component {
                 content='Github'
               >
                 <Link
-                  className='contact-icon'
+                  className='banner-icon'
                   href='https://github.com/Miguel-Bento-Github'
                   icon='github'
                 />
@@ -134,7 +134,7 @@ export default class Contact extends Component {
                 content='Linkedin'
               >
                 <Link
-                  className='contact-icon'
+                  className='banner-icon'
                   href='https://www.linkedin.com/in/miguel-angelo-bento/'
                   icon='linkedin-in'
                 />
@@ -148,7 +148,7 @@ export default class Contact extends Component {
                 content='Instagram'
               >
                 <Link
-                  className='contact-icon'
+                  className='banner-icon'
                   href='https://www.instagram.com/cupids.trick/'
                   icon='instagram'
                 />
