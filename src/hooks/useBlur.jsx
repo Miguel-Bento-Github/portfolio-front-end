@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export default function useBlur({ isOpen }) {
+export default function useBlur(isOpen) {
   const blur = (section) => {
     section.classList.add('blur-active');
   };

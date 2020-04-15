@@ -21,15 +21,19 @@
   @media screen and (max-width: 850px) {
     border-radius: 0;
     border-bottom-right-radius: 8px;
-    min-width: 200px;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
     animation: slide-in 0.5s forwards;
     -webkit-animation: slide-in 0.5s forwards;
-    box-shadow: $box-shadow;
+
+    box-shadow: none;
   }
 
-  @media (orientation: landscape) and (max-width: 1150px) {
-    min-width: 305px;
+  @media screen and (max-width: 650px) {
+    background-image: radial-gradient(
+      ellipse farthest-corner at 10px 60px,
+      $color-white 0%,
+      rgba($color-dark-grey, 0.2)
+    );
   }
 }

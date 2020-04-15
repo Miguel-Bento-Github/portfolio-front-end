@@ -13,7 +13,7 @@ const Icon = ({ img, name, link }) => {
     <button
       aria-label={name}
       type='button'
-      className='btn btn--link'
+      className='skill-logo btn btn--link'
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >

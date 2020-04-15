@@ -11,6 +11,8 @@ $color-gradient-dark: linear-gradient(
   rgba($color-dark-grey, 0.6)
 );
 
+$background-button: lighten($color-raisin-black, 15%);
+
 $box-shadow: (
   2px 2px 2px darken($color-brown, 5%),
   -2px -2px 2px lighten($color-beaver, 5%)
@@ -23,6 +25,12 @@ $box-shadow-hover: (
   3px 3px 6px darken($color-brown, 8%),
   -1px -1px 2px lighten($color-beaver, 3%)
 );
-$background-button: lighten($color-raisin-black, 15%);
+
 $box-shadow-button: -4px -4px 7px lighten($color-beaver, 20%),
   4px 4px 7px darken($color-beaver, 20%);
+
+$box-shadow-button-hover: -4px -4px 5px lighten($color-beaver, 20%),
+  4px 4px 7px darken($color-beaver, 25%);
+
+$box-shadow-button-active: -2px -2px 5px lighten($color-beaver, 20%),
+  2px 2px 5px darken($color-beaver, 20%);

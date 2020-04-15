@@ -1,53 +1,45 @@
 @import '../sass/variables';
 @import '../animations/slide.scss';
-@import '../sass/_font';
+@import '../sass/font';
 
-$transition: 250ms cubic-bezier(0.39, 0.575, 0.565, 1);
 .nav {
   &-link {
-    width: 450px;
+    width: max-content;
     color: $color-raisin-black;
-    padding: 5px 5px 5px 0;
     text-transform: capitalize;
+    font-family: overpass mono;
+    padding: 5px;
+    border-radius: 8px;
+    font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+    transition: background-color 5s linear;
 
-    &:hover {
-      color: $color-white;
-      padding: 5px;
-      background: $color-beaver;
-      box-shadow: $box-shadow;
-      border-radius: 8px;
-    }
-  }
-}
-
-@media (orientation: landscape) and (max-width: 1150px) {
-  .nav {
-    &-link {
-      @include font(2rem);
-    }
-  }
-}
-
-@media screen and (max-width: 650px) {
-  .nav {
-    &-list {
-      display: flex;
-      flex-flow: column wrap;
-      justify-content: space-evenly;
-      min-height: 30vh;
-      margin-top: 15px;
-    }
-    &-link {
-      @include font(1.5rem);
-
+    @media screen and (max-width: 650px) {
       &--active {
         color: $color-dark-grey;
       }
     }
+
+    &:hover {
+      color: $color-white;
+      background: $color-beaver;
+      box-shadow: $box-shadow;
+
+      @media screen and (max-width: 650px) {
+        background: $color-raisin-black;
+        box-shadow: $box-shadow-mobile;
+      }
+    }
   }
 
-  .navbar {
-    font-size: 1rem;
+  &-list {
+    @media screen and (max-width: 950px) {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 70vw;
+      padding: 0 2vw;
+    }
   }
 }
 
