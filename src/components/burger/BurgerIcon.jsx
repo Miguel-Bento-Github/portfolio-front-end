@@ -1,12 +1,12 @@
 import React from 'react';
 import './burger.scss';
 
-export default function BurgerIcon({ isOpen, ...props }) {
+function BurgerIcon({ isOpen, toggle }) {
   return (
     <button
       aria-label='open menu'
       className={isOpen ? 'hamburger hamburger--open' : 'hamburger'}
-      {...props}
+      onClick={toggle}
     >
       <div className='hamburger-box'>
         <div className='hamburger-inner' />
@@ -14,3 +14,4 @@ export default function BurgerIcon({ isOpen, ...props }) {
     </button>
   );
 }
+export default BurgerIcon;
