@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 function ProjectsList({ link, img, title, description, id }) {
   const ref = useRef();
@@ -28,7 +29,7 @@ function ProjectsList({ link, img, title, description, id }) {
       target='_blank'
       href={link}
     >
-      <img className='project-img' src={img} alt={title} />
+      <LazyLoadImage className='project-img' src={img} alt={title} />;
     </a>
   );
 

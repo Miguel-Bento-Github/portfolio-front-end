@@ -97,12 +97,15 @@ export default class Contact extends Component {
                 <Input handleChange={this.handleChange} pHolder='email' />
               </div>
               <Input handleChange={this.handleChange} pHolder='subject' />
-              <textarea
-                onChange={this.handleChange}
-                className='input input-message'
-                placeholder='message'
-                type='text'
-              />
+              <label htmlFor='text-message'>
+                <textarea
+                  id='text-message'
+                  onChange={this.handleChange}
+                  className='input input-message'
+                  placeholder='message'
+                  type='text'
+                />
+              </label>
               <button
                 aria-label='send'
                 onClick={this.handleSubmit}

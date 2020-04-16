@@ -18,7 +18,8 @@
 
   &-user-info {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 
   .input {
@@ -31,11 +32,12 @@
     box-shadow: $box-shadow;
     color: $color-white;
     padding: 5px 8px;
-    margin: 0.5rem;
+    margin: 8px 0;
     height: 6vh;
     @include font(1.1rem);
     border-radius: 8px;
     outline: thin;
+    width: 100%;
 
     &::placeholder {
       color: #ccc;
@@ -125,10 +127,10 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 850px) {
   .contact {
     &-section {
-      margin: 0 5vw;
+      margin: 0 20vw;
     }
     @include font(1.1rem);
   }
@@ -140,6 +142,10 @@
 @media screen and (max-width: 450px) {
   .contact {
     @include font(1rem);
+
+    &-section {
+      margin: 0 2vw;
+    }
   }
 
   .contact .input {
