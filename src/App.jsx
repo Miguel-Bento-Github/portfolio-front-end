@@ -13,7 +13,8 @@ function App() {
   useEffect(() => {
     try {
       async function get() {
-        await Axios.get('https://mr-monkey.herokuapp.com/api');
+        const res = await Axios.get('https://mr-monkey.herokuapp.com');
+        if (res) console.log('backend loaded', res);
       }
       get();
     } catch (error) {}
