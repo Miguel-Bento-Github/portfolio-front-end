@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './app.scss';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import NavbarHome from './components/NavbarHome';
@@ -7,8 +7,20 @@ import Portfolio from './pages/portfolio/Portfolio';
 import Contact from './pages/contact/Contact';
 import Skills from './pages/skills/Skills';
 import FourOhFour from './pages/fourOhfour/FourOhFour';
+import Axios from 'axios';
 
 function App() {
+  useEffect(() => {
+    try {
+      async function get() {
+        await Axios.get('https://mr-monkey.herokuapp.com/api/projects');
+      }
+      get();
+    } catch ({ message }) {
+      console.log(message);
+    }
+  });
+
   return (
     <>
       <NavbarHome />
