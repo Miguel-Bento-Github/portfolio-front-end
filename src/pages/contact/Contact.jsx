@@ -60,28 +60,23 @@ export default class Contact extends Component {
         'Your message should be at least 10 characters long.'
       );
     } else {
-      this.handleSend();
+      this.sendEmail();
     }
-
-    document.getElementById('contact-form').reset();
-    this.setState({ name: '', email: '', subject: '', message: '' });
   };
 
-  handleSend = () => {
-    sendEmail(this.state)
-      .then((res) => {
-        this.setState({ name: '', email: '', subject: '', message: '' });
-        const data = JSON.parse(res.config.data);
-        toast.info(
-          `Hey there ${data.name}. I got your message. I'll get back to you soon!`
-        );
-      })
-      .catch((err) => {
-        toast.error(
-          'Something went wrong. You can contact me directly via Linkedin.'
-        );
-        console.error(err);
-      });
+  sendEmail = async () => {
+    try {
+      const res = await sendEmail(this.state);
+      // this.setState({ name: '', email: '', subject: '', message: '' });
+      const data = JSON.parse(res.config.data);
+      toast.info(
+        `Hey there ${data.name}. I got your message. I'll get back to you soon!`
+      );
+    } catch (error) {
+      toast.error(
+        'Something went wrong. You can contact me directly via Linkedin.'
+      );
+    }
   };
 
   Banner() {
