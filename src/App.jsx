@@ -13,12 +13,10 @@ function App() {
   useEffect(() => {
     try {
       async function get() {
-        await Axios.get('https://mr-monkey.herokuapp.com/api/projects');
+        await Axios.get('https://mr-monkey.herokuapp.com/api');
       }
       get();
-    } catch ({ message }) {
-      console.log(message);
-    }
+    } catch (error) {}
   });
 
   return (
