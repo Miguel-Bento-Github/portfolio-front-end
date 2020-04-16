@@ -223,13 +223,6 @@ input:-webkit-autofill:active {
   .second-bg {
     background-size: cover;
   }
-
-  input[type='text']::-webkit-input-placeholder,
-  input[type='email']::-webkit-input-placeholder {
-    appearance: none;
-    -webkit-appearance: none;
-  }
-
   .section {
     padding: 1vh 10vw 5vh;
     &-header {

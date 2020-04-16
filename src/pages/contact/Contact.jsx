@@ -84,6 +84,39 @@ export default class Contact extends Component {
       });
   };
 
+  Banner() {
+    const links = [
+      {
+        className: 'banner-icon',
+        href: 'https://github.com/Miguel-Bento-Github',
+        icon: 'github',
+      },
+      {
+        className: 'banner-icon',
+        href: 'https://www.linkedin.com/in/miguel-angelo-bento/',
+        icon: 'linkedin-in',
+      },
+      {
+        className: 'banner-icon',
+        href: 'https://www.instagram.com/cupids.trick/',
+        icon: 'instagram',
+      },
+    ];
+
+    return links.map(({ className, href, icon }) => (
+      <Tooltip
+        key={href}
+        color='#ddd9c3'
+        radius={3}
+        padding={4}
+        fontSize='1rem'
+        content={icon}
+      >
+        <Link className={className} href={href} icon={icon} />
+      </Tooltip>
+    ));
+  }
+
   render() {
     return (
       <>
@@ -97,7 +130,7 @@ export default class Contact extends Component {
                 <Input handleChange={this.handleChange} pHolder='email' />
               </div>
               <Input handleChange={this.handleChange} pHolder='subject' />
-              <label htmlFor='text-message'>
+              <label className='contact-form-label' htmlFor='text-message'>
                 <textarea
                   id='text-message'
                   onChange={this.handleChange}
@@ -114,50 +147,7 @@ export default class Contact extends Component {
                 Send
               </button>
             </form>
-            <div className='banner-container'>
-              <Tooltip
-                color='#ddd9c3'
-                radius={3}
-                padding={4}
-                fontSize='1rem'
-                content='Github'
-              >
-                <Link
-                  className='banner-icon'
-                  href='https://github.com/Miguel-Bento-Github'
-                  icon='github'
-                />
-              </Tooltip>
-
-              <Tooltip
-                color='#ddd9c3'
-                radius={3}
-                padding={4}
-                fontSize='1rem'
-                content='Linkedin'
-              >
-                <Link
-                  className='banner-icon'
-                  href='https://www.linkedin.com/in/miguel-angelo-bento/'
-                  icon='linkedin-in'
-                />
-              </Tooltip>
-
-              <Tooltip
-                color='#ddd9c3'
-                radius={3}
-                padding={4}
-                fontSize='1rem'
-                content='Instagram'
-              >
-                <Link
-                  className='banner-icon'
-                  href='https://www.instagram.com/cupids.trick/'
-                  icon='instagram'
-                />
-              </Tooltip>
-            </div>
-
+            <div className='banner-container'>{this.Banner()}</div>
             <aside className='profile-pic'>
               <div className='zoom' />
             </aside>

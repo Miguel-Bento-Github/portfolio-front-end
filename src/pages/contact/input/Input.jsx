@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 
 const Input = ({ handleChange, pHolder }) => {
   return (
-    <label htmlFor={pHolder}>
+    <label className={`contact-form-label`} htmlFor={pHolder}>
       <input
         id={pHolder}
         onChange={handleChange}
