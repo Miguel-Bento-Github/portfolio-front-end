@@ -3,6 +3,7 @@ import './portfolio.scss';
 import ProjectsList from './projects/ProjectsList';
 import projects from './projects/projects.json';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
+import setImageUrl from './hooks/setImageUrl';
 require('smoothscroll-polyfill').polyfill();
 
 export default function Portfolio() {
@@ -22,7 +23,7 @@ export default function Portfolio() {
         key={id}
         id={index}
         link={link}
-        img={img}
+        img={setImageUrl(img)}
         title={title}
         description={description}
       />
