@@ -1,80 +1,82 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './portfolio.scss';
-import ProjectsList from './projects/ProjectsList';
-import projects from './projects/projects.json';
+import projects from './projects/data.json';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
-import setImageUrl from './hooks/setImageUrl';
+import Projects from './projects/Projects';
+import checkIfInView from './helpers/checkIfInView';
+import { isDesktopWidth } from '../../helpers/isMobile';
 require('smoothscroll-polyfill').polyfill();
 
-export default function Portfolio() {
-  const [activeProject, setActiveProject] = useState(0);
-
-  const Projects = projects.map((project, index) => {
-    const {
-      _id: { $oid: id },
-      link,
-      img,
-      title,
-      description,
-    } = project;
-
-    return (
-      <ProjectsList
-        key={id}
-        id={index}
-        link={link}
-        img={setImageUrl(img)}
-        title={title}
-        description={description}
-      />
-    );
-  });
-
+function Portfolio() {
   useDocumentTitle('Projects');
+  const ids = projects.map(({ _id: { $oid: id } }) => id);
+  const [projectInView, setProjectInView] = useState('');
 
-  useEffect(() => {
-    const element = document.getElementById(activeProject);
-    if (activeProject === 0) {
-      document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  function scrollTo(id) {
+    const element = document.getElementById(ids[id]);
+
+    if (ids[id] === ids[ids.length]) {
+      document.body.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
     } else {
-      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  }, [activeProject]);
-
-  function referenceProject(e) {
-    e.preventDefault();
-
-    if (activeProject >= projects.length - 1) {
-      setActiveProject(0);
-    } else {
-      setActiveProject(activeProject + 1);
+      if (isDesktopWidth()) {
+        element.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center',
+        });
+      }
     }
   }
 
+  function toNextProject(e) {
+    e.preventDefault();
+
+    function findElementInView(id) {
+      let project = document.getElementById(id);
+      if (project) {
+        project = document.getElementById(id);
+        const inView = checkIfInView(project.id);
+        if (inView) {
+          const index = ids.indexOf(project.id);
+          setProjectInView(ids[index + 1]);
+          scrollTo(index + 1);
+        }
+      }
+    }
+
+    ids.forEach(findElementInView);
+  }
+
   const ProjectsController = (
-    <a
-      onClick={referenceProject}
+    <button
+      type='button'
+      onClick={toNextProject}
       className={`projects-controller${
-        activeProject >= projects.length - 1
+        ids[ids.length - 1] === projectInView
           ? ' projects-controller-reverse'
           : ''
       }`}
-      href={activeProject}
     >
       <i className='fas fa-2x fa-chevron-circle-down'></i>
-    </a>
+    </button>
   );
 
   return (
     <>
-      <div className='second-bg'></div>
+      <div className='second-bg' />
       <main className='main'>
         <section id='section' className='section'>
           <h1 className='section-header'>Projects</h1>
-          <ul className='projects-container'>{Projects}</ul>
+          <ul className='projects-container'>
+            <Projects projects={projects} />
+          </ul>
         </section>
         {ProjectsController}
       </main>
     </>
   );
 }
+
+export default Portfolio;
