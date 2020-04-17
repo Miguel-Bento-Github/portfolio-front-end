@@ -11,10 +11,21 @@ const PageOverview = ({ isOpen, close }) => {
 
   const ref = useRef();
   const display = isOpen ? '' : 'none';
-  const pages = ['skills', 'projects', 'contact'];
+  const pages = ['projects', 'skills', 'contact'];
   const DisplayPages = pages.map((page) => (
     <List key={page} close={close} to={page} name={page} />
   ));
+
+  const CloseButton = isDesktopWidth() && (
+    <button
+      aria-label='close navbar'
+      type='button'
+      className='btn btn-nav-close'
+      onClick={close}
+    >
+      close
+    </button>
+  );
 
   useBlur(isOpen);
 
@@ -24,16 +35,7 @@ const PageOverview = ({ isOpen, close }) => {
         <List close={close} exact={true} to='/' name='home' />
         {DisplayPages}
       </ul>
-      {isDesktopWidth() && (
-        <button
-          aria-label='close navbar'
-          type='button'
-          className='btn btn-nav-close'
-          onClick={close}
-        >
-          close
-        </button>
-      )}
+      {CloseButton}
     </div>
   );
 };

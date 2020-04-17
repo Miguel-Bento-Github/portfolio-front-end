@@ -33,10 +33,7 @@
     width: 40px;
     height: 24px;
     perspective: 80px;
-    filter: drop-shadow(
-      2px 2px 5px rgba($color-dark-grey, 0.7),
-      -2px -2px 5px rgba($color-white, 0.3)
-    );
+    filter: drop-shadow(2px 2px 2px $color-beaver);
   }
 
   &-inner {
@@ -52,10 +49,11 @@
     width: 40px;
     height: 4px;
     border-radius: 8px;
+    background: $color-dark-grey;
     background: radial-gradient(
       ellipse farthest-corner at 1px 1px,
-      $color-beaver 0%,
-      rgba($color-dark-grey, 0.9)
+      $color-dark-grey 0%,
+      $color-raisin-black
     );
     transition: transform 500ms linear;
     opacity: 1;
