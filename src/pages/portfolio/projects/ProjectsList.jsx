@@ -1,28 +1,45 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import checkIfInView from '../helpers/checkIfInView';
 
-function ProjectsList({ link, img, title, description, id, setWatchingID }) {
+function ProjectsList({
+  link,
+  img,
+  title,
+  description,
+  id,
+  setWatchingID,
+  isFirst,
+  isLast,
+  setChevronDirection,
+}) {
   const ref = useRef();
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
-    window.onscroll = () => {
+    function setActiveViews() {
       const inView = checkIfInView(id);
+      setChevronDirection(isLast && inView);
       if (inView) {
+        setIsInView(true);
         setWatchingID(id);
       }
-    };
+    }
+    window.addEventListener('scroll', setActiveViews);
     return () => {
-      window.onscroll = () => undefined;
+      window.removeEventListener('scroll', setActiveViews);
     };
   });
 
   useEffect(() => {
-    const element = ref.current;
-    element.classList.add('project-content-loaded');
+    const currentElement = ref.current;
+
+    if (isInView || isFirst) {
+      currentElement.classList.add('project-content-loaded');
+    }
     return () => {
-      element.classList.remove('project-content-loaded');
+      currentElement.classList.remove('project-content-loaded');
     };
-  });
+  }, [isInView, isFirst]);
 
   const Title = (
     <a

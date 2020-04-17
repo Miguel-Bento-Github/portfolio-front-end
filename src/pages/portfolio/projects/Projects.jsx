@@ -2,7 +2,7 @@ import React, { useState, useLayoutEffect } from 'react';
 import setImageUrl from '../helpers/setImageUrl';
 import ProjectsList from './ProjectsList';
 
-function Projects({ projects }) {
+function Projects({ projects, setChevronDirection }) {
   const [lookingAtID, setWatchingID] = useState(-0);
 
   const totalProjects = projects.map(
@@ -10,12 +10,15 @@ function Projects({ projects }) {
       <ProjectsList
         key={id}
         id={id}
+        isFirst={id === projects[0]._id.$oid}
+        isLast={id === projects[projects.length - 1]._id.$oid}
         link={link}
         img={setImageUrl(img)}
         title={title}
         description={description}
         setWatchingID={setWatchingID}
         lookingAtID={lookingAtID}
+        setChevronDirection={setChevronDirection}
       />
     )
   );
