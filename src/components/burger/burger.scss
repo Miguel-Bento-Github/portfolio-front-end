@@ -34,8 +34,8 @@
     height: 24px;
     perspective: 80px;
     filter: drop-shadow(
-      2px 2px 2px rgba($color-brown, 0.7),
-      -2px -2px 2px rgba($color-beaver, 0.3)
+      2px 2px 5px rgba($color-dark-grey, 0.7),
+      -2px -2px 5px rgba($color-white, 0.3)
     );
   }
 
@@ -55,7 +55,7 @@
     background: radial-gradient(
       ellipse farthest-corner at 1px 1px,
       $color-beaver 0%,
-      rgba($color-white, 0.7)
+      rgba($color-dark-grey, 0.9)
     );
     transition: transform 500ms linear;
     opacity: 1;

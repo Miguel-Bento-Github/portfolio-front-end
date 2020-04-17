@@ -1,8 +1,21 @@
 import React, { useEffect, useRef } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import checkIfInView from '../helpers/checkIfInView';
 
-function ProjectsList({ link, img, title, description, id }) {
+function ProjectsList({ link, img, title, description, id, setWatchingID }) {
   const ref = useRef();
+
+  useEffect(() => {
+    window.onscroll = () => {
+      const inView = checkIfInView(id);
+      if (inView) {
+        setWatchingID(id);
+      }
+    };
+    return () => {
+      window.onscroll = () => undefined;
+    };
+  });
+
   useEffect(() => {
     const element = ref.current;
     element.classList.add('project-content-loaded');
@@ -29,7 +42,7 @@ function ProjectsList({ link, img, title, description, id }) {
       target='_blank'
       href={link}
     >
-      <LazyLoadImage className='project-img' src={img} alt={title} />;
+      <img className='project-img' src={img} alt={title} />
     </a>
   );
 

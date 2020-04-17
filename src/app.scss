@@ -13,16 +13,6 @@ html {
   padding: env(safe-area-inset);
 }
 
-.is-mobile {
-  height: 85vh;
-  max-height: 85vh;
-}
-
-.is-android {
-  height: 100vh;
-  max-height: 100vh;
-}
-
 body {
   width: 100%;
   color: $color-dark-grey;
@@ -67,6 +57,10 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px $color-dark-grey inset;
   -webkit-text-fill-color: $color-white;
+}
+
+button {
+  all: unset;
 }
 
 .btn {
