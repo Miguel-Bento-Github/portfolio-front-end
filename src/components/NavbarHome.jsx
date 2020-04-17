@@ -4,7 +4,7 @@ import BurgerIcon from './burger/BurgerIcon';
 import PageOverview from './PageOverview';
 import useLinks from '../hooks/useLinks';
 
-const NavbarHome = () => {
+function NavbarHome() {
   const defaultState = false;
   const [isOpen, setIsOpen] = useState(defaultState);
   const navRef = useRef();
@@ -39,6 +39,6 @@ const NavbarHome = () => {
       />
     </nav>
   );
-};
+}
 
 export default NavbarHome;
