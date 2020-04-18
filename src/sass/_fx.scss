@@ -1,23 +1,17 @@
 /* fx */
 .slit {
-  // -webkit-animation: slit-in-vertical 0.45s linear both;
-  // animation: slit-in-vertical 0.45s linear both;
+  -webkit-animation: slit-in-vertical 0.45s 50ms linear both;
+  animation: slit-in-vertical 0.45s 50ms linear both;
   overflow: hidden;
 }
 
-.bounce {
-  -webkit-animation: bounce-top 0.9s both;
-  animation: bounce-top 0.9s both;
-  animation-delay: 0.3s;
-}
-
 .shake {
-  -webkit-animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955)
-    both;
-  animation: shake-bottom 0.8s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  -webkit-animation: shake-bottom 0.8s 50ms
+    cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+  animation: shake-bottom 0.8s 50ms cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
 }
 
 .zoom {
-  -webkit-animation: zoom 4s ease-out forwards;
-  animation: zoom 4s ease-out forwards;
+  -webkit-animation: zoom 4s 50ms ease-out forwards;
+  animation: zoom 4s 50ms ease-out forwards;
 }

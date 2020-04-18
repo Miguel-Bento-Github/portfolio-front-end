@@ -5,11 +5,11 @@ import { Link } from 'react-router-dom';
 const FourOhFour = () => {
   useEffect(() => {
     document.querySelector('.hamburger-inner').className +=
-      ' hamburger-inner--loading';
+      ' hamburger-inner--white';
     return () => {
       document
         .querySelector('.hamburger-inner')
-        .classList.remove('hamburger-inner--loading');
+        .classList.remove('hamburger-inner--white');
     };
   }, []);
 

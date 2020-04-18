@@ -5,9 +5,7 @@ import { isDesktopWidth } from '../helpers/isMobile';
 import useBlur from '../hooks/useBlur';
 
 const PageOverview = ({ isOpen, close }) => {
-  useLayoutEffect(() => {
-    document.getElementById('section').classList.add('blur');
-  });
+  useBlur(isOpen);
 
   const ref = useRef();
   const display = isOpen ? '' : 'none';
@@ -26,8 +24,6 @@ const PageOverview = ({ isOpen, close }) => {
       close
     </button>
   );
-
-  useBlur(isOpen);
 
   return (
     <div style={{ display }} ref={ref} className='page-overview'>

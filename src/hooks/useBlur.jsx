@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 
 export default function useBlur(isOpen) {
   const blur = (section) => {
-    section.classList.add('blur-active');
+    section.classList.add('section--blur');
   };
 
   const unBlur = (section) => {
-    section.classList.remove('blur-active');
+    section.classList.remove('section--blur');
   };
 
   useEffect(() => {
