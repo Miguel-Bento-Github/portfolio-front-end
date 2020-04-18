@@ -3,7 +3,7 @@ import IconsList from './iconsList/IconsList';
 import './skills.scss';
 import useDocumentTitle from '../../hooks/useDocumentTitle';
 
-const Skills = () => {
+function Skills() {
   useDocumentTitle('Skills');
 
   return (
@@ -15,5 +15,5 @@ const Skills = () => {
       </section>
     </>
   );
-};
+}
 export default memo(Skills);

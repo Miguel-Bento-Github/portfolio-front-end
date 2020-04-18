@@ -23,6 +23,7 @@ function ProjectsList({
         setIsInView(true);
         setWatchingID(id);
       }
+      return null;
     }
     window.addEventListener('scroll', setActiveViews);
     return () => {

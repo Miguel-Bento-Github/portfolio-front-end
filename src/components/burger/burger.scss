@@ -31,6 +31,12 @@
   }
 
   &-inner-top,
+  &-inner-center,
+  &-inner-bottom {
+    will-change: transform, opacity;
+  }
+
+  &-inner-top,
   &-inner-bottom {
     display: block;
     content: '';

@@ -3,7 +3,8 @@ import setImageUrl from '../helpers/setImageUrl';
 import ProjectsList from './ProjectsList';
 
 function Projects({ projects, setChevronDirection }) {
-  const [lookingAtID, setWatchingID] = useState(-0);
+  const [lookingAtID, setWatchingID] = useState(null);
+  console.log(lookingAtID);
 
   const totalProjects = projects.map(
     ({ _id: { $oid: id }, link, img, title, description }) => (

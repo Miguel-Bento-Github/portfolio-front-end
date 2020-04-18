@@ -1,4 +1,4 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef } from 'react';
 import './pageOverview.scss';
 import List from './listURL/ListURL';
 import { isDesktopWidth } from '../helpers/isMobile';

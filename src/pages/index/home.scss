@@ -5,6 +5,10 @@
 
 .index {
   min-height: 100vh;
+
+  &--blur {
+    animation: blur-in 0s forwards reverse;
+  }
 }
 
 .content {
@@ -84,7 +88,7 @@
 }
 
 .home-description {
-  position: relative;
+  position: absolute;
   text-align: justify;
   margin-left: 45vw;
   margin-right: 5vw;
@@ -101,6 +105,7 @@
     rgba($color-dark-grey, 0.8)
   );
   z-index: 1;
+  transition: transform 1s ease-out; // this is handled in Home.jsx
 
   &::before {
     position: absolute;
