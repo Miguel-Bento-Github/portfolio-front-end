@@ -2,6 +2,7 @@
 @import './sass/font';
 @import './sass/fx';
 @import './animations/appear.scss';
+@import './animations/blur-in.scss';
 
 * {
   margin: 0;
@@ -25,13 +26,6 @@ button,
 input::placeholder,
 input::-webkit-input-placeholder {
   font-family: 'Overpass', sans-serif;
-}
-
-.blur {
-  &-active {
-    filter: blur(2px);
-  }
-  filter: blur(0px);
 }
 
 h1 {
@@ -103,6 +97,10 @@ button {
   min-height: 100vh;
   height: min-content;
   padding: 1vh 12vw 10vh;
+
+  &--blur {
+    animation: blur-in 0s forwards reverse;
+  }
 
   &-header {
     margin: 3vh 0 4vh 0;

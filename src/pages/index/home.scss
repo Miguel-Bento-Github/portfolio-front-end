@@ -84,38 +84,51 @@
 }
 
 .home-description {
+  position: relative;
   text-align: justify;
-  position: absolute;
-  right: 13vw;
-  top: 50vh;
+  margin-left: 45vw;
+  margin-right: 5vw;
   padding: 1rem;
   min-width: 300px;
-  max-width: 40vw;
-
+  max-width: 35vw;
+  top: 50vh;
   font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+  color: $color-white;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
   background: linear-gradient(
     rgba($color-dark-grey, 0.7),
     rgba($color-dark-grey, 0.8)
   );
-  color: $color-white;
-  border-radius: 8px;
-  box-shadow: $box-shadow;
+  z-index: 1;
+
+  &::before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    content: '';
+    background: linear-gradient(
+      rgba($color-dark-grey, 0.7),
+      rgba($color-dark-grey, 0.9)
+    );
+    border-radius: 8px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s linear;
+  }
 
   &:hover {
-    background: linear-gradient(
-      rgba($color-dark-grey, 0.9),
-      rgba($color-dark-grey, 1)
-    );
+    &::before {
+      opacity: 1;
+    }
+
     cursor: default;
   }
 
   @media screen and (max-width: 1150px) {
     max-width: 80vw;
-    top: 45vh;
-  }
-
-  @media (orientation: landscape) and (max-width: 1150px) {
-    top: 35%;
-    left: 20%;
+    margin-left: 35vw;
   }
 }
