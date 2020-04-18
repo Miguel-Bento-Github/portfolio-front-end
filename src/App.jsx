@@ -12,11 +12,9 @@ import Axios from 'axios';
 function App() {
   useEffect(() => {
     try {
-      async function get() {
-        const res = await Axios.get('https://mr-monkey.herokuapp.com');
-        if (res) console.log('backend loaded', res);
-      }
-      get();
+      (async function get() {
+        await Axios('https://mr-monkey.herokuapp.com');
+      })();
     } catch (error) {}
   });
 

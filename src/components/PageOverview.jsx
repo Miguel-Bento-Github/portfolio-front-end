@@ -1,14 +1,10 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import React, { useRef } from 'react';
 import './pageOverview.scss';
 import List from './listURL/ListURL';
 import { isDesktopWidth } from '../helpers/isMobile';
-import useBlur from '../hooks/useBlur';
 
 const PageOverview = ({ isOpen, close }) => {
-  useBlur(isOpen);
-
   const ref = useRef();
-  const display = isOpen ? '' : 'none';
   const pages = ['projects', 'skills', 'contact'];
   const DisplayPages = pages.map((page) => (
     <List key={page} close={close} to={page} name={page} />
@@ -25,8 +21,20 @@ const PageOverview = ({ isOpen, close }) => {
     </button>
   );
 
+  if (isOpen) {
+    if (ref.current) {
+      ref.current.classList.remove('page-overview--close');
+      ref.current.classList.add('page-overview--open');
+    }
+  } else {
+    if (ref.current) {
+      ref.current.classList.remove('page-overview--open');
+      ref.current.classList.add('page-overview--close');
+    }
+  }
+
   return (
-    <div style={{ display }} ref={ref} className='page-overview'>
+    <div ref={ref} className='page-overview'>
       <ul className='nav-list'>
         <List close={close} exact={true} to='/' name='home' />
         {DisplayPages}

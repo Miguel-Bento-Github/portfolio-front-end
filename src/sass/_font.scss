@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Overpass|Overpass+Mono&display=swap');
-
 @mixin font($size, $weight: '') {
   @if $size {
     font-size: $size;

@@ -1,1 +1,15 @@
 @import-normalize;
+
+@font-face {
+  font-family: 'Overpass';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Overpass'), url('./assets/fonts/Overpass-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Overpass Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Overpass Mono'), url('./assets/fonts/OverpassMono-Regular.ttf');
+}

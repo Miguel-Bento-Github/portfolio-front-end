@@ -9,12 +9,9 @@
     "@sendgrid/mail": "^6.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-lazy-load-image-component": "^1.4.3",
     "react-router-dom": "^5.0.0",
     "react-scripts": "^3.4.1",
-    "react-simple-tooltip": "^2.6.0",
-    "react-toastify": "^5.2.1",
-    "reactjs-popup": "^1.4.1"
+    "react-toastify": "^5.2.1"
   },
   "scripts": {
     "start": "react-scripts start",

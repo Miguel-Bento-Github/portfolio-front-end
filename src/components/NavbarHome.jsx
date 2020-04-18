@@ -5,8 +5,7 @@ import PageOverview from './PageOverview';
 import useLinks from '../hooks/useLinks';
 
 function NavbarHome() {
-  const defaultState = false;
-  const [isOpen, setIsOpen] = useState(defaultState);
+  const [isOpen, setIsOpen] = useState(false);
   const navRef = useRef();
 
   function toggleModal() {
@@ -14,7 +13,7 @@ function NavbarHome() {
   }
 
   function closeModal() {
-    setIsOpen(defaultState);
+    setIsOpen(false);
   }
 
   /**
@@ -29,6 +28,7 @@ function NavbarHome() {
   }
 
   useLinks(isOpen, clickOutside);
+
   return (
     <nav ref={navRef} className='nav'>
       <BurgerIcon isOpen={isOpen} toggle={toggleModal} />

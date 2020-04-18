@@ -11,6 +11,17 @@
   },
   {
     "_id": {
+      "$oid": "5d294ze4fo1kc00e79ac3298"
+    },
+    "title": "Hover Effect & Neumorphism",
+    "img": "https://images.pexels.com/photos/2318068/pexels-photo-2318068.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    "date": "2020-04-19T19:38:23.767Z",
+    "__v": 0,
+    "link": ["https://miguel-bento-github.github.io/neumorphim/"],
+    "description": "Combining neumorphism and an intriguing hover effect, this experiment was written with HTML, CSS and TypeScript."
+  },
+  {
+    "_id": {
       "$oid": "5d094c48fb6fc00e79ac366c"
     },
     "title": "Minks",
@@ -31,6 +42,7 @@
     "link": "https://ruxianyang.netlify.com/",
     "description": "This is a personal portfolio. This project was written with Vanilla JavaScript, Sass and HTML."
   },
+
   {
     "_id": {
       "$oid": "5d094c51fb6fc00e79ac366e"
@@ -62,6 +74,17 @@
     "date": "2019-06-03T17:43:23.767Z",
     "__v": 0,
     "link": "https://studios.netlify.com/",
-    "description": "My first project ever! It was written with HTML and CSS, using bootstrap."
+    "description": "My first project ever! It was written with HTML and CSS, with Bootstrap."
+  },
+  {
+    "_id": {
+      "$oid": "1d94ZE4fo1kar5g791q3m7T"
+    },
+    "title": "Card Animation",
+    "img": "https://images.pexels.com/photos/1576303/pexels-photo-1576303.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
+    "date": "2020-04-19T19:45:13.467Z",
+    "__v": 0,
+    "link": "https://miguel-bento-github.github.io/card-experience/",
+    "description": "This experiment was written with Vue and CSS."
   }
 ]

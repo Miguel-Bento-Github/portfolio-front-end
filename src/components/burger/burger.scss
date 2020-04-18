@@ -12,14 +12,27 @@
   cursor: pointer;
   outline: thin;
 
-  &:hover:not(.open) {
-    .hamburger-inner-top {
-      transform: translateY(-5px);
+  @media screen and (max-width: 1150px) {
+    &-inner {
+      transition: transform 750ms 250ms ease-out, opacity 1500ms 500ms ease-out;
     }
 
-    .hamburger-inner-bottom {
-      transform: translateY(5px);
+    .open &-inner-top {
+      transform: rotate(45deg) translateY(5px);
     }
+
+    .open &-inner-center {
+      transform: translateX(-2px) rotateZ(45deg);
+      opacity: 0;
+      transition: opacity 1500ms 500ms ease-out, transform 750ms 250ms ease-out;
+    }
+    .open &-inner-bottom {
+      transform: rotate(-45deg) translateY(-5px);
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    top: 1vh;
   }
 
   &-inner {
@@ -27,7 +40,12 @@
     height: 4px;
     border-radius: 8px;
     background: $color-dark-grey;
-    transition: transform 250ms 100ms linear;
+  }
+
+  &-inner-top,
+  &-inner-center,
+  &-inner-bottom {
+    will-change: transform, opacity;
   }
 
   &-inner-top,
@@ -39,24 +57,9 @@
   &-inner-top {
     transform: translateY(-6px);
   }
-  .open &-inner-top {
-    transform: rotate(45deg) translateY(4px);
-  }
-
-  &-inner-center {
-    transition: transform 100ms ease-out;
-  }
-  .open &-inner-center {
-    transform: rotateX(180deg) translateY(-4px);
-    opacity: 0;
-    transition: opacity 50ms ease-out;
-  }
 
   &-inner-bottom {
     transform: translateY(6px);
-  }
-  .open &-inner-bottom {
-    transform: rotate(-45deg) translateY(-6px);
   }
 
   &-inner--white,

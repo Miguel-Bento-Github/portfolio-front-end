@@ -4,7 +4,6 @@ import './index.css';
 import { BrowserRouter, withRouter } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-
 class CompareHistory extends PureComponent {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {

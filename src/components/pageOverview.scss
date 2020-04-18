@@ -5,8 +5,8 @@
   position: fixed;
   min-width: 20vw;
   padding: 16px;
-  z-index: 1;
   border: 0;
+  z-index: 1;
   border-radius: 8px;
   color: $color-dark-grey;
   transform: translate(70vw, 10vh);
@@ -18,15 +18,29 @@
     rgba(#c1b2a0, 0.5)
   );
 
-  @media screen and (max-width: 850px) {
+  @media screen and (min-width: 950px) {
+    transition: opacity 250ms ease-out, z-index 250ms ease-out;
+    padding: 16px;
+    opacity: 0;
+    z-index: -1;
+
+    &--open {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  @media screen and (max-width: 950px) {
     border-radius: 0;
     border-bottom-right-radius: 8px;
     -webkit-transform: translateX(-100%);
     transform: translateX(-100%);
-    animation: slide-in 0.5s forwards;
-    -webkit-animation: slide-in 0.5s forwards;
-
     box-shadow: none;
+
+    &--open {
+      animation: slide-in 0.5s forwards;
+      -webkit-animation: slide-in 0.5s forwards;
+    }
   }
 
   @media screen and (max-width: 650px) {

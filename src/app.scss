@@ -2,7 +2,6 @@
 @import './sass/font';
 @import './sass/fx';
 @import './animations/appear.scss';
-@import './animations/blur-in.scss';
 
 * {
   margin: 0;
@@ -98,10 +97,6 @@ button {
   height: min-content;
   padding: 1vh 12vw 10vh;
 
-  &--blur {
-    animation: blur-in 0s forwards reverse;
-  }
-
   &-header {
     margin: 3vh 0 4vh 0;
     padding: 5px;
@@ -114,8 +109,8 @@ button {
 .bg,
 .second-bg {
   position: fixed;
-  height: 100%;
-  width: 100%;
+  height: 105%;
+  width: 105%;
   z-index: -1;
 }
 

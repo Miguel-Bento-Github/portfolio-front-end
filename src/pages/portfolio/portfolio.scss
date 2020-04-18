@@ -39,6 +39,10 @@ $transition: 150ms cubic-bezier(0.39, 0.575, 0.565, 1);
     transition: color $transition, box-shadow 150ms $transition,
       transform 150ms $transition;
 
+    @media screen and (max-width: 850px) {
+      display: none;
+    }
+
     &:hover {
       color: lighten($color-beaver, 5%);
       box-shadow: $box-shadow-button-hover;

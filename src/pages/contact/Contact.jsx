@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Input from './input/Input';
-import Tooltip from 'react-simple-tooltip';
 import { toast } from 'react-toastify';
 import { sendEmail } from '../../api/email';
 import Link from '../../components/iconLink/IconLink';
@@ -46,19 +45,15 @@ export default class Contact extends Component {
     };
 
     if (!name || name.length > 29) {
-      return toast.warning('Please input a valid name.');
+      return toast('Please input a valid name.');
     } else if (!validateEmail(email) || !email) {
-      return toast.warning('Please input a valid email address');
+      return toast('Please input a valid email address');
     } else if (email.length > 29) {
-      return toast.warning('This email is too long. Please try another one.');
+      return toast('This email is too long. Please try another one.');
     } else if (!subject || name.length > 29) {
-      return toast.warning(
-        'Please submit a subject. Keep it under 30 characters.'
-      );
+      return toast('Please submit a subject. Keep it under 30 characters.');
     } else if (message.length < 10) {
-      return toast.warning(
-        'Your message should be at least 10 characters long.'
-      );
+      return toast('Your message should be at least 10 characters long.');
     } else {
       this.sendEmail();
     }
@@ -99,16 +94,7 @@ export default class Contact extends Component {
     ];
 
     return links.map(({ className, href, icon }) => (
-      <Tooltip
-        key={href}
-        color='#ddd9c3'
-        radius={3}
-        padding={4}
-        fontSize='1rem'
-        content={icon}
-      >
-        <Link className={className} href={href} icon={icon} />
-      </Tooltip>
+      <Link className={className} href={href} icon={icon} />
     ));
   }
 
@@ -139,7 +125,7 @@ export default class Contact extends Component {
                 onClick={this.handleSubmit}
                 className='btn btn-submit'
               >
-                Send
+                send
               </button>
             </form>
             <div className='banner-container'>{this.Banner()}</div>

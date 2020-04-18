@@ -14,13 +14,19 @@
   left: 25%;
 
   @media screen and (max-width: 1150px) {
-    top: 10%;
-    left: 20%;
+    top: 15%;
+    left: 10%;
     right: auto;
   }
 
-  @media screen and (max-width: 850px) {
-    top: 0%;
+  @media (orientation: landscape) and (max-width: 1150px) {
+    top: 25%;
+    left: 10%;
+    right: auto;
+  }
+
+  @media screen and (max-width: 650px) {
+    top: 2%;
     left: 5%;
   }
 
@@ -35,7 +41,7 @@
   background: $color-gradient-dark;
   box-shadow: $box-shadow;
   border-radius: 8px;
-  padding: 0 8px;
+  padding: 2px 8px 0;
 
   &--pulse {
     z-index: 1;
@@ -71,27 +77,33 @@
   }
 }
 
-.typewriter-text {
-  animation: blink 0.75s step-end infinite;
-  border-right: 4px solid;
-  cursor: default;
-  color: $color-dark-grey;
-  padding-left: 10px;
+.typewriter {
+  &-text {
+    cursor: default;
+    color: $color-dark-grey;
+    padding-left: 10px;
 
-  @media screen and (max-width: 1150px) {
-    color: $color-white;
+    @media screen and (max-width: 1150px) {
+      color: $color-white;
+    }
+  }
+
+  &--blink {
+    animation: blink 0.75s step-end infinite;
   }
 }
 
 .home-description {
-  position: relative;
-  text-align: justify;
-  margin-left: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  margin-left: 47vw;
   margin-right: 5vw;
   padding: 1rem;
   min-width: 300px;
   max-width: 35vw;
-  top: 50vh;
+  top: 55vh;
   font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
   color: $color-white;
   border-radius: 8px;
@@ -101,6 +113,7 @@
     rgba($color-dark-grey, 0.8)
   );
   z-index: 1;
+  transition: transform 1s ease-out; // this is handled in Home.jsx
 
   &::before {
     position: absolute;
@@ -128,7 +141,22 @@
   }
 
   @media screen and (max-width: 1150px) {
+    max-width: 90vw;
+  }
+
+  @media (orientation: landscape) and (max-width: 1150px) {
+    top: 25%;
+    right: auto;
+  }
+
+  @media screen and (max-width: 650px) {
     max-width: 80vw;
-    margin-left: 35vw;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+  }
+
+  &-paragraph {
+    padding: 8px 0;
   }
 }

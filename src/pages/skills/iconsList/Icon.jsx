@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const Icon = ({ img, name, link }) => {
   const [hovered, setHovered] = useState(false);
@@ -23,7 +22,7 @@ const Icon = ({ img, name, link }) => {
         className='img-container'
         rel='noopener noreferrer'
       >
-        <LazyLoadImage src={img} alt={name} className={className} />
+        <img src={img} alt={name} className={className} />
         <figcaption className='img-caption'>{name}</figcaption>
       </a>
     </button>

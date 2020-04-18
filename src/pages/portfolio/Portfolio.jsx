@@ -28,6 +28,7 @@ function Portfolio() {
             <Projects
               setChevronDirection={setChevronDirection}
               projects={projects}
+              ids={ids}
             />
           </ul>
         </section>
