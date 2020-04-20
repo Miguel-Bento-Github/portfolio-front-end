@@ -26,11 +26,9 @@ $box-shadow-hover: (
   -1px -1px 2px lighten($color-beaver, 3%)
 );
 
-$box-shadow-button: -4px -4px 7px lighten($color-beaver, 20%),
+$box-shadow-button: -3px -3px 5px lighten($color-beaver, 25%),
   4px 4px 7px darken($color-beaver, 20%);
 
-$box-shadow-button-hover: -4px -4px 5px lighten($color-beaver, 20%),
-  4px 4px 7px darken($color-beaver, 25%);
+$box-shadow-button-hover: 3px 3px 5px #6e655c, -2px -2px 3px #e7d9c1;
 
-$box-shadow-button-active: -2px -2px 5px lighten($color-beaver, 20%),
-  2px 2px 5px darken($color-beaver, 20%);
+$box-shadow-button-active: 1px 1px 3px #6e655c, -1px -1px 3px #e7d9c1;

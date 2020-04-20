@@ -6,9 +6,9 @@ import Js from '../icons/js/js.svg';
 import Node from '../icons/js/node.svg';
 import ReactImg from '../icons/js/react.svg';
 // css
-import Bootstrap from '../icons/css/bootstrap.svg';
-import Styled from '../icons/css/styled.svg';
 import Css from '../icons/css/css.svg';
+import Styled from '../icons/css/styled.svg';
+import Bootstrap from '../icons/css/bootstrap.svg';
 import Sass from '../icons/css/sass.svg';
 // markup
 import Ejs from '../icons/markup/ejs.svg';
@@ -57,7 +57,7 @@ function IconsList() {
       <IconLi
         title='Styling'
         images={[Css, Styled, Bootstrap, Sass]}
-        name={['CSS3', 'Bootstrap', 'Sass', 'Styled']}
+        name={['CSS3', 'Styled', 'Bootstrap', 'Sass']}
         links={styleLinks}
       />
       <IconLi

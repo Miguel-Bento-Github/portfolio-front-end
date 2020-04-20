@@ -47,17 +47,11 @@
   right: 16px;
   bottom: 16px;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-self: flex-end;
-  align-self: flex-end;
   border: 0;
-  margin-left: auto;
+  outline: thin;
   color: $color-raisin-black;
   background: linear-gradient(145deg, #cfbeab, #aea090);
-  box-shadow: 3px 3px 5px #7f756a, -3px -3px 5px #e7d9c1;
-  outline: thin;
+  box-shadow: $box-shadow-button;
 
   @media screen and (max-width: 650px) {
     margin-top: 1rem;
@@ -66,12 +60,12 @@
 
   &:hover {
     background: linear-gradient(150deg, #cfbeab, #aea090);
-    box-shadow: 3px 3px 5px #6e655c, -2px -2px 3px #e7d9c1;
+    box-shadow: $box-shadow-button-hover;
   }
 
   &:active {
     right: 15px;
     bottom: 15px;
-    box-shadow: 1px 1px 3px #6e655c, -1px -1px 3px #e7d9c1;
+    box-shadow: $box-shadow-button-active;
   }
 }
