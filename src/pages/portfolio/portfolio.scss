@@ -29,14 +29,14 @@ $transition: 150ms 150ms cubic-bezier(0.39, 0.575, 0.565, 1);
     right: 5vw;
     margin: 0 auto;
     display: flex;
-    place-content: center;
     color: $color-beaver;
-    background: lighten($color-raisin-black, 15%);
+    background: rgba($color-raisin-black, 0.5);
     box-shadow: $box-shadow-button;
     border-radius: 50%;
     width: min-content;
     cursor: pointer;
     transition: transform $transition;
+
     @media screen and (max-width: 850px) {
       display: none;
     }
@@ -55,13 +55,19 @@ $transition: 150ms 150ms cubic-bezier(0.39, 0.575, 0.565, 1);
     &-reverse {
       transition: box-shadow $transition;
       transform: rotate(180deg);
-      box-shadow: 4px 4px 7px lighten($color-beaver, 20%),
-        -4px -4px 7px darken($color-beaver, 20%);
+      box-shadow: 4px 4px 7px lighten($color-beaver, 20%), -4px -4px 7px darken($color-beaver, 20%);
 
       &:hover {
         box-shadow: 4px 4px 5px lighten($color-beaver, 15%),
           -4px -4px 5px darken($color-beaver, 15%);
       }
+    }
+
+    .chevron {
+      height: 100%;
+      width: 4vw;
+      padding: 15px;
+      fill: $color-white;
     }
   }
 }
@@ -162,8 +168,7 @@ $transition: 150ms 150ms cubic-bezier(0.39, 0.575, 0.565, 1);
 
     &-title {
       font-size: 1.5rem;
-      text-shadow: 2px 2px 2px $color-dark-grey,
-        -2px -2px 2px darken($color-white, 10%);
+      text-shadow: 2px 2px 2px $color-dark-grey, -2px -2px 2px darken($color-white, 10%);
     }
   }
 }
