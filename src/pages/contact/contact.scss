@@ -70,19 +70,18 @@
     transition: color 300ms cubic-bezier(0.19, 1, 0.22, 1);
     width: 29px;
     fill: $color-raisin-black;
-    animation: changeColor 2s alternate-reverse 2;
     margin: 0 5px;
 
     &:hover {
-      animation: changeColor 750ms alternate-reverse infinite;
+      animation: changeColor 4s alternate infinite;
     }
 
     @keyframes changeColor {
       from {
-        fill: $color-white;
+        filter: drop-shadow(4px 4px 3px $color-link);
       }
       to {
-        fill: $color-raisin-black;
+        filter: drop-shadow(2px 2px 10px $color-raisin-black);
       }
     }
   }

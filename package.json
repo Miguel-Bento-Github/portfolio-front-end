@@ -6,7 +6,6 @@
     "@sendgrid/mail": "^6.5.0",
     "axios": "^0.19.2",
     "node-sass": "^4.14.1",
-    "postcss-normalize": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -32,6 +31,8 @@
     ]
   },
   "devDependencies": {
+    "@hint/configuration-web-recommended": "^8.0.5",
+    "hint": "^6.0.6",
     "smoothscroll-polyfill": "^0.4.4"
   }
 }
