@@ -6,6 +6,10 @@ import Link from '../../components/iconLink/IconLink';
 import './contact.scss';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { ReactComponent as Github } from '../../assets/icons/github.svg';
+import { ReactComponent as LinkedIn } from '../../assets/icons/linkedIn.svg';
+import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
+
 toast.configure({
   autoClose: 50000,
   draggable: false,
@@ -64,13 +68,9 @@ export default class Contact extends Component {
       const res = await sendEmail(this.state);
       // this.setState({ name: '', email: '', subject: '', message: '' });
       const data = JSON.parse(res.config.data);
-      toast.info(
-        `Hey there ${data.name}. I got your message. I'll get back to you soon!`
-      );
+      toast.info(`Hey there ${data.name}. I got your message. I'll get back to you soon!`);
     } catch (error) {
-      toast.error(
-        'Something went wrong. You can contact me directly via Linkedin.'
-      );
+      toast.error('Something went wrong. You can contact me directly via Linkedin.');
     }
   };
 
@@ -78,23 +78,23 @@ export default class Contact extends Component {
     const links = [
       {
         className: 'banner-icon',
-        href: 'https://github.com/Miguel-Bento-Github',
-        icon: 'github',
-      },
-      {
-        className: 'banner-icon',
         href: 'https://www.linkedin.com/in/miguel-angelo-bento/',
-        icon: 'linkedin-in',
+        Icon: LinkedIn,
       },
       {
         className: 'banner-icon',
         href: 'https://www.instagram.com/cupids.trick/',
-        icon: 'instagram',
+        Icon: Instagram,
+      },
+      {
+        className: 'banner-icon',
+        href: 'https://github.com/Miguel-Bento-Github',
+        Icon: Github,
       },
     ];
 
-    return links.map(({ className, href, icon }) => (
-      <Link className={className} href={href} icon={icon} />
+    return links.map(({ className, href, Icon }) => (
+      <Link key={href} className={className} href={href} icon={Icon} />
     ));
   }
 
@@ -120,11 +120,7 @@ export default class Contact extends Component {
                   type='text'
                 />
               </label>
-              <button
-                aria-label='send'
-                onClick={this.handleSubmit}
-                className='btn btn-submit'
-              >
+              <button aria-label='send' onClick={this.handleSubmit} className='btn btn-submit'>
                 send
               </button>
             </form>

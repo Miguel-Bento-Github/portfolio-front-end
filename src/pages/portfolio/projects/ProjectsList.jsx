@@ -41,7 +41,7 @@ function ProjectsList({
     function defineState() {
       setImageURL(resizeImg(img));
     }
-    const defineURL = debounce(defineState, 250);
+    const defineURL = debounce(defineState, 500);
 
     window.addEventListener('resize', defineURL);
     return () => {
@@ -73,12 +73,7 @@ function ProjectsList({
   );
 
   const Image = (
-    <a
-      className='project-img-container page'
-      rel='noopener noreferrer'
-      target='_blank'
-      href={link}
-    >
+    <a className='project-img-container page' rel='noopener noreferrer' target='_blank' href={link}>
       <img className='project-img' src={imgURL} alt={title} />
     </a>
   );

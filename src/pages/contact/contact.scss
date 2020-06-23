@@ -26,11 +26,7 @@
     display: flex;
     align-items: center;
     border: 0;
-    background: linear-gradient(
-      to right,
-      rgba($color-dark-grey, 0.8),
-      rgba($color-dark-grey, 0.6)
-    );
+    background: linear-gradient(to right, rgba($color-dark-grey, 0.8), rgba($color-dark-grey, 0.6));
     box-shadow: $box-shadow;
     color: $color-white;
     @include font(1.1rem);
@@ -46,10 +42,7 @@
 
     &:focus,
     &-message:focus {
-      background: linear-gradient(
-        rgba($color-dark-grey, 0.8),
-        rgba($color-dark-grey, 0.8)
-      );
+      background: linear-gradient(rgba($color-dark-grey, 0.8), rgba($color-dark-grey, 0.8));
       outline: thin 1px double;
     }
 
@@ -75,8 +68,8 @@
 
   &-icon {
     transition: color 300ms cubic-bezier(0.19, 1, 0.22, 1);
-    @include font(2.5rem);
-    color: $color-raisin-black;
+    width: 29px;
+    fill: $color-raisin-black;
     animation: changeColor 2s alternate-reverse 2;
     margin: 0 5px;
 
@@ -86,10 +79,10 @@
 
     @keyframes changeColor {
       from {
-        color: $color-white;
+        fill: $color-white;
       }
       to {
-        color: $color-raisin-black;
+        fill: $color-raisin-black;
       }
     }
   }
@@ -100,10 +93,6 @@
 }
 
 @media screen and (min-width: 1700px) {
-  .banner-icon {
-    @include font(3.5rem);
-  }
-
   .contact-form .input-message::placeholder,
   .contact-form .input::placeholder {
     @include font(1.4rem);
@@ -147,10 +136,6 @@
 
   .contact .input {
     @include font(1rem);
-    background: linear-gradient(
-      to right,
-      rgba($color-dark-grey, 0.7),
-      rgba($color-dark-grey, 0.9)
-    );
+    background: linear-gradient(to right, rgba($color-dark-grey, 0.7), rgba($color-dark-grey, 0.9));
   }
 }
