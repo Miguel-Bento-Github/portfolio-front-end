@@ -43,19 +43,19 @@ export default function Contact() {
     };
 
     if (!inputs.name || inputs.name.length > 29) {
-      toast('Please input a valid name.');
+      toast.info('Please input a valid name.');
       return null;
     } else if (!validateEmail(inputs.email) || !inputs.email) {
-      toast('Please input a valid email address');
+      toast.info('Please input a valid email address');
       return null;
     } else if (inputs.email.length > 29) {
-      toast('This email is too long. Please try another one.');
+      toast.info('This email is too long. Please try another one.');
       return null;
     } else if (!inputs.subject || inputs.name.length > 29) {
-      toast('Please submit a subject. Keep it under 30 characters.');
+      toast.info('Please submit a subject. Keep it under 30 characters.');
       return null;
     } else if (inputs.message.length < 10) {
-      toast('Your message should be at least 10 characters long.');
+      toast.info('Your message should be at least 10 characters long.');
       return null;
     } else {
       postEmail();
