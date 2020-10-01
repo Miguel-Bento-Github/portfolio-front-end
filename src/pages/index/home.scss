@@ -41,7 +41,8 @@
   background: $color-gradient-dark;
   box-shadow: $box-shadow;
   border-radius: 8px;
-  padding: 2px 8px 0;
+  padding: 2px 8px;
+  margin-bottom: 16px;
 
   &--pulse {
     z-index: 1;
@@ -108,10 +109,7 @@
   color: $color-white;
   border-radius: 8px;
   box-shadow: $box-shadow;
-  background: linear-gradient(
-    rgba($color-dark-grey, 0.7),
-    rgba($color-dark-grey, 0.8)
-  );
+  background: linear-gradient(rgba($color-dark-grey, 0.7), rgba($color-dark-grey, 0.8));
   z-index: 1;
   transition: transform 1s ease-out; // this is handled in Home.jsx
 
@@ -122,10 +120,7 @@
     left: 0;
     bottom: 0;
     content: '';
-    background: linear-gradient(
-      rgba($color-dark-grey, 0.7),
-      rgba($color-dark-grey, 0.9)
-    );
+    background: linear-gradient(rgba($color-dark-grey, 0.7), rgba($color-dark-grey, 0.9));
     border-radius: 8px;
     opacity: 0;
     z-index: -1;
@@ -138,6 +133,10 @@
     }
 
     cursor: default;
+  }
+
+  &-paragraph {
+    padding: 8px 0;
   }
 
   @media screen and (max-width: 1150px) {
@@ -154,9 +153,5 @@
     margin: 0 auto;
     left: 0;
     right: 0;
-  }
-
-  &-paragraph {
-    padding: 8px 0;
   }
 }

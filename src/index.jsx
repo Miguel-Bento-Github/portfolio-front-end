@@ -13,7 +13,7 @@ const CompareHistory = ({ history, location }) => {
           window.scrollTo(0, 0);
         }
       }),
-    [location]
+    [location, history],
   );
   return null;
 };
@@ -25,7 +25,7 @@ ReactDOM.render(
     <ScrollToTop />
     <App />
   </BrowserRouter>,
-  document.getElementById('root')
+  document.getElementById('root'),
 );
 
 serviceWorker.unregister();

@@ -61,7 +61,6 @@
     display: flex;
     justify-content: space-between;
     padding: 5px;
-    margin: 1vh 0.5rem 0;
     width: max-content;
     margin-top: calc(-35px - 0.5rem);
   }
@@ -78,10 +77,10 @@
 
     @keyframes changeColor {
       from {
-        filter: drop-shadow(4px 4px 3px $color-link);
+        filter: drop-shadow(4px 4px 3px $color-white);
       }
       to {
-        filter: drop-shadow(2px 2px 10px $color-raisin-black);
+        filter: drop-shadow(2px 2px 10px $color-beaver);
       }
     }
   }
