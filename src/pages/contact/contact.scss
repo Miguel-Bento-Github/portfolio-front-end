@@ -1,6 +1,6 @@
-@import '../../sass/font';
-@import '../../sass/variables';
-@import '../../animations/zoom';
+@import "../../sass/font";
+@import "../../sass/variables";
+@import "../../animations/zoom";
 
 .contact {
   display: flex;
@@ -51,7 +51,6 @@
       resize: none;
       padding: 2vh 1vw;
       color: $color-white;
-      font-family: 'Overpass';
     }
   }
 }

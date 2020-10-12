@@ -1,8 +1,8 @@
-@import '../../sass/variables';
-@import '../../sass/font';
-@import '../../animations/shake.scss';
-@import '../../animations/slit.scss';
-@import '../../animations/appear.scss';
+@import "../../sass/variables";
+@import "../../sass/font";
+@import "../../animations/shake.scss";
+@import "../../animations/slit.scss";
+@import "../../animations/appear.scss";
 
 .skills {
   display: flex;
@@ -24,9 +24,6 @@
   }
 
   &-li {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     background: rgba($color-dark-grey, 0.3);
     box-shadow: $box-shadow;
     border-radius: 8px;
@@ -39,29 +36,26 @@
     display: grid;
     padding: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
   }
 }
 
 .img {
   &-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     opacity: 0;
     animation: appear 1250ms linear forwards;
   }
 
   &-caption {
-    padding: 3vh 1vw;
-    padding-bottom: 0;
+    text-align: center;
     color: $color-white;
     @include font(1.1rem);
   }
 
   &-skill {
-    max-width: 80px;
+    display: block;
+    margin: 0 auto 1rem;
+    width: 80px;
   }
 }

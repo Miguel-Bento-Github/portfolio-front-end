@@ -7,7 +7,7 @@ const IconLi = ({ images, name, title, links }) => {
       <h3 className="skill-title">{title}</h3>
       <div className="logos-container">
         {images.map((img, i) => (
-          <Icon key={name[i]} img={img} name={name[i]} link={links[name[i]]} />
+          <Icon key={name[i]} img={img} name={name[i]} link={links[name[i].toLowerCase()]} />
         ))}
       </div>
     </li>
