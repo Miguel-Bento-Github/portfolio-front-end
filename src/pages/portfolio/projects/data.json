@@ -4,7 +4,7 @@
       "$oid": "2a24SovHa2L1S86e7124a9S63s13k66"
     },
     "title": "MoneyWell",
-    "img": "https://ia601501.us.archive.org/11/items/screenshot-2020-10-15-at-16.10.13/Screenshot%202020-10-15%20at%2016.10.13.png?done",
+    "img": "https://ia601501.us.archive.org/11/items/screenshot-2020-10-15-at-16.10.13/moneyWell.png?done",
     "link": "https://moneywell.netlify.app/",
     "description": "Stocks application, written with TypeScript, Vue and Sass"
   },
