@@ -10,9 +10,7 @@ function burgerAnimation(isActive, animationsObject, isMobile) {
     });
   } else {
     animations.forEach((animation, index) =>
-      !animations[index - 1]
-        ? animation.play()
-        : (animations[index - 1].onfinish = () => animation.play())
+      !animations[index - 1] ? animation.play() : (animations[index - 1].onfinish = () => animation.play()),
     );
   }
 }

@@ -1,4 +1,4 @@
-@import '../../sass/variables';
+@import "../../sass/variables";
 
 .hamburger {
   position: fixed;
@@ -12,24 +12,24 @@
   cursor: pointer;
   outline: thin;
 
-  @media screen and (max-width: 1150px) {
-    &-inner {
-      transition: transform 750ms 250ms ease-out, opacity 1500ms 500ms ease-out;
-    }
+  // @media screen and (max-width: 1150px) {
+  //   &-inner {
+  //     transition: transform 750ms 250ms ease-out, opacity 1500ms 500ms ease-out;
+  //   }
 
-    .open &-inner-top {
-      transform: rotate(45deg) translateY(5px);
-    }
+  //   .open &-inner-top {
+  //     transform: rotate(45deg) translateY(5px);
+  //   }
 
-    .open &-inner-center {
-      transform: translateX(-2px) rotateZ(45deg);
-      opacity: 0;
-      transition: opacity 1500ms 500ms ease-out, transform 750ms 250ms ease-out;
-    }
-    .open &-inner-bottom {
-      transform: rotate(-45deg) translateY(-5px);
-    }
-  }
+  //   .open &-inner-center {
+  //     transform: translateX(-2px) rotateZ(45deg);
+  //     opacity: 0;
+  //     transition: opacity 1500ms 500ms ease-out, transform 750ms 250ms ease-out;
+  //   }
+  //   .open &-inner-bottom {
+  //     transform: rotate(-45deg) translateY(-5px);
+  //   }
+  // }
 
   @media screen and (max-width: 450px) {
     top: 1vh;
@@ -51,7 +51,7 @@
   &-inner-top,
   &-inner-bottom {
     display: block;
-    content: '';
+    content: "";
   }
 
   &-inner-top {
