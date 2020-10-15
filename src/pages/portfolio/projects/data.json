@@ -1,6 +1,15 @@
 [
   {
     "_id": {
+      "$oid": "2a24SovHa2L1S86e7124a9S63s13k66"
+    },
+    "title": "MoneyWell",
+    "img": "https://ia601501.us.archive.org/11/items/screenshot-2020-10-15-at-16.10.13/Screenshot%202020-10-15%20at%2016.10.13.png?done",
+    "link": "https://moneywell.netlify.app/",
+    "description": "Stocks application, written with TypeScript, Vue and Sass"
+  },
+  {
+    "_id": {
       "$oid": "5ede1f66e7179a6b63683a86"
     },
     "title": "The Empty Basket",
@@ -84,16 +93,5 @@
     "__v": 0,
     "link": "https://studios.netlify.com/",
     "description": "My first project ever! It was written with HTML and CSS, with Bootstrap."
-  },
-  {
-    "_id": {
-      "$oid": "1d94ZE4fo1kar5g791q3m7T"
-    },
-    "title": "Card Animation",
-    "img": "https://images.pexels.com/photos/1576303/pexels-photo-1576303.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500",
-    "date": "2020-04-19T19:45:13.467Z",
-    "__v": 0,
-    "link": "https://miguel-bento-github.github.io/card-experience/",
-    "description": "This experiment was written with Vue and CSS."
   }
 ]
