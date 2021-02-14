@@ -2,11 +2,11 @@ import React, { useRef } from "react";
 import "./pageOverview.scss";
 import List from "./listURL/ListURL";
 
-import { pages } from "../router/routes";
-
 const PageOverview = ({ isOpen, close }) => {
   const ref = useRef();
-  const DisplayPages = pages.map(page => <List key={page} close={close} to={page} name={page} />);
+  const DisplayPages = ["contact"].map(page => (
+    <List key={page} close={close} to={page} name={page} />
+  ));
 
   if (isOpen) {
     if (ref.current) {

@@ -1,4 +1,4 @@
-export default function checkIfInView(id, percentage) {
+export default function checkIfInView(id) {
   if (!id) return null;
   const sensor = document.getElementById(id);
   const rect = sensor.getBoundingClientRect();

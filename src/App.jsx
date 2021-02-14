@@ -1,9 +1,8 @@
 import React, { useEffect } from "react";
 import "./app.scss";
+import Axios from "axios";
 import { withRouter } from "react-router-dom";
 import NavbarHome from "./components/NavbarHome";
-
-import Axios from "axios";
 import Routes from "./router/Routes";
 
 function App() {
