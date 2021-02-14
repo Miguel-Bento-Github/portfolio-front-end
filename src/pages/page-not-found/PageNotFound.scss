@@ -1,12 +1,9 @@
 @import "../../sass/variables";
 
-.four-oh-four {
+.page-not-found {
   min-height: 85vh;
   color: $color-white;
-  background: linear-gradient(
-      rgba($color-dark-grey, 0.5),
-      rgba($color-dark-grey, 0.5)
-    ),
+  background: linear-gradient(rgba($color-dark-grey, 0.5), rgba($color-dark-grey, 0.5)),
     url("https://images.pexels.com/photos/1280162/pexels-photo-1280162.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
       center;
   background-repeat: no-repeat;
@@ -20,10 +17,7 @@
   padding: 5%;
 
   @media screen and (max-width: 500px) {
-    background: linear-gradient(
-        rgba($color-dark-grey, 0.3),
-        rgba($color-dark-grey, 0.2)
-      ),
+    background: linear-gradient(rgba($color-dark-grey, 0.3), rgba($color-dark-grey, 0.2)),
       url("../../assets/404.jpg") center no-repeat;
     background-attachment: fixed;
     background-size: cover;
