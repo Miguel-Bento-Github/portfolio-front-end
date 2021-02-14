@@ -1,13 +1,13 @@
-@import '../sass/variables';
-@import '../animations/slide.scss';
-@import '../sass/font';
+@import "../sass/variables";
+@import "../animations/slide.scss";
+@import "../sass/font";
 
 .nav {
   &-link {
     width: max-content;
     color: $color-raisin-black;
     text-transform: capitalize;
-    font-family: 'Overpass Mono', monospace;
+    font-family: "Overpass Mono", monospace;
     padding: 5px;
     border-radius: 8px;
     font-size: calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
@@ -40,32 +40,5 @@
       width: 70vw;
       padding: 0 2vw;
     }
-  }
-}
-
-.btn-nav-close {
-  right: 16px;
-  bottom: 16px;
-  position: absolute;
-  border: 0;
-  outline: thin;
-  color: $color-raisin-black;
-  background: linear-gradient(145deg, #cfbeab, #aea090);
-  box-shadow: $box-shadow-button;
-
-  @media screen and (max-width: 650px) {
-    margin-top: 1rem;
-    margin-left: initial;
-  }
-
-  &:hover {
-    background: linear-gradient(150deg, #cfbeab, #aea090);
-    box-shadow: $box-shadow-button-hover;
-  }
-
-  &:active {
-    right: 15px;
-    bottom: 15px;
-    box-shadow: $box-shadow-button-active;
   }
 }
