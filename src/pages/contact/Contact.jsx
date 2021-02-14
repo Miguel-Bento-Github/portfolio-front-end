@@ -1,13 +1,12 @@
 import React, { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
 import { sendEmail } from '../../api/email';
+import { ReactComponent as Github } from '../../assets/icons/github.svg';
+import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
+import { ReactComponent as LinkedIn } from '../../assets/icons/linkedIn.svg';
 import Link from '../../components/iconLink/IconLink';
 import './contact.scss';
-import { ReactComponent as Github } from '../../assets/icons/github.svg';
-import { ReactComponent as LinkedIn } from '../../assets/icons/linkedIn.svg';
-import { ReactComponent as Instagram } from '../../assets/icons/instagram.svg';
 import Input from './input/Input';
 
 toast.configure({
@@ -28,16 +27,16 @@ export default function Contact() {
   };
 
   const handleChange = ({ current }) => {
-    setInputs((prevState) => ({
+    setInputs(prevState => ({
       ...prevState,
       [current.id]: current.value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = e => {
     e.preventDefault();
 
-    const validateEmail = (userEmail) => {
+    const validateEmail = userEmail => {
       const validator = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/;
       return validator.test(String(userEmail).toLowerCase());
     };
@@ -96,43 +95,45 @@ export default function Contact() {
 
   return (
     <>
-      <div className='bg zoom' />
-      <section id='section' className='contact-section page'>
-        <div className='contact'>
-          <h1 className='section-header'>Contact me</h1>
-          <form onSubmit={handleSubmit} id='contact-form' className='contact-form'>
-            <div className='contact-form-user-info'>
+      <div className="slit">
+        <div className="bg zoom" />
+        <section id="section" className="contact-section page">
+          <div className="contact">
+            <h1 className="section-header">Contact me</h1>
+            <form onSubmit={handleSubmit} id="contact-form" className="contact-form">
+              <div className="contact-form-user-info">
+                <Input
+                  ref={ref.name}
+                  pHolder="name"
+                  handleChange={() => handleChange(ref.name)}
+                  value={inputs.name}
+                />
+                <Input
+                  ref={ref.email}
+                  value={inputs.email}
+                  pHolder="email"
+                  handleChange={() => handleChange(ref.email)}
+                />
+              </div>
               <Input
-                ref={ref.name}
-                pHolder='name'
-                handleChange={() => handleChange(ref.name)}
-                value={inputs.name}
+                ref={ref.subject}
+                value={inputs.subject}
+                pHolder="subject"
+                handleChange={() => handleChange(ref.subject)}
               />
               <Input
-                ref={ref.email}
-                value={inputs.email}
-                pHolder='email'
-                handleChange={() => handleChange(ref.email)}
+                ref={ref.message}
+                value={inputs.message}
+                pHolder="message"
+                handleChange={() => handleChange(ref.message)}
               />
-            </div>
-            <Input
-              ref={ref.subject}
-              value={inputs.subject}
-              pHolder='subject'
-              handleChange={() => handleChange(ref.subject)}
-            />
-            <Input
-              ref={ref.message}
-              value={inputs.message}
-              pHolder='message'
-              handleChange={() => handleChange(ref.message)}
-            />
 
-            <input type='submit' className='btn btn-submit' value='send' />
-          </form>
-          <div className='banner-container'>{Banner}</div>
-        </div>
-      </section>
+              <input type="submit" className="btn btn-submit" value="send" />
+            </form>
+            <div className="banner-container">{Banner}</div>
+          </div>
+        </section>
+      </div>
     </>
   );
 }
