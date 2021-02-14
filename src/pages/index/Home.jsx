@@ -19,8 +19,6 @@ export default function Home() {
         style.filter = "blur(0)";
       }
     }, 50);
-
-    // sectionRef.current.classList[type]('index--blur');
   }
 
   function handleLeave() {
