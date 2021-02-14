@@ -10,12 +10,9 @@ function App() {
   useEffect(() => {
     try {
       (async () => {
-        const { status } = await Axios("https://mr-monkey.herokuapp.com");
-        console.warn(status !== 200 ? "Connected to DB" : new Error("Could not connect to DB"));
+        await Axios("https://mr-monkey.herokuapp.com");
       })();
-    } catch (error) {
-      throw new Error("Cannot establish connection with the database.");
-    }
+    } catch (e) {}
   });
 
   return (

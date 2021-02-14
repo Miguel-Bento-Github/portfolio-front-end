@@ -11,11 +11,11 @@ const PageNotFound = () => {
   }, []);
 
   return (
-    <section id="section" className="four-oh-four page">
-      <h1 className="four-oh-four__title">404 This page doesn't exist</h1>
+    <section id="section" className="page-not-found page">
+      <h1 className="page-not-found__title">404 This page doesn't exist</h1>
 
-      <Link className="four-oh-four__link" to="/">
-        <i className="four-oh-four__icon fas fa-igloo"></i>
+      <Link className="page-not-found__link" to="/">
+        <i className="page-not-found__icon fas fa-igloo"></i>
         Back to Home Page
       </Link>
     </section>
