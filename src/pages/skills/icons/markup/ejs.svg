@@ -1,6 +1,0 @@
-<svg width="260px" height="250px" viewBox="0 0 512 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid">
-  <style>
-    .ejs { font: bold 85px  sans-serif; fill: #fff; font-family: Arial; }
-  </style>
-  <text x="-10" y="100" class="ejs">&lt;%= EJS %></text>
-</svg>
