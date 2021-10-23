@@ -6,14 +6,18 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locale/**/*.json\""
   },
   "dependencies": {
+    "@luxdamore/vue-css-doodle": "^1.0.1",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
-    "vue": "^3.0.0"
+    "vue": "^3.0.0",
+    "vue-i18n": "^9.1.0"
   },
   "devDependencies": {
+    "@intlify/vue-i18n-loader": "^3.0.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "@vue/cli-plugin-babel": "~4.5.0",
@@ -32,7 +36,8 @@
     "prettier": "^2.2.1",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
-    "typescript": "~4.1.5"
+    "typescript": "~4.1.5",
+    "vue-cli-plugin-i18n": "~2.3.1"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

@@ -1,0 +1,8 @@
+@use "sass:math";
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($value) {
+  @return math.div($value, $value * 0 + 1);
+}
