@@ -17,4 +17,9 @@ module.exports = {
       compositionOnly: true,
     },
   },
+  devServer: {
+    overlay: {
+      errors: false,
+    },
+  },
 };
