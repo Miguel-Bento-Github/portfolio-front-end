@@ -85,33 +85,49 @@ export default defineComponent({
 
 <template>
   <Speak class="icon speech-selector" v-if="false" />
-  <section @keydown.esc="closeLangs">
+  <section @keydown.esc="closeLangs" v-if="false">
     <button type="button" class="lang-select" @click="toggleLangs">
       <Lang class="icon lang-selector" />
     </button>
 
     <ul class="language-options" v-show="showLangs">
       <li v-for="lang in langs" :key="lang">
-        <button key class="language-option" @click="selectLang(lang)" type="button">
+        <button
+          key
+          class="language-option"
+          @click="selectLang(lang)"
+          type="button"
+        >
           {{ lang }}
         </button>
       </li>
     </ul>
   </section>
 
-  <main ref="content" class="content" itemscope itemtype="https://schema.org/Person">
+  <main
+    ref="content"
+    class="content"
+    itemscope
+    itemtype="https://schema.org/Person"
+  >
     <pre aria-disabled="true">></pre>
     <header>
       <h1 tabindex="0" @focus="readme" itemprop="name">Bento</h1>
     </header>
 
     <section>
-      <h2 tabindex="0" @focus="readme" itemprop="jobTitle">Frontend Developer</h2>
+      <h2 tabindex="0" @focus="readme" itemprop="jobTitle">
+        Frontend Developer
+      </h2>
     </section>
 
     <section itemprop="contactPoint" class="contact">
       <h2 class="contact__header">Contact</h2>
-      <a @focus="readme" tabindex="0" href="mailto:bento-miguel@outlook.com" itemprop="email"
+      <a
+        @focus="readme"
+        tabindex="0"
+        href="mailto:bento-miguel@outlook.com"
+        itemprop="email"
         >bento-miguel@outlook.com</a
       >
 
@@ -169,7 +185,12 @@ export default defineComponent({
         toggleBackgroundContent();
       "
     >
-      <css-doodle @mouseenter="updateDoodle" @mouseleave="clearDoodle" class="doodle" ref="doodle">
+      <css-doodle
+        @mouseenter="updateDoodle"
+        @mouseleave="clearDoodle"
+        class="doodle"
+        ref="doodle"
+      >
         <pre>
           :doodle {
             @grid: 8 / 90%;
